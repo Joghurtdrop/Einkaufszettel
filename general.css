@@ -1,0 +1,49 @@
+*{
+	margin: 0;
+	padding: 0;
+	border: 0;
+}
+
+ul {
+    list-style-type: none;	
+}
+
+div,button,span,strong{font-family:Calibri;}
+
+li {
+    display:inline-block;
+	*display:inline;
+}
+
+li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 8px 12px;
+    text-decoration: none;
+}
+
+li a:hover:not(.active) {
+    background-color: #111;
+}
+
+.navbar {
+	overflow: hidden;
+	background-color: #444;
+	position:fixed;
+	top: 0;
+	width: 100%;
+}
+
+.main {
+  padding: 16px;
+  margin-top: 25px;
+  height: 1500px; 
+}  
+.active {
+	background-color: #8e161e;	
+}
+
+.rightAlign{
+	float: right!important;
+}
