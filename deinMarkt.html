@@ -2,14 +2,15 @@
 <html>
 <head>
 <link rel="stylesheet" href="general.css">
+<link rel="stylesheet" href="deinMarkt.css">
 </head>
 <body>
 
 <div class="navbar">
 	<ul>
-		<li><a href="einkaufszettel.html">Einkaufszettel</a></li>
-		<li><a class="active">Dein Markt</a></li>
-		<li class="rightAlign"><a href="profil.html">Profil</a></li>
+		<li><a href="einkaufszettel.html">Einkaufszettel</a></li><!--
+        --><li><a class="active">Dein Markt</a></li><!--
+        --><li class="rightAlign"><a href="profil.html">Profil</a></li>
 	</ul>
 </div>
 
@@ -17,6 +18,22 @@
   <h1>Fixed Top Menu</h1>
   <h2>Scroll this page to see the effect</h2>
   <h2>The navigation bar will stay at the top of the page while scrolling</h2>
+
+    <div class="card column" draggable="true">
+        <p>  AgarAgar</p>
+    </div>
+    <br>
+    <div class="card column" draggable="true">
+        <p>  Brot</p>
+    </div>
+    <br>
+    <div class="card column" draggable="true">
+        <p>  Cumquat</p>
+    </div>
+    <br>
+    <div class="card column" draggable="true">
+        <p>  Dosenmais</p>
+    </div>
 
   <p>Some text some text some text some text..</p>
   <p>Some text some text some text some text..</p>
@@ -26,6 +43,64 @@
   <p>Some text some text some text some text..</p>
   
 </div>
+<script>
 
+function handleDragStart(e) {
+    this.style.opacity = '0.4';
+
+    dragSrcEl = this;
+
+    e.dataTransfer.effectAllowed = 'move';
+    e.dataTransfer.setData('text/hmtl', this.innerHTLM);
+}
+
+function handleDragOver(e) {
+    if (e.preventDefault) {
+        e.preventDefault();
+    }
+
+    e.dataTransfer.dropEffect = 'move';
+
+    return false;
+}
+
+function handleDragEnter(e) {
+    this.classList.add('over');
+}
+
+function handleDragLeave(e) {
+    this.classList.remove('over');
+}
+
+function handleDrop(e) {
+    if (e.stopPropagation) {
+        e.stopPropagation();
+    }
+
+    if (dragSrcEl != this) {
+        dragSrcEl.innerHTML = this.innerHTML;
+        this.innerHTML = e.dataTransfer.getData('text/html');
+    }
+        return false;
+}
+
+function handleDragEnd(e) {
+    this.style.opacity = '1.0';
+    [].forEach.call(cols, function (col) {
+        col.classList.remove('over');
+    });
+}
+
+var cols = document.querySelectorAll('.column');
+[].forEach.call(cols, function(col){
+        col.addEventListener('dragstart', handleDragStart, false)
+        col.addEventListener('dragenter', handleDragEnter, false)
+        col.addEventListener('dragover', handleDragOver, false)
+        col.addEventListener('dragleave', handleDragLeave, false)
+        col.addEventListener('drop', handleDrop, false)
+        col.addEventListener('dragend', handleDragEnd, false)
+    });
+
+</script>
 </body>
 </html>
