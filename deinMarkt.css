@@ -7,13 +7,17 @@
     -webkit-user-drag: element;
 }
 
+.middlerow {
+    width: 80%;
+    margin: auto;
+}
 
 .column {
-    padding: 3px 5px;
+    padding: 2px 2px;
     cursor: move;
-    background-color: red;
 }
 
 .column.over {
+    padding: 0px;
     border: 2px dashed #000;
 }
