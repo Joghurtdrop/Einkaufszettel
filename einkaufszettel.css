@@ -3,7 +3,7 @@
 	padding: 0px 10px;
 	display:inline-block;
 	text-align:left;
-	min-width:300px;
+	min-width:280px;
 	max-width:600px;
 	width: 50%;
 }
@@ -31,7 +31,7 @@
     border-radius: 4px;
     background-color: #f8f8f8;
     font-size: 16px;
-    resize: none;
+	width:100%;
 }
 
 .articleInput:hover{
@@ -43,25 +43,10 @@
 	border-color:#8e161e;
 	outline:none;
 	background-color:#eee;
-	display:inline-block;
 }
 
 .kategorien{
-	display:inline-block;
+	display:block;
 	border: 1px solid black;
 	padding: 5px 20px;
-	width:auto;
-}
-
-.halfInline{
-	display:inline-block;
-	width:49%;
-}
-
-.left{
-	text-align:left;
-}
-
-.right{
-	text-align:right;
 }
