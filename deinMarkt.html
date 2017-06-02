@@ -19,29 +19,31 @@
   <h2>Scroll this page to see the effect</h2>
   <h2>The navigation bar will stay at the top of the page while scrolling</h2>
 
-    <div class="card column" draggable="true">
-        <p>  AgarAgar</p>
+<div class="card">
+    <div id="item1" class="column" draggable="true">
+        AgarAgar
     </div>
     <br>
-    <div class="card column" draggable="true">
-        <p>  Brot</p>
+    <div id="item2" class="column" draggable="true">
+        Brot
     </div>
     <br>
-    <div class="card column" draggable="true">
-        <p>  Cumquat</p>
+    <div id="item3" class="column" draggable="true">
+        Cumquat
     </div>
     <br>
-    <div class="card column" draggable="true">
-        <p>  Dosenmais</p>
+    <div id="item4" class="column" draggable="true">
+        Dosenmais
     </div>
+</div>
 
-  <p>Some text some text some text some text..</p>
-  <p>Some text some text some text some text..</p>
-  <p>Some text some text some text some text..</p>
-  <p>Some text some text some text some text..</p>
-  <p>Some text some text some text some text..</p>
-  <p>Some text some text some text some text..</p>
-  
+<p>Some text some text some text some text..</p>
+<p>Some text some text some text some text..</p>
+<p>Some text some text some text some text..</p>
+<p>Some text some text some text some text..</p>
+<p>Some text some text some text some text..</p>
+<p>Some text some text some text some text..</p>
+
 </div>
 <script>
 
@@ -51,7 +53,8 @@ function handleDragStart(e) {
     dragSrcEl = this;
 
     e.dataTransfer.effectAllowed = 'move';
-    e.dataTransfer.setData('text/hmtl', this.innerHTLM);
+    e.dataTransfer.setData('text', this.innerHTML);
+    console.log(this.innerHTML);
 }
 
 function handleDragOver(e) {
@@ -76,19 +79,23 @@ function handleDrop(e) {
     if (e.stopPropagation) {
         e.stopPropagation();
     }
-
     if (dragSrcEl != this) {
-        dragSrcEl.innerHTML = this.innerHTML;
-        this.innerHTML = e.dataTransfer.getData('text/html');
+        /* var data = e.dataTransfer.getData('text');
+        e.target.appendChild(document.getElementById(data)); */
+         dragSrcEl.innerHTML = this.innerHTML;
+           this.innerHTML = e.dataTransfer.getData('text/plain');
+           console.log(e.dataTransfer.getData('text/plain')); 
     }
-        return false;
+    return false;
 }
 
 function handleDragEnd(e) {
     this.style.opacity = '1.0';
+    console.log("ende");
+    console.log(this);
     [].forEach.call(cols, function (col) {
-        col.classList.remove('over');
-    });
+            col.classList.remove('over');
+            });
 }
 
 var cols = document.querySelectorAll('.column');
@@ -99,7 +106,7 @@ var cols = document.querySelectorAll('.column');
         col.addEventListener('dragleave', handleDragLeave, false)
         col.addEventListener('drop', handleDrop, false)
         col.addEventListener('dragend', handleDragEnd, false)
-    });
+        });
 
 </script>
 </body>
