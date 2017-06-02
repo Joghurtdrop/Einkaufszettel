@@ -1,9 +1,10 @@
 .listcontainer {	
 	min-height: 200px;
-	padding: 10px;
+	padding: 0px 10px;
 	display:inline-block;
 	text-align:left;
-	min-width:400px;
+	min-width:300px;
+	max-width:600px;
 	width: 50%;
 }
 
@@ -15,6 +16,7 @@
 .listtext {
 	font-family: Bradley Hand ITC;
 	font-size: 20px;
+	padding: 0px 0px 0px 15px;
 }
 
 .listelement{
@@ -22,9 +24,25 @@
 	border-bottom: thin solid black;
 }
 
+.articleInput{
+	width: 50%;
+    height: 30px;
+    padding: 10px 10px;
+    box-sizing: border-box;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    background-color: #f8f8f8;
+    font-size: 16px;
+    resize: none;
+}
 
+.articleInput:hover{
+	border-color:#8e161e;
+	outline:none;
+}
 
-.bottom{
-	position:fixed;
-	bottom:0;
+.articleInput:focus{
+	border-color:#8e161e;
+	outline:none;
+	background-color:#eee;
 }

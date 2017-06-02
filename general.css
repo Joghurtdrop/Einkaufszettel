@@ -16,6 +16,10 @@ div,button,span,strong{font-family:Calibri;}
   text-align:center;
 }  
 
+.mainWithBaseboard{
+  margin-bottom:45px;
+}
+
 h1{
 	text-align:center;
 }
@@ -24,6 +28,17 @@ h1{
   box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
   background-color: white;
   border-radius: 8px;  
+}
+
+
+.baseboard{
+	position:fixed;
+	bottom:0;
+	padding: 10px 20px;
+	text-align:center;
+	background-color:#555;
+	color:white;
+	width:100%;
 }
 
 
@@ -52,7 +67,7 @@ h1{
 
 .navbar {
 	overflow: hidden;
-	background-color: #444;
+	background-color: #555;
 	position:fixed;
 	top: 0;
 	width: 100%;
@@ -63,7 +78,7 @@ h1{
 }
 
 .rightAlign{
-	float: right!important;
+	float: right;
 }
 
 /*END: navigation bar elements*/
