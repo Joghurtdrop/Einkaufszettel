@@ -11,6 +11,7 @@
 .list{
 	padding: 10px;
 	margin:10px;
+	list-style-type:none;
 }
 
 .listtext {
@@ -25,10 +26,7 @@
 }
 
 .articleInput{
-	width: 50%;
-    height: 30px;
     padding: 10px 10px;
-    box-sizing: border-box;
     border: 2px solid #ccc;
     border-radius: 4px;
     background-color: #f8f8f8;
@@ -45,4 +43,25 @@
 	border-color:#8e161e;
 	outline:none;
 	background-color:#eee;
+	display:inline-block;
+}
+
+.kategorien{
+	display:inline-block;
+	border: 1px solid black;
+	padding: 5px 20px;
+	width:auto;
+}
+
+.halfInline{
+	display:inline-block;
+	width:49%;
+}
+
+.left{
+	text-align:left;
+}
+
+.right{
+	text-align:right;
 }
