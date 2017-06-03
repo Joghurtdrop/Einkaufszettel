@@ -43,6 +43,18 @@ body{
 
 /*END: grid columns */
 
+/* material-design icon styling classes */
+
+.material-icons.md-18 { font-size: 18px; }
+.material-icons.md-24 { font-size: 24px; }
+.material-icons.md-30 { font-size: 30px; }
+.material-icons.md-36 { font-size: 36px; }
+.material-icons.md-48 { font-size: 48px; }
+
+/*END: material-design icon styling classes */
+
+/* general site elements*/
+
 .main {
   padding: 16px;
   margin-top: 25px;
@@ -68,6 +80,8 @@ body{
 	color:white;
 	width:100%;
 }
+
+/*END: general site elements*/
 
 /*navigation bar elements*/
 .navbar ul {
