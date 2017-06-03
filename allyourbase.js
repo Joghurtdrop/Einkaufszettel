@@ -1,3 +1,13 @@
+/* function to add new items to the list */
+function newItem() {
+    var newitem = document.createElement("div");
+    newitem.className = "column";
+    newitem.setAttribute("draggable","true");
+    newitem.innerText = "Essiggurken";
+
+    document.getElementById("trace").appendChild(newitem);
+    refreshItems();
+}
 
 function handleDragStart(e) {
     this.style.opacity = '0.4';
@@ -39,18 +49,21 @@ function handleDrop(e) {
 
 function handleDragEnd(e) {
     this.style.opacity = '1.0';
+    var cols = document.querySelectorAll('.column');
     [].forEach.call(cols, function (col) {
-            col.classList.remove('over');
-            });
+        col.classList.remove('over');
+    });
 }
 
-var cols = document.querySelectorAll('.column');
-[].forEach.call(cols, function(col){
+function refreshItems() {
+    var cols = document.querySelectorAll('.column');
+    [].forEach.call(cols, function(col){
         col.addEventListener('dragstart', handleDragStart, false)
         col.addEventListener('dragenter', handleDragEnter, false)
         col.addEventListener('dragover', handleDragOver, false)
         col.addEventListener('dragleave', handleDragLeave, false)
         col.addEventListener('drop', handleDrop, false)
         col.addEventListener('dragend', handleDragEnd, false)
-        });
-
+    });
+}
+refreshItems();
