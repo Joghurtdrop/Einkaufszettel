@@ -1,43 +1,3 @@
-<!DOCTYPE html>
-<html>
-<head>
-<link rel="stylesheet" href="general.css">
-<link rel="stylesheet" href="deinMarkt.css">
-
-</head>
-<body>
-
-<div class="navbar">
-	<ul>
-		<li><a href="einkaufszettel.html">Einkaufszettel</a></li><!--
-        --><li><a class="active">Dein Markt</a></li><!--
-        --><li class="rightAlign"><a href="profil.html">Profil</a></li>
-	</ul>
-</div>
-
-<div class="main">
-  <h1>Dein Markt</h1>
-  <h2>Trage hier deinen Einkaufsweg durch den Laden ein.</h2>
-
-<div class="card middlerow">
-    <div id="item1" class="column" draggable="true">
-        AgarAgar
-    </div>
-    <div id="item2" class="column" draggable="true">
-        Brot
-    </div>
-    <div id="item3" class="column" draggable="true">
-        Cumquat
-    </div>
-    <div id="item4" class="column" draggable="true">
-        Dosenmais
-    </div>
-</div>
-</div>
-
-
-
-<script>
 
 function handleDragStart(e) {
     this.style.opacity = '0.4';
@@ -46,7 +6,6 @@ function handleDragStart(e) {
 
     e.dataTransfer.effectAllowed = 'move';
     e.dataTransfer.setData('text', this.innerHTML);
-    console.log(this.innerHTML);
 }
 
 function handleDragOver(e) {
@@ -72,19 +31,14 @@ function handleDrop(e) {
         e.stopPropagation();
     }
     if (dragSrcEl != this) {
-        /* var data = e.dataTransfer.getData('text');
-        e.target.appendChild(document.getElementById(data)); */
-         dragSrcEl.innerHTML = this.innerHTML;
-           this.innerHTML = e.dataTransfer.getData('text/plain');
-           console.log(e.dataTransfer.getData('text/plain')); 
+        dragSrcEl.innerHTML = this.innerHTML;
+        this.innerHTML = e.dataTransfer.getData('text/plain');
     }
     return false;
 }
 
 function handleDragEnd(e) {
     this.style.opacity = '1.0';
-    console.log("ende");
-    console.log(this);
     [].forEach.call(cols, function (col) {
             col.classList.remove('over');
             });
@@ -100,6 +54,3 @@ var cols = document.querySelectorAll('.column');
         col.addEventListener('dragend', handleDragEnd, false)
         });
 
-</script>
-</body>
-</html>
