@@ -35,6 +35,10 @@ body{
         width: 100%;
     }
 }
+[class*="col-"] {
+    float: left;
+    padding: 15px;
+}
 
 
 /*END: grid columns */
@@ -60,7 +64,6 @@ body{
 .baseboard{
 	position:fixed;
 	bottom:0;
-	padding: 10px 0px;
 	background-color:#555;
 	color:white;
 	width:100%;

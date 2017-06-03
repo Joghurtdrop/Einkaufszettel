@@ -1,3 +1,12 @@
+@media only screen and (max-width: 550px) {
+    /* For mobile phones: */
+    .mobileInvisible {
+        display:none;
+    }
+}
+
+
+
 .listcontainer {	
 	min-height: 200px;
 	padding: 0px 10px;
@@ -15,7 +24,7 @@
 }
 
 .listtext {
-	font-family: Bradley Hand ITC;
+	font-family: Patrick Hand;
 	font-size: 20px;
 	padding: 0px 0px 0px 15px;
 }
@@ -26,12 +35,13 @@
 }
 
 .articleInput{
-    padding: 10px 10px;
+    padding: 4px 10px;
     border: 2px solid #ccc;
     border-radius: 4px;
     background-color: #f8f8f8;
     font-size: 16px;
 	width:100%;
+	font-family: Patrick Hand;
 }
 
 .articleInput:hover{
@@ -46,7 +56,12 @@
 }
 
 .kategorien{
-	display:block;
 	border: 1px solid black;
 	padding: 5px 20px;
 }
+
+.baseboardElements{
+	padding:5px 10px;	
+}
+
+
