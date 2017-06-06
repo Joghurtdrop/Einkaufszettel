@@ -7,35 +7,38 @@
     -webkit-user-drag: element;
 }
 
-/*nav.vertical {
+
+nav.vertical {
+    position:absolute;
     display: inline-block;
     z-index: 2;
     left:0;
     padding: 0px;
     float: left;
-    position: fixed;
     background: #555;
-    width: 10%;
     height: 100%;
 }
-*/
+
 nav.vertical ul {
+    height: 100%;
+    width: 100%;
     list-style: none;
     position: relative;
     float: left;
 }
 
 nav.vertical li {
+    height: 50%;
     position: relative;
 }
 
 nav.vertical a {
-    width: 200px;
+    height:100%;
     background: #555;
     display: block;
     color: white;
     text-decoration: none;
-    padding: 10px 15px;
+    padding: 10px 0px;
     transition: 0.2s;
 }
 
@@ -44,6 +47,7 @@ nav.vertical li:hover > a {
 }
 
 nav.vertical ul ul{
+    height: 200%;
     position:absolute;
     left:0%;
     top:0;
@@ -59,6 +63,9 @@ nav.vertical li:hover > ul {
     visibility: visible;
     opacity: 1;
     transform: translateX(0px);
+}
+.vertinav {
+    margin-left:16.66%;
 }
 
 .middlerow {
