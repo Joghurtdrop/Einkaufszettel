@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<link rel="stylesheet" href="general.css">
-	<link rel="stylesheet" href="einkaufszettel.css">
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="general.css">
+	<link rel="stylesheet" href="einkaufszettel.css">
 	<link href="https://fonts.googleapis.com/css?family=Patrick+Hand" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 </head>
@@ -23,54 +23,80 @@
   <div class="card listcontainer">
 	<ul class="list">
 		<li class="listelement">
+			<div class="listtext">5</div>
 			<div class="listtext">Banane</div>
 		</li>
 		<li class="listelement">
+			<div class="listtext">2</div>
 			<div class="listtext">Eimer</div>
 		</li>
 		<li class="listelement">
+			<div class="listtext">1</div>
 			<div class="listtext">Klopapier</div>
 		</li>
 		<li class="listelement">
+			<div class="listtext">10</div>
 			<div class="listtext">Fliwat&uuml;t</div>
 		</li>
 		<li class="listelement">
+			<div class="listtext">5</div>
 			<div class="listtext">Banane</div>
 		</li>
 		<li class="listelement">
+			<div class="listtext">2</div>
 			<div class="listtext">Eimer</div>
 		</li>
 		<li class="listelement">
+			<div class="listtext">1</div>
 			<div class="listtext">Klopapier</div>
 		</li>
 		<li class="listelement">
+			<div class="listtext">10</div>
 			<div class="listtext">Fliwat&uuml;t</div>
 		</li>
 		<li class="listelement">
+			<div class="listtext">5</div>
 			<div class="listtext">Banane</div>
 		</li>
 		<li class="listelement">
+			<div class="listtext">2</div>
 			<div class="listtext">Eimer</div>
 		</li>
 		<li class="listelement">
+			<div class="listtext">1</div>
 			<div class="listtext">Klopapier</div>
 		</li>
-		
+		<li class="listelement">
+			<div class="listtext">10</div>
+			<div class="listtext">Fliwat&uuml;t</div>
+		</li>		
 	</ul>
   </div>
 </div>
+
+<div class="col-5 row-1 categoryListContainer">
+	<a class="categoryElement">Test</a>
+	<a class="categoryElement">Test</a>
+	<a class="categoryElement">Test</a>
+	<a class="categoryElement">Test</a>
+	<a class="categoryElement">Test</a>
+	<a class="categoryElement">Test</a>
+</div>
+
 <div class="baseboard">
 	<div class="contentDesktop">
 		<div class="col-1 mobileInvisible">
 		</div>
-		<div class="col-5 baseboardElements">
-			<input class="articleInput" id=="newArticle"></input>
-		</div>	
-		<div class="col-5 baseboardElements">
-			<div class="category">Kategorie</div>
-		</div>
+		<form action="addElement.php">
+			<div class="col-5 baseboardElements">
+				<input class="articleInput" id=="newArticle"></input>
+			</div>	
+			<div class="col-5 baseboardElements">
+				<div class="category">Kategorie</div>
+			</div>
+		</form>
 		<div class="col-1 baseboardElements">
-			<i class="material-icons md-30">&#xE854;</i>
+			<a href="deinmarkt.html"><i class="material-icons md-30">&#xE854;</i></a>
 		</div>
 	</div>
 </div>
