@@ -4,7 +4,9 @@
 	border: 0;
 	box-sizing:border-box;
 }
-
+html {
+	background-color:#fff9f9;
+}
 /*general font formating*/
 div,button,span,strong{font-family:Calibri;}
 

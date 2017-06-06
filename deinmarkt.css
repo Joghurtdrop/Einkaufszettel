@@ -7,9 +7,62 @@
     -webkit-user-drag: element;
 }
 
+nav.vertical {
+    z-index: 2;
+    left:0;
+    padding: 0px;
+    float: left;
+    position: fixed;
+}
+
+nav.vertical ul {
+    list-style: none;
+    position: relative;
+    float: left;
+}
+
+nav.vertical li {
+    position: relative;
+}
+
+nav.vertical a {
+    display: block;
+    width: 200px;
+    color: white;
+    text-decoration: none;
+    padding: 10px 15px;
+    background: #555;
+    transition: 0.2s;
+}
+
+nav.vertical li:hover > a {
+    background: #8e161e;
+}
+
+nav.vertical ul ul{
+    position:absolute;
+    left:0%;
+    top:0;
+    width:100%;
+    visibility:hidden;
+    opacity:0;
+    transition: transform 0.2s;
+    transform: translateX(50px);
+}
+
+nav.vertical li:hover > ul {
+    left:100%;
+    visibility: visible;
+    opacity: 1;
+    transform: translateX(0px);
+}
+
 .middlerow {
-    width: 80%;
-    margin: auto;
+    display: table;
+    width: 60%;
+    float:right;
+    margin-right:20%;
+    position: relative;
 }
 
 .column {

@@ -1,9 +1,9 @@
 /* function to add new items to the list */
-function newItem() {
+function newItem(e) {
     var newitem = document.createElement("div");
     newitem.className = "column";
     newitem.setAttribute("draggable","true");
-    newitem.innerText = "Essiggurken";
+    newitem.innerText = e.innerText;
 
     document.getElementById("trace").appendChild(newitem);
     refreshItems();
