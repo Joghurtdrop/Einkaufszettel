@@ -9,6 +9,7 @@
 
 
 nav.vertical {
+    margin-top: 35px; 
     position:absolute;
     display: inline-block;
     z-index: 2;
