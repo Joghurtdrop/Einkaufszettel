@@ -3,8 +3,8 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link rel="stylesheet" href="general.css">
-	<link rel="stylesheet" href="einkaufszettel.css">
+	<link rel="stylesheet" href="css/general.css">
+	<link rel="stylesheet" href="css/einkaufszettel.css">
 	<link href="https://fonts.googleapis.com/css?family=Patrick+Hand" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 </head>
@@ -21,55 +21,7 @@
 <div class="main mainWithBaseboard">
   <h1>Dein Einkaufszettel</h1>
   <div class="card listcontainer">
-	<ul class="list">
-		<li class="listelement">
-			<div class="listtext">5</div>
-			<div class="listtext">Banane</div>
-		</li>
-		<li class="listelement">
-			<div class="listtext">2</div>
-			<div class="listtext">Eimer</div>
-		</li>
-		<li class="listelement">
-			<div class="listtext">1</div>
-			<div class="listtext">Klopapier</div>
-		</li>
-		<li class="listelement">
-			<div class="listtext">10</div>
-			<div class="listtext">Fliwat&uuml;t</div>
-		</li>
-		<li class="listelement">
-			<div class="listtext">5</div>
-			<div class="listtext">Banane</div>
-		</li>
-		<li class="listelement">
-			<div class="listtext">2</div>
-			<div class="listtext">Eimer</div>
-		</li>
-		<li class="listelement">
-			<div class="listtext">1</div>
-			<div class="listtext">Klopapier</div>
-		</li>
-		<li class="listelement">
-			<div class="listtext">10</div>
-			<div class="listtext">Fliwat&uuml;t</div>
-		</li>
-		<li class="listelement">
-			<div class="listtext">5</div>
-			<div class="listtext">Banane</div>
-		</li>
-		<li class="listelement">
-			<div class="listtext">2</div>
-			<div class="listtext">Eimer</div>
-		</li>
-		<li class="listelement">
-			<div class="listtext">1</div>
-			<div class="listtext">Klopapier</div>
-		</li>
-		<li class="listelement">
-			<div class="listtext">10</div>
-			<div class="listtext">Fliwat&uuml;t</div>
-		</li>		
+	<ul id="list">	
 	</ul>
   </div>
 </div>
@@ -100,5 +52,6 @@
 		</div>
 	</div>
 </div>
+<script src="js/loadShoppingList.js"></script>
 </body>
 </html>
