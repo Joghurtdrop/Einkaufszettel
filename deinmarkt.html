@@ -3,7 +3,7 @@
 <head>
 <link rel="stylesheet" href="css/general.css">
 <link rel="stylesheet" href="css/deinmarkt.css">
-
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 </head>
 <body>
 
@@ -17,7 +17,7 @@
 <div class="row">
     <nav class="vertical col-2">
         <ul>
-            <li><a onclick="newItem(this)">Tiefk&uuml;hlkost</a>
+            <li><a class="navclick"onclick="newItem(this)">Tiefk&uuml;hlkost</a>
             <ul>
                 <li><a onclick="newItem(this)">Pizza</a></li>
                 <li><a onclick="newItem(this)">Pommes</a></li>
@@ -34,7 +34,11 @@
 
         <div id="trace" class="card middlerow">
             <div class="column" draggable="true">
-                AgarAgar
+                AgarAgar 
+				<div onclick="removeItem(this)" class="icon">
+					<i class="material-icons md-18">&#xE928;
+					</i>
+				</div>
             </div>
             <div class="column" draggable="true">
                 Brot

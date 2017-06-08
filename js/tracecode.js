@@ -1,12 +1,34 @@
 /* function to add new items to the list */
 function newItem(e) {
+	var doppelt = true;
     var newitem = document.createElement("div");
     newitem.className = "column";
     newitem.setAttribute("draggable","true");
-    newitem.innerText = e.innerText;
+	newitem.id = e.innerText;
+	newitem.innerHTML = e.innerText+"<div onclick=\"removeItem(this)\" class=\"icon\">\
+					<i class=\"material-icons md-18\">&#xE928;\
+					</i>\
+				</div>";
 
-    document.getElementById("trace").appendChild(newitem);
+	var cols = document.querySelectorAll('.column');
+	[].forEach.call(cols, function(col) {
+		if (col.id == newitem.id){
+			alert(col.id+" ist bereits auf Ihrem Einkaufsweg!");
+			doppelt = false;
+		}
+	});
+	if (doppelt){
+		document.getElementById("trace").appendChild(newitem);
+	}
     refreshItems();
+}
+
+function removeItem(e){
+	e.parentNode.remove();
+}
+
+function testDouble(e){
+	
 }
 
 function handleDragStart(e) {
@@ -22,7 +44,6 @@ function handleDragOver(e) {
     if (e.preventDefault) {
         e.preventDefault();
     }
-
     e.dataTransfer.dropEffect = 'move';
 
     return false;

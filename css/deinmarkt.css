@@ -65,6 +65,11 @@ nav.vertical li:hover > ul {
     opacity: 1;
     transform: translateX(0px);
 }
+
+div.icon {
+	float:right;
+	cursor:pointer;
+}
 .vertinav {
     margin-left:16.66%;
 }
