@@ -27,9 +27,6 @@ function removeItem(e){
 	e.parentNode.remove();
 }
 
-function testDouble(e){
-	
-}
 
 function handleDragStart(e) {
     this.style.opacity = '0.4';
@@ -50,6 +47,7 @@ function handleDragOver(e) {
 }
 
 function handleDragEnter(e) {
+	console.log
     this.classList.add('over');
 }
 
@@ -62,15 +60,19 @@ function handleDrop(e) {
         e.stopPropagation();
     }
     if (dragSrcEl != this) {
-		var newid = dragSrcEl.id;
-        dragSrcEl.innerHTML = this.innerHTML;
-		dragSrcEl.id = this.id;
-        this.innerHTML = e.dataTransfer.getData('text/plain');
-		this.id=newid;
-		
+		schubser(e,this);
     }
     return false;
 }
+
+function schubser(e, that){
+	var newid = dragSrcEl.id;
+        dragSrcEl.innerHTML = that.innerHTML;
+		dragSrcEl.id = that.id;
+        that.innerHTML = e.dataTransfer.getData('text/plain');
+		that.id=newid;
+}
+
 
 function handleDragEnd(e) {
     this.style.opacity = '1.0';
