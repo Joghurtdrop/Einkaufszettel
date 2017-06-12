@@ -41,13 +41,25 @@ function handleDragOver(e) {
     if (e.preventDefault) {
         e.preventDefault();
     }
+	
+	var rootEL = document.getElementById('trace');
+	var target = e.target;
+	
+	if( target && target !== dragSrcEl ){
+		var rect = e.target.getBoundingClientRect();
+		var next = (e.clientY - rect.top)/(rect.bottom - rect.top) > .5;
+		if (target.nextSibling !== null ){
+			rootEL.insertBefore(dragSrcEl, next && target.nextSibling || target);
+		} else {
+			rootEL.insertBefore(dragSrcEl, next && target || target.nextSibling);
+		}
+	}
     e.dataTransfer.dropEffect = 'move';
 
     return false;
 }
 
 function handleDragEnter(e) {
-	console.log
     this.classList.add('over');
 }
 
