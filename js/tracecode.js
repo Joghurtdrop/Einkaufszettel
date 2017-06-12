@@ -62,8 +62,12 @@ function handleDrop(e) {
         e.stopPropagation();
     }
     if (dragSrcEl != this) {
+		var newid = dragSrcEl.id;
         dragSrcEl.innerHTML = this.innerHTML;
+		dragSrcEl.id = this.id;
         this.innerHTML = e.dataTransfer.getData('text/plain');
+		this.id=newid;
+		
     }
     return false;
 }
