@@ -87,6 +87,39 @@
 	font-family: Patrick Hand;
 }
 
+
+.categoryList a{
+	height:100%;
+}
+
+.categoryList ul{
+	list-style-type:none;
+	
+}
+
+.categoryList li:hover > ul{
+	display:block;
+}
+
+.categoryList ul ul{
+	display: none;
+	margin-top:-97px;
+	background-color:#555;
+}
+
+.categoryList ul li:hover{
+	background:#ddd;
+}
+
+.categoryList{
+	padding:0px 10px;
+	margin-bottom:10px;
+}
+
+.baseboardElement{
+	padding: 5px 10px;
+}
+
 .articleInput:hover{
 	border-color:#8e161e;
 	outline:none;
@@ -98,41 +131,33 @@
 	background-color:#eee;
 }
 
-.category{
-	border: 1px solid black;
-	padding: 5px 20px;	
-}
-
-.baseboardElements{
-	padding:5px 10px;	
-}
-
 a:visited,:link{
 	color:black;
 }
 
-.categoryListContainer{
-	position:absolute;
-	padding:0px 10px;
-	margin:0px;
-	display:none;
+.category{
+	list-style-type:none;
+	position:relative;
+	margin-top:-80px;
 }
 
-.categoryListContainer a{
-	border-left: 1px solid black;
-	border-right: 1px solid black;	
-	background-color:#555;
-	display:block;
+.category li:hover{
+	border-left: solid 1px #000;
 }
 
-.category:hover ~ div.categoryListContainer{
-    display: none;
+.category li{
+	padding: 4px 10px;
+	width:100%;
 }
 
-.category:hover + div{
-	background-color:black;    
+
+.category li:last-child{
+	border:solid 1px #000;
 }
 
+.category li:last-child:hover ul.category{
+	background-color:red;
+}
 
 
 
