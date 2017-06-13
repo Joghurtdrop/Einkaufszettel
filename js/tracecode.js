@@ -66,7 +66,7 @@ function handleDragEnter(e) {
 function handleDragLeave(e) {
     this.classList.remove('over');
 }
-
+/*
 function handleDrop(e) {
     if (e.stopPropagation) {
         e.stopPropagation();
@@ -84,7 +84,7 @@ function schubser(e, that){
         that.innerHTML = e.dataTransfer.getData('text/plain');
 		that.id=newid;
 }
-
+*/
 
 function handleDragEnd(e) {
     this.style.opacity = '1.0';
@@ -101,7 +101,7 @@ function refreshItems() {
         col.addEventListener('dragenter', handleDragEnter, false)
         col.addEventListener('dragover', handleDragOver, false)
         col.addEventListener('dragleave', handleDragLeave, false)
-        col.addEventListener('drop', handleDrop, false)
+        //col.addEventListener('drop', handleDrop, false)
         col.addEventListener('dragend', handleDragEnd, false)
     });
 }
