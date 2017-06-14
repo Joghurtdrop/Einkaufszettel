@@ -10,3 +10,5 @@ data/ib_logfile0
 *.log
 
 data/ibdata1
+
+data/mysql\.pid
