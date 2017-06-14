@@ -88,15 +88,14 @@
 }
 
 
-.categoryList a{
-	height:100%;
-	transition: 0.2s;
-	padding: 5px 0px;
+.categoryList div{
+	height:44px;
+	padding-top:10px;
 }
 
 .categoryList ul{
 	list-style-type:none;
-	margin-top:10px;
+	/*margin-top:10px;*/
 	
 }
 
@@ -111,22 +110,30 @@
 
 .categoryList ul ul{
 	visibility:hidden;
-	margin-top:-97px;
+	top:100%;
 	background-color:#555;
 	transition: transform 0.3s;
 	transform: translateY(35px);
 	z-index:-1;
 	position:absolute;
 	width:22.5%;
-	margin-bottom:10px;
 }
 
 .categoryList ul li:hover{
-	background:#ddd;
+	background:#8e161e;
+}
+
+.categoryList ul li ul li:hover{
+	background:#111;
 }
 
 .categoryList{
 	padding:0px 10px;
+}
+
+.categoryList a{
+	display:block;
+	height: 50px;
 }
 
 .baseboardElement{

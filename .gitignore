@@ -1,0 +1,10 @@
+
+mysql_error\.log
+
+aria_log\.00000001
+
+aria_log_control
+
+data/ib_logfile0
+
+*.log
