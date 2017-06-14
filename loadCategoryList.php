@@ -22,7 +22,7 @@
 		{
 			?>
 				<li>
-					<a><?php echo $row['name']?></a>
+					<div onClick="setCategory(this)"><?php echo $row['name']?></div>
 				</li>
 			<?php
 		}
