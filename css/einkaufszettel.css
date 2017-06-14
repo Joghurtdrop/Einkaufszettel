@@ -96,11 +96,12 @@
 
 .categoryList ul{
 	list-style-type:none;
+	margin-top:10px;
 	
 }
 
 .categoryList ul li{
-	list-style-type:none;	
+	list-style-type:none;
 }
 
 .categoryList li:hover > ul{
@@ -112,11 +113,12 @@
 	visibility:hidden;
 	margin-top:-97px;
 	background-color:#555;
-	transition: transform 0.4s;
+	transition: transform 0.3s;
 	transform: translateY(35px);
 	z-index:-1;
 	position:absolute;
 	width:22.5%;
+	margin-bottom:10px;
 }
 
 .categoryList ul li:hover{

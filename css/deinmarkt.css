@@ -55,7 +55,6 @@ nav.vertical ul ul{
     width:100%;
     visibility:hidden;
     opacity:0;
-    transition: transform 0.2s;
     transform: translateX(50px);
 }
 
