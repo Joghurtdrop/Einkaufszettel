@@ -497,3 +497,403 @@ Version: '10.1.21-MariaDB'  socket: ''  port: 3306  mariadb.org binary distribut
 2017-06-14  7:59:15 1660 [Note] Server socket created on IP: '::'.
 2017-06-14  7:59:15 1660 [Note] c:\xampp\mysql\bin\mysqld.exe: ready for connections.
 Version: '10.1.21-MariaDB'  socket: ''  port: 3306  mariadb.org binary distribution
+2017-06-14 10:30:18 ba4 InnoDB: Warning: Using innodb_additional_mem_pool_size is DEPRECATED. This option may be removed in future releases, together with the option innodb_use_sys_malloc and with the InnoDB's internal memory allocator.
+2017-06-14 10:30:18 2980 [Note] InnoDB: innodb_empty_free_list_algorithm has been changed to legacy because of small buffer pool size. In order to use backoff, increase buffer pool at least up to 20MB.
+
+2017-06-14 10:30:18 2980 [Note] InnoDB: Using mutexes to ref count buffer pool pages
+2017-06-14 10:30:18 2980 [Note] InnoDB: The InnoDB memory heap is disabled
+2017-06-14 10:30:18 2980 [Note] InnoDB: Mutexes and rw_locks use Windows interlocked functions
+2017-06-14 10:30:18 2980 [Note] InnoDB: _mm_lfence() and _mm_sfence() are used for memory barrier
+2017-06-14 10:30:18 2980 [Note] InnoDB: Compressed tables use zlib 1.2.3
+2017-06-14 10:30:18 2980 [Note] InnoDB: Using generic crc32 instructions
+2017-06-14 10:30:18 2980 [Note] InnoDB: Initializing buffer pool, size = 16.0M
+2017-06-14 10:30:18 2980 [Note] InnoDB: Completed initialization of buffer pool
+2017-06-14 10:30:19 2980 [Note] InnoDB: Highest supported file format is Barracuda.
+2017-06-14 10:30:19 2980 [Note] InnoDB: The log sequence numbers 1835037 and 1835037 in ibdata files do not match the log sequence number 1962994 in the ib_logfiles!
+2017-06-14 10:30:19 2980 [Note] InnoDB: Database was not shutdown normally!
+2017-06-14 10:30:19 2980 [Note] InnoDB: Starting crash recovery.
+2017-06-14 10:30:19 2980 [Note] InnoDB: Reading tablespace information from the .ibd files...
+2017-06-14 10:30:19 2980 [Note] InnoDB: Restoring possible half-written data pages 
+2017-06-14 10:30:19 2980 [Note] InnoDB: from the doublewrite buffer...
+2017-06-14 10:30:20 ba4  InnoDB: Error: table 'shoppinglist/categories'
+InnoDB: in InnoDB data dictionary has tablespace id 39,
+InnoDB: but a tablespace with that id does not exist. There is
+InnoDB: a tablespace of name shoppinglist/categories and id 32, though. Have
+InnoDB: you deleted or moved .ibd files?
+InnoDB: Please refer to
+InnoDB: http://dev.mysql.com/doc/refman/5.6/en/innodb-troubleshooting-datadict.html
+InnoDB: for how to resolve the issue.
+2017-06-14 10:30:20 ba4  InnoDB: Error: table 'shoppinglist/listentries'
+InnoDB: in InnoDB data dictionary has tablespace id 34,
+InnoDB: but a tablespace with that id does not exist. There is
+InnoDB: a tablespace of name shoppinglist/listentries and id 35, though. Have
+InnoDB: you deleted or moved .ibd files?
+InnoDB: Please refer to
+InnoDB: http://dev.mysql.com/doc/refman/5.6/en/innodb-troubleshooting-datadict.html
+InnoDB: for how to resolve the issue.
+2017-06-14 10:30:20 ba4  InnoDB: Error: table 'shoppinglist/users'
+InnoDB: in InnoDB data dictionary has tablespace id 40,
+InnoDB: but a tablespace with that id does not exist. There is
+InnoDB: a tablespace of name shoppinglist/users and id 38, though. Have
+InnoDB: you deleted or moved .ibd files?
+InnoDB: Please refer to
+InnoDB: http://dev.mysql.com/doc/refman/5.6/en/innodb-troubleshooting-datadict.html
+InnoDB: for how to resolve the issue.
+2017-06-14 10:30:20 2980 [Note] InnoDB: 128 rollback segment(s) are active.
+2017-06-14 10:30:20 2980 [Note] InnoDB: Waiting for purge to start
+2017-06-14 10:30:21 2590 InnoDB: Error: page 3 log sequence number 1983753
+InnoDB: is in the future! Current system log sequence number 1963020.
+InnoDB: Your database may be corrupt or you may have copied the InnoDB
+InnoDB: tablespace but not the InnoDB log files. See
+InnoDB: http://dev.mysql.com/doc/refman/5.6/en/forcing-innodb-recovery.html
+InnoDB: for more information.
+2017-06-14 10:30:21 2590 InnoDB: Error: page 3 log sequence number 1981750
+InnoDB: is in the future! Current system log sequence number 1963020.
+InnoDB: Your database may be corrupt or you may have copied the InnoDB
+InnoDB: tablespace but not the InnoDB log files. See
+InnoDB: http://dev.mysql.com/doc/refman/5.6/en/forcing-innodb-recovery.html
+InnoDB: for more information.
+2017-06-14 10:30:21 2980 [Note] InnoDB:  Percona XtraDB (http://www.percona.com) 5.6.34-79.1 started; log sequence number 1962994
+2017-06-14 10:30:21 7596 [Note] InnoDB: Dumping buffer pool(s) not yet started
+2017-06-14 10:30:21 2980 [Note] Plugin 'FEEDBACK' is disabled.
+2017-06-14 10:30:21 2980 [Note] Server socket created on IP: '::'.
+2017-06-14 10:30:21 2980 [Note] c:\xampp\mysql\bin\mysqld.exe: ready for connections.
+Version: '10.1.21-MariaDB'  socket: ''  port: 3306  mariadb.org binary distribution
+2017-06-14 10:30:21 7288 [ERROR] InnoDB: Failed to find tablespace for table '"shoppinglist"."listentries"' in the cache. Attempting to load the tablespace with space id 34.
+2017-06-14 10:30:21 1c78  InnoDB: Operating system error number 32 in a file operation.
+InnoDB: The error means that another program is using InnoDB's files.
+InnoDB: This might be a backup or antivirus software or another instance
+InnoDB: of MySQL. Please close it to get rid of this error.
+2017-06-14 10:30:31 1c78  InnoDB: Operating system error number 32 in a file operation.
+InnoDB: The error means that another program is using InnoDB's files.
+InnoDB: This might be a backup or antivirus software or another instance
+InnoDB: of MySQL. Please close it to get rid of this error.
+2017-06-14 10:30:41 1c78  InnoDB: Operating system error number 32 in a file operation.
+InnoDB: The error means that another program is using InnoDB's files.
+InnoDB: This might be a backup or antivirus software or another instance
+InnoDB: of MySQL. Please close it to get rid of this error.
+2017-06-14 10:30:51 1c78  InnoDB: Operating system error number 32 in a file operation.
+InnoDB: The error means that another program is using InnoDB's files.
+InnoDB: This might be a backup or antivirus software or another instance
+InnoDB: of MySQL. Please close it to get rid of this error.
+2017-06-14 10:31:01 1c78  InnoDB: Operating system error number 32 in a file operation.
+InnoDB: The error means that another program is using InnoDB's files.
+InnoDB: This might be a backup or antivirus software or another instance
+InnoDB: of MySQL. Please close it to get rid of this error.
+2017-06-14 10:31:11 1c78  InnoDB: Operating system error number 32 in a file operation.
+InnoDB: The error means that another program is using InnoDB's files.
+InnoDB: This might be a backup or antivirus software or another instance
+InnoDB: of MySQL. Please close it to get rid of this error.
+2017-06-14 10:31:21 1c78  InnoDB: Operating system error number 32 in a file operation.
+InnoDB: The error means that another program is using InnoDB's files.
+InnoDB: This might be a backup or antivirus software or another instance
+InnoDB: of MySQL. Please close it to get rid of this error.
+2017-06-14 10:31:53 1e14 InnoDB: Warning: Using innodb_additional_mem_pool_size is DEPRECATED. This option may be removed in future releases, together with the option innodb_use_sys_malloc and with the InnoDB's internal memory allocator.
+2017-06-14 10:31:53 7700 [Note] InnoDB: innodb_empty_free_list_algorithm has been changed to legacy because of small buffer pool size. In order to use backoff, increase buffer pool at least up to 20MB.
+
+2017-06-14 10:31:53 7700 [Note] InnoDB: Using mutexes to ref count buffer pool pages
+2017-06-14 10:31:53 7700 [Note] InnoDB: The InnoDB memory heap is disabled
+2017-06-14 10:31:53 7700 [Note] InnoDB: Mutexes and rw_locks use Windows interlocked functions
+2017-06-14 10:31:53 7700 [Note] InnoDB: _mm_lfence() and _mm_sfence() are used for memory barrier
+2017-06-14 10:31:53 7700 [Note] InnoDB: Compressed tables use zlib 1.2.3
+2017-06-14 10:31:53 7700 [Note] InnoDB: Using generic crc32 instructions
+2017-06-14 10:31:53 7700 [Note] InnoDB: Initializing buffer pool, size = 16.0M
+2017-06-14 10:31:53 7700 [Note] InnoDB: Completed initialization of buffer pool
+2017-06-14 10:31:53 7700 [Note] InnoDB: Highest supported file format is Barracuda.
+2017-06-14 10:31:53 7700 [Note] InnoDB: The log sequence numbers 1835037 and 1835037 in ibdata files do not match the log sequence number 1963020 in the ib_logfiles!
+2017-06-14 10:31:53 7700 [Note] InnoDB: Database was not shutdown normally!
+2017-06-14 10:31:53 7700 [Note] InnoDB: Starting crash recovery.
+2017-06-14 10:31:53 7700 [Note] InnoDB: Reading tablespace information from the .ibd files...
+2017-06-14 10:31:53 7700 [Note] InnoDB: Restoring possible half-written data pages 
+2017-06-14 10:31:53 7700 [Note] InnoDB: from the doublewrite buffer...
+2017-06-14 10:31:54 1e14  InnoDB: Error: table 'shoppinglist/categories'
+InnoDB: in InnoDB data dictionary has tablespace id 39,
+InnoDB: but a tablespace with that id does not exist. There is
+InnoDB: a tablespace of name shoppinglist/categories and id 32, though. Have
+InnoDB: you deleted or moved .ibd files?
+InnoDB: Please refer to
+InnoDB: http://dev.mysql.com/doc/refman/5.6/en/innodb-troubleshooting-datadict.html
+InnoDB: for how to resolve the issue.
+2017-06-14 10:31:54 1e14  InnoDB: Error: table 'shoppinglist/listentries'
+InnoDB: in InnoDB data dictionary has tablespace id 34,
+InnoDB: but a tablespace with that id does not exist. There is
+InnoDB: a tablespace of name shoppinglist/listentries and id 35, though. Have
+InnoDB: you deleted or moved .ibd files?
+InnoDB: Please refer to
+InnoDB: http://dev.mysql.com/doc/refman/5.6/en/innodb-troubleshooting-datadict.html
+InnoDB: for how to resolve the issue.
+2017-06-14 10:31:54 1e14  InnoDB: Error: table 'shoppinglist/users'
+InnoDB: in InnoDB data dictionary has tablespace id 40,
+InnoDB: but a tablespace with that id does not exist. There is
+InnoDB: a tablespace of name shoppinglist/users and id 38, though. Have
+InnoDB: you deleted or moved .ibd files?
+InnoDB: Please refer to
+InnoDB: http://dev.mysql.com/doc/refman/5.6/en/innodb-troubleshooting-datadict.html
+InnoDB: for how to resolve the issue.
+2017-06-14 10:31:54 7700 [Note] InnoDB: 128 rollback segment(s) are active.
+2017-06-14 10:31:54 7700 [Note] InnoDB: Waiting for purge to start
+2017-06-14 10:31:54 2b34 InnoDB: Error: page 3 log sequence number 1983753
+InnoDB: is in the future! Current system log sequence number 1963030.
+InnoDB: Your database may be corrupt or you may have copied the InnoDB
+InnoDB: tablespace but not the InnoDB log files. See
+InnoDB: http://dev.mysql.com/doc/refman/5.6/en/forcing-innodb-recovery.html
+InnoDB: for more information.
+2017-06-14 10:31:54 2b34 InnoDB: Error: page 3 log sequence number 1981750
+InnoDB: is in the future! Current system log sequence number 1963030.
+InnoDB: Your database may be corrupt or you may have copied the InnoDB
+InnoDB: tablespace but not the InnoDB log files. See
+InnoDB: http://dev.mysql.com/doc/refman/5.6/en/forcing-innodb-recovery.html
+InnoDB: for more information.
+2017-06-14 10:31:54 7700 [Note] InnoDB:  Percona XtraDB (http://www.percona.com) 5.6.34-79.1 started; log sequence number 1963020
+2017-06-14 10:31:54 10444 [Note] InnoDB: Dumping buffer pool(s) not yet started
+2017-06-14 10:31:54 7700 [Note] Plugin 'FEEDBACK' is disabled.
+2017-06-14 10:31:54 7700 [Note] Server socket created on IP: '::'.
+2017-06-14 10:31:54 7700 [Note] c:\xampp\mysql\bin\mysqld.exe: ready for connections.
+Version: '10.1.21-MariaDB'  socket: ''  port: 3306  mariadb.org binary distribution
+2017-06-14 10:32:17 1632 [ERROR] InnoDB: Failed to find tablespace for table '"shoppinglist"."listentries"' in the cache. Attempting to load the tablespace with space id 34.
+2017-06-14 10:32:17 660  InnoDB: Operating system error number 32 in a file operation.
+InnoDB: The error means that another program is using InnoDB's files.
+InnoDB: This might be a backup or antivirus software or another instance
+InnoDB: of MySQL. Please close it to get rid of this error.
+2017-06-14 10:32:27 660  InnoDB: Operating system error number 32 in a file operation.
+InnoDB: The error means that another program is using InnoDB's files.
+InnoDB: This might be a backup or antivirus software or another instance
+InnoDB: of MySQL. Please close it to get rid of this error.
+2017-06-14 10:32:37 660  InnoDB: Operating system error number 32 in a file operation.
+InnoDB: The error means that another program is using InnoDB's files.
+InnoDB: This might be a backup or antivirus software or another instance
+InnoDB: of MySQL. Please close it to get rid of this error.
+2017-06-14 10:32:47 660  InnoDB: Operating system error number 32 in a file operation.
+InnoDB: The error means that another program is using InnoDB's files.
+InnoDB: This might be a backup or antivirus software or another instance
+InnoDB: of MySQL. Please close it to get rid of this error.
+2017-06-14 10:32:57 660  InnoDB: Operating system error number 32 in a file operation.
+InnoDB: The error means that another program is using InnoDB's files.
+InnoDB: This might be a backup or antivirus software or another instance
+InnoDB: of MySQL. Please close it to get rid of this error.
+2017-06-14 10:33:07 660  InnoDB: Operating system error number 32 in a file operation.
+InnoDB: The error means that another program is using InnoDB's files.
+InnoDB: This might be a backup or antivirus software or another instance
+InnoDB: of MySQL. Please close it to get rid of this error.
+2017-06-14 10:33:17 660  InnoDB: Operating system error number 32 in a file operation.
+InnoDB: The error means that another program is using InnoDB's files.
+InnoDB: This might be a backup or antivirus software or another instance
+InnoDB: of MySQL. Please close it to get rid of this error.
+2017-06-14 10:33:27 660  InnoDB: Operating system error number 32 in a file operation.
+InnoDB: The error means that another program is using InnoDB's files.
+InnoDB: This might be a backup or antivirus software or another instance
+InnoDB: of MySQL. Please close it to get rid of this error.
+2017-06-14 10:33:37 660  InnoDB: Operating system error number 32 in a file operation.
+InnoDB: The error means that another program is using InnoDB's files.
+InnoDB: This might be a backup or antivirus software or another instance
+InnoDB: of MySQL. Please close it to get rid of this error.
+2017-06-14 10:33:47 660  InnoDB: Operating system error number 32 in a file operation.
+InnoDB: The error means that another program is using InnoDB's files.
+InnoDB: This might be a backup or antivirus software or another instance
+InnoDB: of MySQL. Please close it to get rid of this error.
+2017-06-14 10:33:57 660  InnoDB: Operating system error number 32 in a file operation.
+InnoDB: The error means that another program is using InnoDB's files.
+InnoDB: This might be a backup or antivirus software or another instance
+InnoDB: of MySQL. Please close it to get rid of this error.
+2017-06-14 10:34:07 660  InnoDB: Operating system error number 32 in a file operation.
+InnoDB: The error means that another program is using InnoDB's files.
+InnoDB: This might be a backup or antivirus software or another instance
+InnoDB: of MySQL. Please close it to get rid of this error.
+2017-06-14 10:34:11 2650 InnoDB: Warning: Using innodb_additional_mem_pool_size is DEPRECATED. This option may be removed in future releases, together with the option innodb_use_sys_malloc and with the InnoDB's internal memory allocator.
+2017-06-14 10:34:11 9808 [Note] InnoDB: innodb_empty_free_list_algorithm has been changed to legacy because of small buffer pool size. In order to use backoff, increase buffer pool at least up to 20MB.
+
+2017-06-14 10:34:11 9808 [Note] InnoDB: Using mutexes to ref count buffer pool pages
+2017-06-14 10:34:11 9808 [Note] InnoDB: The InnoDB memory heap is disabled
+2017-06-14 10:34:11 9808 [Note] InnoDB: Mutexes and rw_locks use Windows interlocked functions
+2017-06-14 10:34:11 9808 [Note] InnoDB: _mm_lfence() and _mm_sfence() are used for memory barrier
+2017-06-14 10:34:11 9808 [Note] InnoDB: Compressed tables use zlib 1.2.3
+2017-06-14 10:34:11 9808 [Note] InnoDB: Using generic crc32 instructions
+2017-06-14 10:34:11 9808 [Note] InnoDB: Initializing buffer pool, size = 16.0M
+2017-06-14 10:34:11 9808 [Note] InnoDB: Completed initialization of buffer pool
+2017-06-14 10:34:11 9808 [ERROR] InnoDB: C:\xampp\htdocs\Einkaufszettel\data\ibdata1 can't be opened in read-write mode
+2017-06-14 10:34:11 9808 [ERROR] InnoDB: The system tablespace must be writable!
+2017-06-14 10:34:11 9808 [ERROR] Plugin 'InnoDB' init function returned error.
+2017-06-14 10:34:11 9808 [ERROR] Plugin 'InnoDB' registration as a STORAGE ENGINE failed.
+2017-06-14 10:34:11 9808 [Note] Plugin 'FEEDBACK' is disabled.
+2017-06-14 10:34:11 9808 [ERROR] Unknown/unsupported storage engine: InnoDB
+2017-06-14 10:34:11 9808 [ERROR] Aborting
+
+2017-06-14 10:34:38 2780 InnoDB: Warning: Using innodb_additional_mem_pool_size is DEPRECATED. This option may be removed in future releases, together with the option innodb_use_sys_malloc and with the InnoDB's internal memory allocator.
+2017-06-14 10:34:38 10112 [Note] InnoDB: innodb_empty_free_list_algorithm has been changed to legacy because of small buffer pool size. In order to use backoff, increase buffer pool at least up to 20MB.
+
+2017-06-14 10:34:38 10112 [Note] InnoDB: Using mutexes to ref count buffer pool pages
+2017-06-14 10:34:38 10112 [Note] InnoDB: The InnoDB memory heap is disabled
+2017-06-14 10:34:38 10112 [Note] InnoDB: Mutexes and rw_locks use Windows interlocked functions
+2017-06-14 10:34:38 10112 [Note] InnoDB: _mm_lfence() and _mm_sfence() are used for memory barrier
+2017-06-14 10:34:38 10112 [Note] InnoDB: Compressed tables use zlib 1.2.3
+2017-06-14 10:34:38 10112 [Note] InnoDB: Using generic crc32 instructions
+2017-06-14 10:34:38 10112 [Note] InnoDB: Initializing buffer pool, size = 16.0M
+2017-06-14 10:34:38 10112 [Note] InnoDB: Completed initialization of buffer pool
+2017-06-14 10:34:38 10112 [ERROR] InnoDB: C:\xampp\htdocs\Einkaufszettel\data\ibdata1 can't be opened in read-write mode
+2017-06-14 10:34:38 10112 [ERROR] InnoDB: The system tablespace must be writable!
+2017-06-14 10:34:38 10112 [ERROR] Plugin 'InnoDB' init function returned error.
+2017-06-14 10:34:38 10112 [ERROR] Plugin 'InnoDB' registration as a STORAGE ENGINE failed.
+2017-06-14 10:34:38 10112 [Note] Plugin 'FEEDBACK' is disabled.
+2017-06-14 10:34:38 10112 [ERROR] Unknown/unsupported storage engine: InnoDB
+2017-06-14 10:34:38 10112 [ERROR] Aborting
+
+2017-06-14 10:34:42 27f0 InnoDB: Warning: Using innodb_additional_mem_pool_size is DEPRECATED. This option may be removed in future releases, together with the option innodb_use_sys_malloc and with the InnoDB's internal memory allocator.
+2017-06-14 10:34:42 10224 [Note] InnoDB: innodb_empty_free_list_algorithm has been changed to legacy because of small buffer pool size. In order to use backoff, increase buffer pool at least up to 20MB.
+
+2017-06-14 10:34:42 10224 [Note] InnoDB: Using mutexes to ref count buffer pool pages
+2017-06-14 10:34:42 10224 [Note] InnoDB: The InnoDB memory heap is disabled
+2017-06-14 10:34:42 10224 [Note] InnoDB: Mutexes and rw_locks use Windows interlocked functions
+2017-06-14 10:34:42 10224 [Note] InnoDB: _mm_lfence() and _mm_sfence() are used for memory barrier
+2017-06-14 10:34:42 10224 [Note] InnoDB: Compressed tables use zlib 1.2.3
+2017-06-14 10:34:42 10224 [Note] InnoDB: Using generic crc32 instructions
+2017-06-14 10:34:42 10224 [Note] InnoDB: Initializing buffer pool, size = 16.0M
+2017-06-14 10:34:42 10224 [Note] InnoDB: Completed initialization of buffer pool
+2017-06-14 10:34:42 10224 [ERROR] InnoDB: C:\xampp\htdocs\Einkaufszettel\data\ibdata1 can't be opened in read-write mode
+2017-06-14 10:34:42 10224 [ERROR] InnoDB: The system tablespace must be writable!
+2017-06-14 10:34:42 10224 [ERROR] Plugin 'InnoDB' init function returned error.
+2017-06-14 10:34:42 10224 [ERROR] Plugin 'InnoDB' registration as a STORAGE ENGINE failed.
+2017-06-14 10:34:42 10224 [Note] Plugin 'FEEDBACK' is disabled.
+2017-06-14 10:34:42 10224 [ERROR] Unknown/unsupported storage engine: InnoDB
+2017-06-14 10:34:42 10224 [ERROR] Aborting
+
+2017-06-14 10:35:23 b50 InnoDB: Warning: Using innodb_additional_mem_pool_size is DEPRECATED. This option may be removed in future releases, together with the option innodb_use_sys_malloc and with the InnoDB's internal memory allocator.
+2017-06-14 10:35:23 2896 [Note] InnoDB: innodb_empty_free_list_algorithm has been changed to legacy because of small buffer pool size. In order to use backoff, increase buffer pool at least up to 20MB.
+
+2017-06-14 10:35:23 2896 [Note] InnoDB: Using mutexes to ref count buffer pool pages
+2017-06-14 10:35:23 2896 [Note] InnoDB: The InnoDB memory heap is disabled
+2017-06-14 10:35:23 2896 [Note] InnoDB: Mutexes and rw_locks use Windows interlocked functions
+2017-06-14 10:35:23 2896 [Note] InnoDB: _mm_lfence() and _mm_sfence() are used for memory barrier
+2017-06-14 10:35:23 2896 [Note] InnoDB: Compressed tables use zlib 1.2.3
+2017-06-14 10:35:23 2896 [Note] InnoDB: Using generic crc32 instructions
+2017-06-14 10:35:23 2896 [Note] InnoDB: Initializing buffer pool, size = 16.0M
+2017-06-14 10:35:23 2896 [Note] InnoDB: Completed initialization of buffer pool
+2017-06-14 10:35:23 2896 [Note] InnoDB: Highest supported file format is Barracuda.
+2017-06-14 10:35:24 2896 [Note] InnoDB: The log sequence numbers 1835037 and 1835037 in ibdata files do not match the log sequence number 1963030 in the ib_logfiles!
+2017-06-14 10:35:24 2896 [Note] InnoDB: Database was not shutdown normally!
+2017-06-14 10:35:24 2896 [Note] InnoDB: Starting crash recovery.
+2017-06-14 10:35:24 2896 [Note] InnoDB: Reading tablespace information from the .ibd files...
+2017-06-14 10:35:24 2896 [Note] InnoDB: Restoring possible half-written data pages 
+2017-06-14 10:35:24 2896 [Note] InnoDB: from the doublewrite buffer...
+2017-06-14 10:35:25 b50  InnoDB: Error: table 'shoppinglist/categories'
+InnoDB: in InnoDB data dictionary has tablespace id 39,
+InnoDB: but a tablespace with that id does not exist. There is
+InnoDB: a tablespace of name shoppinglist/categories and id 32, though. Have
+InnoDB: you deleted or moved .ibd files?
+InnoDB: Please refer to
+InnoDB: http://dev.mysql.com/doc/refman/5.6/en/innodb-troubleshooting-datadict.html
+InnoDB: for how to resolve the issue.
+2017-06-14 10:35:25 b50  InnoDB: Error: table 'shoppinglist/listentries'
+InnoDB: in InnoDB data dictionary has tablespace id 34,
+InnoDB: but a tablespace with that id does not exist. There is
+InnoDB: a tablespace of name shoppinglist/listentries and id 35, though. Have
+InnoDB: you deleted or moved .ibd files?
+InnoDB: Please refer to
+InnoDB: http://dev.mysql.com/doc/refman/5.6/en/innodb-troubleshooting-datadict.html
+InnoDB: for how to resolve the issue.
+2017-06-14 10:35:25 b50  InnoDB: Error: table 'shoppinglist/users'
+InnoDB: in InnoDB data dictionary has tablespace id 40,
+InnoDB: but a tablespace with that id does not exist. There is
+InnoDB: a tablespace of name shoppinglist/users and id 38, though. Have
+InnoDB: you deleted or moved .ibd files?
+InnoDB: Please refer to
+InnoDB: http://dev.mysql.com/doc/refman/5.6/en/innodb-troubleshooting-datadict.html
+InnoDB: for how to resolve the issue.
+2017-06-14 10:35:25 2896 [Note] InnoDB: 128 rollback segment(s) are active.
+2017-06-14 10:35:25 2896 [Note] InnoDB: Waiting for purge to start
+2017-06-14 10:35:25 2898 InnoDB: Error: page 3 log sequence number 1983753
+InnoDB: is in the future! Current system log sequence number 1963040.
+InnoDB: Your database may be corrupt or you may have copied the InnoDB
+InnoDB: tablespace but not the InnoDB log files. See
+InnoDB: http://dev.mysql.com/doc/refman/5.6/en/forcing-innodb-recovery.html
+InnoDB: for more information.
+2017-06-14 10:35:25 2898 InnoDB: Error: page 3 log sequence number 1981750
+InnoDB: is in the future! Current system log sequence number 1963040.
+InnoDB: Your database may be corrupt or you may have copied the InnoDB
+InnoDB: tablespace but not the InnoDB log files. See
+InnoDB: http://dev.mysql.com/doc/refman/5.6/en/forcing-innodb-recovery.html
+InnoDB: for more information.
+2017-06-14 10:35:25 2896 [Note] InnoDB:  Percona XtraDB (http://www.percona.com) 5.6.34-79.1 started; log sequence number 1963030
+2017-06-14 10:35:25 1272 [Note] InnoDB: Dumping buffer pool(s) not yet started
+2017-06-14 10:35:25 2896 [Note] Plugin 'FEEDBACK' is disabled.
+2017-06-14 10:35:25 2896 [Note] Server socket created on IP: '::'.
+2017-06-14 10:35:25 2896 [Note] c:\xampp\mysql\bin\mysqld.exe: ready for connections.
+Version: '10.1.21-MariaDB'  socket: ''  port: 3306  mariadb.org binary distribution
+2017-06-14 10:35:38 11036 [ERROR] InnoDB: Failed to find tablespace for table '"shoppinglist"."listentries"' in the cache. Attempting to load the tablespace with space id 34.
+2017-06-14 10:35:38 2b1c  InnoDB: Operating system error number 32 in a file operation.
+InnoDB: The error means that another program is using InnoDB's files.
+InnoDB: This might be a backup or antivirus software or another instance
+InnoDB: of MySQL. Please close it to get rid of this error.
+2017-06-14 10:35:48 2b1c  InnoDB: Operating system error number 32 in a file operation.
+InnoDB: The error means that another program is using InnoDB's files.
+InnoDB: This might be a backup or antivirus software or another instance
+InnoDB: of MySQL. Please close it to get rid of this error.
+2017-06-14 10:35:58 2b1c  InnoDB: Operating system error number 32 in a file operation.
+InnoDB: The error means that another program is using InnoDB's files.
+InnoDB: This might be a backup or antivirus software or another instance
+InnoDB: of MySQL. Please close it to get rid of this error.
+2017-06-14 10:36:08 2b1c  InnoDB: Operating system error number 32 in a file operation.
+InnoDB: The error means that another program is using InnoDB's files.
+InnoDB: This might be a backup or antivirus software or another instance
+InnoDB: of MySQL. Please close it to get rid of this error.
+2017-06-14 10:36:18 2b1c  InnoDB: Operating system error number 32 in a file operation.
+InnoDB: The error means that another program is using InnoDB's files.
+InnoDB: This might be a backup or antivirus software or another instance
+InnoDB: of MySQL. Please close it to get rid of this error.
+2017-06-14 10:36:28 2b1c  InnoDB: Operating system error number 32 in a file operation.
+InnoDB: The error means that another program is using InnoDB's files.
+InnoDB: This might be a backup or antivirus software or another instance
+InnoDB: of MySQL. Please close it to get rid of this error.
+2017-06-14 10:36:38 2b1c  InnoDB: Operating system error number 32 in a file operation.
+InnoDB: The error means that another program is using InnoDB's files.
+InnoDB: This might be a backup or antivirus software or another instance
+InnoDB: of MySQL. Please close it to get rid of this error.
+2017-06-14 10:36:48 2b1c  InnoDB: Operating system error number 32 in a file operation.
+InnoDB: The error means that another program is using InnoDB's files.
+InnoDB: This might be a backup or antivirus software or another instance
+InnoDB: of MySQL. Please close it to get rid of this error.
+2017-06-14 10:36:58 2b1c  InnoDB: Operating system error number 32 in a file operation.
+InnoDB: The error means that another program is using InnoDB's files.
+InnoDB: This might be a backup or antivirus software or another instance
+InnoDB: of MySQL. Please close it to get rid of this error.
+2017-06-14 10:37:08 2b1c  InnoDB: Operating system error number 32 in a file operation.
+InnoDB: The error means that another program is using InnoDB's files.
+InnoDB: This might be a backup or antivirus software or another instance
+InnoDB: of MySQL. Please close it to get rid of this error.
+2017-06-14 10:37:18 2b1c  InnoDB: Operating system error number 32 in a file operation.
+InnoDB: The error means that another program is using InnoDB's files.
+InnoDB: This might be a backup or antivirus software or another instance
+InnoDB: of MySQL. Please close it to get rid of this error.
+2017-06-14 10:37:28 2b1c  InnoDB: Operating system error number 32 in a file operation.
+InnoDB: The error means that another program is using InnoDB's files.
+InnoDB: This might be a backup or antivirus software or another instance
+InnoDB: of MySQL. Please close it to get rid of this error.
+2017-06-14 10:37:38 2b1c  InnoDB: Operating system error number 32 in a file operation.
+InnoDB: The error means that another program is using InnoDB's files.
+InnoDB: This might be a backup or antivirus software or another instance
+InnoDB: of MySQL. Please close it to get rid of this error.
+2017-06-14 10:37:42 204c InnoDB: Warning: Using innodb_additional_mem_pool_size is DEPRECATED. This option may be removed in future releases, together with the option innodb_use_sys_malloc and with the InnoDB's internal memory allocator.
+2017-06-14 10:37:42 8268 [Note] InnoDB: innodb_empty_free_list_algorithm has been changed to legacy because of small buffer pool size. In order to use backoff, increase buffer pool at least up to 20MB.
+
+2017-06-14 10:37:42 8268 [Note] InnoDB: Using mutexes to ref count buffer pool pages
+2017-06-14 10:37:42 8268 [Note] InnoDB: The InnoDB memory heap is disabled
+2017-06-14 10:37:42 8268 [Note] InnoDB: Mutexes and rw_locks use Windows interlocked functions
+2017-06-14 10:37:42 8268 [Note] InnoDB: _mm_lfence() and _mm_sfence() are used for memory barrier
+2017-06-14 10:37:42 8268 [Note] InnoDB: Compressed tables use zlib 1.2.3
+2017-06-14 10:37:42 8268 [Note] InnoDB: Using generic crc32 instructions
+2017-06-14 10:37:42 8268 [Note] InnoDB: Initializing buffer pool, size = 16.0M
+2017-06-14 10:37:42 8268 [Note] InnoDB: Completed initialization of buffer pool
+2017-06-14 10:37:42 8268 [Note] InnoDB: Highest supported file format is Barracuda.
+2017-06-14 10:37:42 8268 [Note] InnoDB: The log sequence numbers 1835037 and 1835037 in ibdata files do not match the log sequence number 1991229 in the ib_logfiles!
+2017-06-14 10:37:42 8268 [Note] InnoDB: Database was not shutdown normally!
+2017-06-14 10:37:42 8268 [Note] InnoDB: Starting crash recovery.
+2017-06-14 10:37:42 8268 [Note] InnoDB: Reading tablespace information from the .ibd files...
+2017-06-14 10:37:42 8268 [Note] InnoDB: Restoring possible half-written data pages 
+2017-06-14 10:37:42 8268 [Note] InnoDB: from the doublewrite buffer...
+2017-06-14 10:37:44 8268 [Note] InnoDB: 128 rollback segment(s) are active.
+2017-06-14 10:37:44 8268 [Note] InnoDB: Waiting for purge to start
+2017-06-14 10:37:44 8268 [Note] InnoDB:  Percona XtraDB (http://www.percona.com) 5.6.34-79.1 started; log sequence number 1991229
+2017-06-14 10:37:44 5052 [Note] InnoDB: Dumping buffer pool(s) not yet started
+2017-06-14 10:37:44 8268 [Note] Plugin 'FEEDBACK' is disabled.
+2017-06-14 10:37:44 8268 [Note] Server socket created on IP: '::'.
+2017-06-14 10:37:44 8268 [Note] c:\xampp\mysql\bin\mysqld.exe: ready for connections.
+Version: '10.1.21-MariaDB'  socket: ''  port: 3306  mariadb.org binary distribution

@@ -10,9 +10,9 @@
 
 nav.vertical {
     margin-top: 35px; 
-    position:absolute;
+    position:fixed;
     display: inline-block;
-    z-index: 2;
+    z-index: 0;
     left:0;
     padding: 0px;
     float: left;
@@ -40,7 +40,7 @@ nav.vertical a {
     color: white;
     text-decoration: none;
     padding: 10px 0px;
-    transition: 0.2s;
+    /*transition: 0.2s;*/
 }
 
 nav.vertical li:hover > a {
@@ -55,13 +55,14 @@ nav.vertical ul ul{
     width:100%;
     visibility:hidden;
     opacity:0;
-    transform: translateX(50px);
+    transform: translateX(-30px);
 }
 
 nav.vertical li:hover > ul {
     left:100%;
     visibility: visible;
     opacity: 1;
+	transition: transform 0.3s;
     transform: translateX(0px);
 }
 
