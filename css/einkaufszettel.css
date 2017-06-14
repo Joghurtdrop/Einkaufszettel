@@ -90,6 +90,8 @@
 
 .categoryList a{
 	height:100%;
+	transition: 0.2s;
+	padding: 5px 0px;
 }
 
 .categoryList ul{
@@ -97,14 +99,24 @@
 	
 }
 
+.categoryList ul li{
+	list-style-type:none;	
+}
+
 .categoryList li:hover > ul{
-	display:block;
+	visibility:visible;
+	transform: translateY(0px);
 }
 
 .categoryList ul ul{
-	display: none;
+	visibility:hidden;
 	margin-top:-97px;
 	background-color:#555;
+	transition: transform 0.4s;
+	transform: translateY(35px);
+	z-index:-1;
+	position:absolute;
+	width:22.5%;
 }
 
 .categoryList ul li:hover{
@@ -113,7 +125,6 @@
 
 .categoryList{
 	padding:0px 10px;
-	margin-bottom:10px;
 }
 
 .baseboardElement{
@@ -135,29 +146,6 @@ a:visited,:link{
 	color:black;
 }
 
-.category{
-	list-style-type:none;
-	position:relative;
-	margin-top:-80px;
-}
-
-.category li:hover{
-	border-left: solid 1px #000;
-}
-
-.category li{
-	padding: 4px 10px;
-	width:100%;
-}
-
-
-.category li:last-child{
-	border:solid 1px #000;
-}
-
-.category li:last-child:hover ul.category{
-	background-color:red;
-}
 
 
 
