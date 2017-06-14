@@ -8,6 +8,9 @@
 }
 
 
+
+
+
 nav.vertical {
     margin-top: 35px; 
     position:fixed;
@@ -71,6 +74,7 @@ div.icon {
 	cursor:pointer;
 }
 .vertinav {
+	z-index: 0;
     margin-left:16.66%;
 }
 
@@ -87,4 +91,24 @@ div.icon {
 .column.over {
     padding: 0px;
     border: 2px dashed #000;
+}
+
+
+@media only screen and (max-width: 550px) {
+    /* For mobile phones: */
+    [class*="col-"] {
+        width: 100%;
+    }
+	.vertinav {
+		z-index:100;
+		margin-left: 0px;
+	}
+	
+	.middlerow {
+		width: 80%;
+	}
+	
+	nav.vertical {
+		position:relative;
+	}
 }
