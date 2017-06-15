@@ -46,7 +46,7 @@
 		$r = '';
 		foreach( $array as $line) {
 			if ($line[2] == $level) {
-				$r = $r."<li><a onclick=\"newItem(this)\">".$line[1]."</a>".makelist($array,$line[0])."</li>\n";
+				$r = $r."<li><a id=\"".$line[0]."\" onclick=\"newItem(this)\">".$line[1]."</a>".makelist($array,$line[0])."</li>\n";
 			}
 		}
 		//$r = $r."</ul>\n";

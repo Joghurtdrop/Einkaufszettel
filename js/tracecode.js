@@ -4,7 +4,7 @@ function newItem(e) {
     var newitem = document.createElement("div");
     newitem.className = "column";
     newitem.setAttribute("draggable","true");
-	newitem.id = e.innerText;
+	newitem.id = e.id;
 	newitem.innerHTML = e.innerText+"<div onclick=\"removeItem(this)\" class=\"icon\">\
 					<i class=\"material-icons md-18\">&#xE928;\
 					</i>\
@@ -13,7 +13,7 @@ function newItem(e) {
 	var cols = document.querySelectorAll('.column');
 	[].forEach.call(cols, function(col) {
 		if (col.id == newitem.id){
-			alert(col.id+" liegt bereits auf deinem Einkaufsweg!");
+			alert(col.innerText+" liegt bereits auf deinem Einkaufsweg!");
 			doppelt = false;
 		}
 	});
@@ -25,6 +25,7 @@ function newItem(e) {
 
 function removeItem(e){
 	e.parentNode.remove();
+	refreshItems();
 }
 
 
@@ -92,6 +93,7 @@ function handleDragEnd(e) {
     [].forEach.call(cols, function (col) {
         col.classList.remove('over');
     });
+	refreshItems();
 }
 
 function refreshItems() {
