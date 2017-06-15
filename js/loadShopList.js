@@ -1,4 +1,5 @@
-loadDoc("loadShopCategoryList.php", "verticallist");
+loadDoc("ShopCategoryList.php", "verticallist");
+
 
 function loadDoc(phpSource, id) 
 {
@@ -6,7 +7,7 @@ function loadDoc(phpSource, id)
   xhttp.onreadystatechange = function() {
     if (this.readyState == 4 && this.status == 200) {
 		//console.log(typeof this.responseText);		
-    document.getElementById(id).innerHTML=this.responseText;
+      document.getElementById(id).innerHTML=this.responseText;
 	}	
   };
   xhttp.open("GET", phpSource, true);
@@ -14,6 +15,30 @@ function loadDoc(phpSource, id)
 }
 
 function setheight() {
-	
+	//
 }
 
+function saveList(){
+	var user = 1;
+	var shop = 1;
+	var pos = 0;
+	var cols = document.querySelectorAll('.column');
+	
+	[].forEach.call(cols,function(col){
+		++pos;
+		category = col.id;
+		console.log("user: "+user+" shop: "+shop+" pos: "+pos+" category: "+category);
+		var xhttp = new XMLHttpRequest();
+		xhttp.onreadystatechange = function() {
+        if (xhttp.readyState == 4 && xhttp.status == 200) 
+        {
+            alert(xhttp.responseText);
+        }
+    };
+		xhttp.open("GET", "updateShopList.php?position="+pos+"&shopid="+shop+"&userid="+user+"&categoryid="+category, true);
+		xhttp.send();
+		console.log(this.responseText);
+	});
+}
+
+// UPDATE `positions` SET `position`=3 WHERE `shopId`=1 and `userId`=1 AND `categoryId`= 9
