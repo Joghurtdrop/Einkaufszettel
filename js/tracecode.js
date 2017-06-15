@@ -106,5 +106,6 @@ function refreshItems() {
         //col.addEventListener('drop', handleDrop, false)
         col.addEventListener('dragend', handleDragEnd, false)
     });
+	saveList();
 }
 refreshItems();
