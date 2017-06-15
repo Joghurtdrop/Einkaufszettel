@@ -13,7 +13,7 @@ function newItem(e) {
 	var cols = document.querySelectorAll('.column');
 	[].forEach.call(cols, function(col) {
 		if (col.id == newitem.id){
-			alert(col.id+" liegt bereits auf Ihrem Einkaufsweg!");
+			alert(col.id+" liegt bereits auf deinem Einkaufsweg!");
 			doppelt = false;
 		}
 	});
