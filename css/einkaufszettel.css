@@ -32,6 +32,14 @@
 	border-bottom: thin solid black;
 }
 
+.listnumber{
+	font-family: Patrick Hand;
+	font-size: 20px;
+	display:inline-block;
+	width: 20px;
+	text-align:right;
+}
+
 
 
 .categoryList{
@@ -83,7 +91,8 @@
 }
 
 .baseboardElement{
-	padding: 5px 10px;
+	padding: 5px 0px;
+	padding-right:5px;
 }
 
 
@@ -119,6 +128,10 @@
 
 a:visited,:link{
 	color:black;
+}
+
+a:hover{
+	cursor: pointer; 
 }
 
 div.hiddenField{
