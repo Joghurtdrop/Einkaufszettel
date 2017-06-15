@@ -1,0 +1,50 @@
+
+/* 15.06. Create tables: categories, listEntries, positions, products, users, shops */
+
+CREATE TABLE `shoppinglist`.`categories` 
+	( `id` INT UNSIGNED NOT NULL AUTO_INCREMENT , 
+	  `name` VARCHAR(100) NOT NULL , 
+	  `parentId` INT UNSIGNED NULL , 
+	  PRIMARY KEY (`id`)) 
+	ENGINE = InnoDB;
+	
+	
+CREATE TABLE `shoppinglist`.`listEntries` 
+	( `userId` INT UNSIGNED NOT NULL , 
+	  `productId` INT UNSIGNED NOT NULL , 
+	  `categoryId` INT UNSIGNED NOT NULL , 
+	  `count` INT UNSIGNED NULL ) 
+	ENGINE = InnoDB;
+	
+	
+CREATE TABLE `shoppinglist`.`positions` 
+	( `userId` INT UNSIGNED NOT NULL , 
+	  `categoryId` INT UNSIGNED NOT NULL , 
+	  `shopId` INT UNSIGNED NOT NULL , 
+	  `position` INT UNSIGNED NOT NULL ) 
+	ENGINE = InnoDB;
+	
+	
+CREATE TABLE `shoppinglist`.`products` 
+	( `id` INT UNSIGNED NOT NULL AUTO_INCREMENT , 
+	  `name` VARCHAR(100) NOT NULL , 
+	  PRIMARY KEY (`id`)) 
+	ENGINE = InnoDB;
+	
+	
+CREATE TABLE `shoppinglist`.`users` 
+	( `id` INT UNSIGNED NOT NULL AUTO_INCREMENT , 
+	  `name` VARCHAR(25) NOT NULL , 
+	  `password` VARCHAR(25) NOT NULL , 
+	  PRIMARY KEY (`id`)) 
+	ENGINE = InnoDB;
+	
+	
+CREATE TABLE `shoppinglist`.`shops` 
+	( `id` INT UNSIGNED NOT NULL AUTO_INCREMENT , 
+	  `name` VARCHAR(100) NOT NULL , 
+	  PRIMARY KEY (`id`)) 
+	ENGINE = InnoDB;
+	
+	
+	
