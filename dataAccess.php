@@ -2,6 +2,9 @@
 
 	require_once('dbConfiguration.php');
 
+	
+	/* returns a mysqli-object which represents a connection to the database 
+		based on the data in dbConfiguration.php */
 	function getDbLink()
 	{
 		$db_link=mysqli_connect(
@@ -20,6 +23,8 @@
 	}
 	
 	
+	/* adds a row with the passed name parameter to the table shoppinglist.products 
+	   returns the assigned productId */
 	function addProduct($name)
 	{
 		$db_link=getDbLink();
@@ -29,6 +34,10 @@
 		return getProductUnsafe($name);
 	}
 	
+	
+	/* returns the productId of a product selected by name from the table shoppinglist.products 
+	   if this exists else NULL*/	
+	/* !!FIXME: safe parameter passing (sql injection) */
 	function getProductUnsafe($name)
 	{
 		$db_link=getDbLink();
@@ -43,7 +52,8 @@
 		return NULL;
 	}
 	
-	
+	/* returns the productId of a product selected by name from the table shoppinglist.products */	
+	/* !!FIXME: ERORR: mysqli_prepare excepts mysqli object parameter ??? WTF?? */
 	function getProductSafe($name)
 	{
 		$db_link=getDbLink();
@@ -64,6 +74,8 @@
 		return $result;
 	}
 	
+	/* returns row-array from the table shoppinglist.listentries selected by UserId and productId 
+	   if it exists, else NULL */
 	function getEntry($productId, $userId)
 	{
 		$db_link=getDbLink();
@@ -76,6 +88,8 @@
 		return NULL;
 	}
 	
+	/* updates the number of a defined shoppinglist.listentries row with the passed value
+		if the value is 0 or smaller the row will be deleted*/
 	function updateEntryNumber($productId, $userId, $number)
 	{
 		if($number < 1)
@@ -89,6 +103,9 @@
 		mysqli_close($db_link);
 	}
 	
+	/* adds a row to the shoppinglist.listentries table; checks if the products exists yet in the 
+	   shoppinglist.products table, if it does uses its productId; if the already product is in the 
+	   shoppinglist.listentries table it increases the number by the passes number-value */
 	function addEntry($userId, $name, $number , $categoryId)
 	{
 		$id=getProductUnsafe($name);
@@ -111,6 +128,7 @@
 		mysqli_close($db_link);
 	}
 	
+	/* removes a row defined by userId and prod from the shoppinglist.listentries table */
 	function removeEntry($userId,$productId)
 	{
 		$db_link=getDbLink();
