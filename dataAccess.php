@@ -58,18 +58,18 @@
 	function getProductSafe($name)
 	{
 		$db_link=getDbLink();
-		$query="SELECT id FROM shoppinglist.products WHERE name = ?";
-		if($sql=mysqli_prepare($db_link,$query))
+		$stmt=mysqli_stmt_init($db_link);
+		if(mysqli_stmt_prepare($stmt, "SELECT id FROM shoppinglist.products WHERE name = ?"))
 		{		
 			echo 'juhuu';
-			mysqli_stmt_bind_param($sql,"s",$name);
-			mysqli_stmt_execute($sql);
-			mysqli_stmt_bind_result($sql,$result);
-			if(mysqli_stmt_fetch($sql)==NULL)
+			mysqli_stmt_bind_param($stmt,"s",$name);
+			mysqli_stmt_execute($stmt);
+			mysqli_stmt_bind_result($stmt,$result);
+			if(mysqli_stmt_fetch($stmt)==NULL)
 			{
 				$result=NULL;
 			}	
-			mysqli_stmt_close($sql);
+			mysqli_stmt_close($stmt);
 		}
 		mysqli_close($db_link);
 		return $result;
@@ -138,4 +138,17 @@
 		mysqli_close($db_link);
 	}
 	
+	
+	/* checks if a username password combination is valid returns TRUE if username is registered*/
+	function checkUsername($username)
+	{
+	
+	}
+	
+	
+	/* returns TRUE if username password combination is valid, else FALSE */
+	function checkRegistration($username, $password)
+	{}
+	
+	echo getProductSafe('Haselnüsse');
 ?>
