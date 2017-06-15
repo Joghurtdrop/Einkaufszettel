@@ -61,7 +61,6 @@
 		$stmt=mysqli_stmt_init($db_link);
 		if(mysqli_stmt_prepare($stmt, "SELECT id FROM shoppinglist.products WHERE name = ?"))
 		{		
-			echo 'juhuu';
 			mysqli_stmt_bind_param($stmt,"s",$name);
 			mysqli_stmt_execute($stmt);
 			mysqli_stmt_bind_result($stmt,$result);
@@ -142,13 +141,42 @@
 	/* checks if a username password combination is valid returns TRUE if username is registered*/
 	function checkUsername($username)
 	{
-	
+		$valid=FALSE;
+		$db_link=getDbLink();
+		$stmt=mysqli_stmt_init($db_link);
+		if(mysqli_stmt_prepare($stmt, "SELECT name FROM shoppinglist.users WHERE name = ?"))
+		{		
+			mysqli_stmt_bind_param($stmt,"s",$username);
+			mysqli_stmt_execute($stmt);
+			mysqli_stmt_bind_result($stmt,$result);
+			if(mysqli_stmt_fetch($stmt)!=NULL)
+			{
+				$valid=TRUE;
+			}				
+			mysqli_stmt_close($stmt);
+			return $valid;
+		}
 	}
 	
 	
 	/* returns TRUE if username password combination is valid, else FALSE */
 	function checkRegistration($username, $password)
-	{}
+	{
+		$valid=FALSE;
+		$db_link=getDbLink();
+		$stmt=mysqli_stmt_init($db_link);
+		if(mysqli_stmt_prepare($stmt, "SELECT name, password FROM shoppinglist.users WHERE name = ? AND password = ?"))
+		{		
+			mysqli_stmt_bind_param($stmt,"si",$username, $password);
+			mysqli_stmt_execute($stmt);
+			mysqli_stmt_bind_result($stmt,$result);
+			if(mysqli_stmt_fetch($stmt)!=NULL)
+			{
+				$valid=TRUE;
+			}				
+			mysqli_stmt_close($stmt);
+			return $valid;
+		}
+	}
 	
-	echo getProductSafe('Haselnüsse');
 ?>
