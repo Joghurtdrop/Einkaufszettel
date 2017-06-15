@@ -22,7 +22,6 @@
 		." AND categoryId="
 		.$_GET['categoryid'];
 		
-	print_r($query);
 	mysqli_query($db_link, $query);
 	mysqli_close($db_link);
 ?>
