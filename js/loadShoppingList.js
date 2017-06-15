@@ -20,27 +20,28 @@ function setCategory(div)
 }
 
 
-function removeProduct(a)
-{
-	console.log(a.parentNode.parentNode.lastChild.previousSibling.innerHTML);
-	var productId=a.parentNode.parentNode.lastChild.previousSibling.innerHTML;
+function updateEntry(Id, newNumber)
+{	
 	$.ajax({
 		type: "POST",
-		url: "removeProduct.php",
+		url: "updateListEntry.php",
 		data:{
-			id:productId
+			productId:Id,
+			number:newNumber
+		},
+		success:function(result){
+			console.log(result);
+			loadDoc("loadShoppingList.php", "list");
 		},
 		error: function(){
-			console.log("error: removal failed");
+			console.log("error: update failed");
 		}
 	});	
-	loadDoc("loadShoppingList.php",document.getElementById("list"));
 }
 
 
 function addEntry()
 {
-	console.log($("#selectedCategoryId"));
 	$.ajax({
 		type: "POST",
 		url: "addListEntry.php",
@@ -50,11 +51,15 @@ function addEntry()
 			categoryId:$("#selectedCategoryId").html()
 		},
 		success:function(result){
-			console.log(result);
 			loadDoc("loadShoppingList.php", "list");
 		},
 		error: function(){
-			console.log("error: removal failed");
+			console.log("error: adding failed");
 		}
 	});	
+}
+
+function removeEntry(a)
+{
+	updateEntry(a.parentNode.parentNode.lastElementChild.innerHTML,0);
 }
