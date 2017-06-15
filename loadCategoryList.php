@@ -13,7 +13,7 @@
 		die("Connection failed: " . mysqli_connect_error());
 	}
 
-	$sql = "SELECT name FROM categories INNER JOIN positions ON positions.CategoryId=categories.id WHERE positions.UserId=1 ORDER BY positions.Position";
+	$sql = "SELECT name, id FROM categories INNER JOIN positions ON positions.categoryId=categories.id WHERE positions.userId=1 ORDER BY positions.position";
 	$result = mysqli_query($db_link, $sql);
 
 	if($result != FALSE)
@@ -23,6 +23,7 @@
 			?>
 				<li>
 					<div onClick="setCategory(this)"><?php echo $row['name']?></div>
+					<div class="hiddenField"><?php echo $row['id']?></div>
 				</li>
 			<?php
 		}

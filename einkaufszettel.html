@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<meta charset="utf-8">
+	<meta http-equiv="Content-Type" content="text/html">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="stylesheet" href="css/general.css">
 	<link rel="stylesheet" href="css/einkaufszettel.css">
@@ -31,12 +31,13 @@
 		<div class="col-1 mobileInvisible baseboardElement">
 		</div>
 		<div class="col-5 baseboardElement">
-			<input class="articleInput" id="numberInput" value="productNumber"></input>
-			<input class="articleInput" id="productNameInput" value="productName"></input>
+			<input class="articleInput" id="numberInput" type="number" min="1"></input>
+			<input class="articleInput" id="productNameInput" type="text"></input>
 		</div>	
 		<div class="col-5 categoryList">
 			<ul>
 				<li><div id="selectedCategory">Katergorie:</div> 
+					<div class="hiddenField" id="selectedCategoryId">0</div>
 					<ul class="dropup" id="categories">
 					</ul>
 				</li>

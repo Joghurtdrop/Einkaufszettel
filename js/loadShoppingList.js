@@ -5,8 +5,7 @@ function loadDoc(phpSource, id)
 {
   var xhttp = new XMLHttpRequest();
   xhttp.onreadystatechange = function() {
-    if (this.readyState == 4 && this.status == 200) {
-		console.log(typeof this.responseText);		
+    if (this.readyState == 4 && this.status == 200) {	
     document.getElementById(id).innerHTML=this.responseText;
 	}	
   };
@@ -17,6 +16,7 @@ function loadDoc(phpSource, id)
 function setCategory(div)
 {
 	document.getElementById("selectedCategory").innerHTML=div.innerHTML;
+	document.getElementById("selectedCategoryId").innerHTML=div.nextElementSibling.innerHTML;
 }
 
 
@@ -40,5 +40,21 @@ function removeProduct(a)
 
 function addEntry()
 {
-	
+	console.log($("#selectedCategoryId"));
+	$.ajax({
+		type: "POST",
+		url: "addListEntry.php",
+		data:{
+			productName:$('#productNameInput').val(),
+			productNumber:$("#numberInput").val(),
+			categoryId:$("#selectedCategoryId").html()
+		},
+		success:function(result){
+			console.log(result);
+			loadDoc("loadShoppingList.php", "list");
+		},
+		error: function(){
+			console.log("error: removal failed");
+		}
+	});	
 }

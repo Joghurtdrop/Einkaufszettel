@@ -66,13 +66,11 @@
 	
 	function getEntry($productId, $userId)
 	{
-		echo 4;
 		$db_link=getDbLink();
 		$query="SELECT userId, productId, categoryId, number FROM shoppinglist.listentries WHERE userId = '".$userId."' AND productId ='".$productId."'";
 		$result = mysqli_query($db_link,$query);
-		if($result != FALSE)
+		if(mysqli_num_rows($result)==1)
 		{
-			echo 5;
 			return mysqli_fetch_assoc($result);
 		}
 		return NULL;
@@ -100,18 +98,15 @@
 		}
 		else
 		{
-			echo 1;
 			$entry=getEntry($id,$userId);
 			if($entry!=NULL)
 			{
-				echo 2;
 				updateEntryNumber($entry['productId'], $entry['userId'], $number+$entry['number']);
 				return;
 			}	
 		}
-		echo 3;
 		$db_link=getDbLink();
-		$query="INSERT INTO shoppinglist.listentries (userId,productId,categoryId,number) VALUES (1,".$id.",".$categoryId.",".$number.")";
+		$query="INSERT INTO shoppinglist.listentries (userId, productId, categoryId, number) VALUES (".$userId.",".$id.",".$categoryId.",".$number.")";
 		mysqli_query($db_link,$query);
 		mysqli_close($db_link);
 	}
