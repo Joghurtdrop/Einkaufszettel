@@ -56,6 +56,11 @@ INSERT INTO `shoppinglist`.`shops`(`name`) VALUES ('rewe');
 INSERT INTO `shoppinglist`.`users`(`name`, `password`) VALUES ('test','test');
 
 
+/* rename column in shoppinglist.listEntries count -> number */
+
+ALTER TABLE `listentries` CHANGE `count` `number` INT(10) UNSIGNED NULL DEFAULT NULL;
+
+
 /* 15.06. Set endoding to UTF8 */ 
 
 ALTER TABLE `categories` CHANGE `name` `name` VARCHAR(100) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL; 
@@ -63,3 +68,5 @@ ALTER TABLE `products` CHANGE `name` `name` VARCHAR(100) CHARACTER SET utf8 COLL
 ALTER TABLE `shops` CHANGE `name` `name` VARCHAR(100) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL; 
 ALTER TABLE `users` CHANGE `name` `name` VARCHAR(100) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL; 
 ALTER TABLE `users` CHANGE `password` `password` VARCHAR(100) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL;
+
+
