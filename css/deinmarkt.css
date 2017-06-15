@@ -36,11 +36,12 @@ nav.vertical li {
 nav.vertical a {
 	text-align:center;
     height:100%;
+	line-height: 100%;
     background: #555;
     display: block;
     color: white;
     text-decoration: none;
-    padding: 10px 0px;
+    padding: 55% 0px;
     /*transition: 0.2s;*/
 }
 
