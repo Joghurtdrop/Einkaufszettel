@@ -30,7 +30,6 @@ function updateEntry(Id, newNumber)
 			number:newNumber
 		},
 		success:function(result){
-			console.log(result);
 			loadDoc("loadShoppingList.php", "list");
 		},
 		error: function(){
@@ -62,4 +61,16 @@ function addEntry()
 function removeEntry(a)
 {
 	updateEntry(a.parentNode.parentNode.lastElementChild.innerHTML,0);
+}
+
+function incrementEntry(a)
+{	
+	newNumber=parseInt(a.parentNode.parentNode.firstElementChild.innerHTML)+1;
+	updateEntry(a.parentNode.parentNode.lastElementChild.innerHTML, newNumber);
+}
+
+function decrementEntry(a)
+{
+	newNumber=parseInt(a.parentNode.parentNode.firstElementChild.innerHTML)-1;
+	updateEntry(a.parentNode.parentNode.lastElementChild.innerHTML, newNumber);
 }
