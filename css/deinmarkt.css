@@ -8,9 +8,6 @@
 }
 
 
-
-
-
 nav.vertical {
     margin-top: 35px; 
     position:fixed;
@@ -32,11 +29,12 @@ nav.vertical ul {
 }
 
 nav.vertical li {
-    height: 50%;
+    height: 25%;
     position: relative;
 }
 
 nav.vertical a {
+	text-align:center;
     height:100%;
     background: #555;
     display: block;
@@ -51,7 +49,7 @@ nav.vertical li:hover > a {
 }
 
 nav.vertical ul ul{
-    height: 200%;
+    height: 400%;
     position:absolute;
     left:0%;
     top:0;
