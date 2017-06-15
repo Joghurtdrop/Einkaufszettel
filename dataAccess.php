@@ -19,6 +19,7 @@
 			die("Connection failed: " . mysqli_connect_error());
 			return NULL;
 		}
+		$code = mysqli_query($db_link, "SET NAMES utf8");
 		return $db_link;
 	}
 	

@@ -12,7 +12,8 @@
 	{
 		die("Connection failed: " . mysqli_connect_error());
 	}
-
+	
+	$code= mysqli_query($db_link, "SET NAMES utf8");
 	$sql = "SELECT listentries.number, products.name, products.id FROM listentries INNER JOIN products ON products.id=listentries.productId";
 	$result = mysqli_query($db_link, $sql);
 
