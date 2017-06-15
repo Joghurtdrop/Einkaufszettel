@@ -22,17 +22,23 @@ function setCategory(div)
 
 function removeProduct(a)
 {
-	console.log(a.parentNode.parentNode);
-	var product=a.parentNode.siblingAbove.innerHTML;
+	console.log(a.parentNode.parentNode.lastChild.previousSibling.innerHTML);
+	var productId=a.parentNode.parentNode.lastChild.previousSibling.innerHTML;
 	$.ajax({
 		type: "POST",
 		url: "removeProduct.php",
 		data:{
-			name:product			
+			id:productId
 		},
 		error: function(){
 			console.log("error: removal failed");
 		}
 	});	
 	loadDoc("loadShoppingList.php",document.getElementById("list"));
+}
+
+
+function addEntry()
+{
+	
 }

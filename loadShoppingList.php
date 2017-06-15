@@ -13,7 +13,7 @@
 		die("Connection failed: " . mysqli_connect_error());
 	}
 
-	$sql = "SELECT listentries.number, products.name FROM listentries INNER JOIN products ON products.id=listentries.productId";
+	$sql = "SELECT listentries.number, products.name, products.id FROM listentries INNER JOIN products ON products.id=listentries.productId";
 	$result = mysqli_query($db_link, $sql);
 
 	if($result != FALSE)
@@ -22,13 +22,14 @@
 		{
 			?>
 				<li class="listelement">
-					<div class="listtext number"><?php echo $row['number']?></div>
-					<div class="listtext product"><?php echo $row['name']?></div>
+					<div class="listtext"><?php echo $row['number']?></div>
+					<div class="listtext"><?php echo $row['name']?></div>
 					<div style="float:right">
 						<a onClick="removeProduct(this)"><i class="material-icons md-24">&#xE928;</i></a>
 						<a><i class="material-icons md-24">&#xE145;</i></a>
 						<a><i class="material-icons md-24">&#xE15B;</i></a>
 					</div>
+					<div class="hiddenField"><?php echo $row['id']?></div>
 				</li>
 			<?php
 		}
