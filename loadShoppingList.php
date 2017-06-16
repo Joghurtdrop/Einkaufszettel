@@ -1,17 +1,7 @@
 <?php
-	require_once('dbConfiguration.php');
-
-	$db_link=mysqli_connect(
-			MYSQL_HOST,
-			MYSQL_USER,
-			MYSQL_PASSWORD,
-			MYSQL_DATABASE
-			);
-			
-	if (!$db_link) 
-	{
-		die("Connection failed: " . mysqli_connect_error());
-	}
+	include 'dataAccess/dataAccessShoppingList.php';
+	
+	$db_link=getDbLink();
 	
 	$code= mysqli_query($db_link, "SET NAMES utf8");
 	$sql = "SELECT listentries.number, products.name, products.id FROM listentries INNER JOIN products ON products.id=listentries.productId";

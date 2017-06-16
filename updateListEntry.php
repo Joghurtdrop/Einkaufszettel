@@ -3,7 +3,7 @@
 	$productId=$_POST['productId'];
 	$number=$_POST['number'];
 
-	include 'dataAccess.php';
+	include 'cataAccess/dataAccessShoppingList.php';
 	
 	updateEntryNumber($productId, 1, $number)
 ?>
