@@ -6,7 +6,7 @@ function newItem(e) {
     newitem.setAttribute("draggable","true");
 	newitem.id = e.id;
 	newitem.innerHTML = e.innerText+"<div onclick=\"removeItem(this)\" class=\"icon\">\
-					<i class=\"material-icons md-18\">&#xE928;\
+					<i class=\"material-icons md-18\">&#xE92B;\
 					</i>\
 				</div>";
 
