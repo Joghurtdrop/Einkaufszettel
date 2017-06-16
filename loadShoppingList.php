@@ -1,11 +1,7 @@
 <?php
 	include 'dataAccess/dataAccessShoppingList.php';
 	
-	$db_link=getDbLink();
-	
-	$code= mysqli_query($db_link, "SET NAMES utf8");
-	$sql = "SELECT listentries.number, products.name, products.id FROM listentries INNER JOIN products ON products.id=listentries.productId";
-	$result = mysqli_query($db_link, $sql);
+	$result = loadList(1,1);
 
 	if($result != FALSE)
 	{
@@ -29,5 +25,4 @@
 	{
 		echo "Query failed";
 	}
-	mysqli_close($db_link);
 ?>

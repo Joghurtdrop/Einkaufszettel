@@ -1,6 +1,19 @@
 <?php
 	include 'dataAccess.php';
 	
+	/* loads all listentries with the passed user and shop ID from the database in order as saved in table positions */
+	function loadList($userid, $shopid)
+	{
+		$db_link=getDbLink();
+		$query="SELECT listentries.number, products.name, products.id FROM listentries 
+				INNER JOIN products ON products.id=listentries.productId 
+				INNER JOIN positions ON positions.categoryId=listentries.categoryId
+				WHERE listentries.userId=".$userid." AND positions.shopId=".$shopid."
+				ORDER BY positions.position";
+		$result=mysqli_query($db_link, $query);		
+		mysqli_close($db_link);
+		return $result;
+	}
 	
 	
 	/* adds a row with the passed name parameter to the table shoppinglist.products 
