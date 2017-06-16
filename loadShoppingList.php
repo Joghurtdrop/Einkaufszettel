@@ -2,7 +2,7 @@
 	session_start();
 	include 'dataAccess/dataAccessShoppingList.php';
 	
-	$result = loadList($_SESSION['userid'],1);
+	$result = loadList($_SESSION['userId'],1);
 
 	if($result != FALSE)
 	{

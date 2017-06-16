@@ -8,10 +8,18 @@
 		$name=$_POST['name'];
 		$password=$_POST['password'];		
 		
-		if(checkUsername($name) && $user=checkRegistration($name, $password))
+		if(checkUsername($name) && $userId=checkRegistration($name, $password))
 		{
-			$_SESSION['userid'] = $user;
-			header('Location: http://'.$_SERVER['HTTP_HOST'].'/Einkaufszettel');
+			$_SESSION['userId'] = $userId;
+			$_SESSION['selectedShopId']=getSelectedShop($userId);
+			if($_SESSION['selectedShopId']!=NULL)
+			{
+				header('Location: http://'.$_SERVER['HTTP_HOST'].'/Einkaufszettel/einkaufszettel.php');				
+			}
+			else
+			{
+				header('Location: http://'.$_SERVER['HTTP_HOST'].'/Einkaufszettel');								
+			}
 		}
 		else 
 		{

@@ -47,9 +47,28 @@
 	function getUsername($userid)
 	{		
 		$db_link=getDbLink();
-		$query="SELECT name FROM shoppinglist.users WHERE id=('".$userid."')";
+		$query="SELECT name FROM shoppinglist.users WHERE id=".$userid;
 		$name=mysqli_query($db_link,$query);
 		mysqli_close($db_link);
 		return mysqli_fetch_assoc($name)['name'];
+	}
+	
+	
+	function getSelectedShop($userid)
+	{
+		$db_link=getDbLink();
+		$query="SELECT selectedShop FROM shoppinglist.users WHERE id=".$userid;
+		$selectedShop=mysqli_query($db_link,$query);
+		mysqli_close($db_link);
+		return mysqli_fetch_assoc($selectedShop)['selectedShop'];
+	}
+	
+	
+	function setSelectedShop($userid, $shopid)
+	{
+		$db_link=getDbLink();
+		$query="UPDATE shoppinglist.users SET selectedShop=".$shopid." WHERE id=".$userid;
+		mysqli_query($db_link, $query);
+		mysqli_close($db_link);		
 	}
 ?>
