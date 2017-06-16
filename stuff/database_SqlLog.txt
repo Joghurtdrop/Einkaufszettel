@@ -1,0 +1,77 @@
+
+/* 15.06. Create tables: categories, listEntries, positions, products, users, shops */
+
+CREATE TABLE `shoppinglist`.`categories` 
+	( `id` INT UNSIGNED NOT NULL AUTO_INCREMENT , 
+	  `name` VARCHAR(100) NOT NULL , 
+	  `parentId` INT UNSIGNED NULL , 
+	  PRIMARY KEY (`id`)) 
+	ENGINE = InnoDB;
+	
+	
+CREATE TABLE `shoppinglist`.`listEntries` 
+	( `userId` INT UNSIGNED NOT NULL , 
+	  `productId` INT UNSIGNED NOT NULL , 
+	  `categoryId` INT UNSIGNED NOT NULL , 
+	  `count` INT UNSIGNED NULL ) 
+	ENGINE = InnoDB;
+	
+	
+CREATE TABLE `shoppinglist`.`positions` 
+	( `userId` INT UNSIGNED NOT NULL , 
+	  `categoryId` INT UNSIGNED NOT NULL , 
+	  `shopId` INT UNSIGNED NOT NULL , 
+	  `position` INT UNSIGNED NOT NULL ) 
+	ENGINE = InnoDB;
+	
+	
+CREATE TABLE `shoppinglist`.`products` 
+	( `id` INT UNSIGNED NOT NULL AUTO_INCREMENT , 
+	  `name` VARCHAR(100) NOT NULL , 
+	  PRIMARY KEY (`id`)) 
+	ENGINE = InnoDB;
+	
+	
+CREATE TABLE `shoppinglist`.`users` 
+	( `id` INT UNSIGNED NOT NULL AUTO_INCREMENT , 
+	  `name` VARCHAR(25) NOT NULL , 
+	  `password` VARCHAR(25) NOT NULL , 
+	  PRIMARY KEY (`id`)) 
+	ENGINE = InnoDB;
+	
+	
+CREATE TABLE `shoppinglist`.`shops` 
+	( `id` INT UNSIGNED NOT NULL AUTO_INCREMENT , 
+	  `name` VARCHAR(100) NOT NULL , 
+	  PRIMARY KEY (`id`)) 
+	ENGINE = InnoDB;
+	
+	
+/* 15.06. Create dummy-entries */	
+
+INSERT INTO `shoppinglist`.`products` (`name`) VALUES ('Banane'), ('Eimer'), ('Milch'), ('Mehl'), ('Zucker'), ('Brot'), ('Birnen'), ('Haselnüsse'), ('Schaufel'), ('Taschentücher');
+INSERT INTO `shoppinglist`.`categories` (`name`) VALUES ('Backen'),('Obst und Gemüse'),('Drogerie'),('Werkzeug'),('Nüsse und Trockenfrüchte'),('Backwaren');
+INSERT INTO `shoppinglist`.`positions`(`userId`, `categoryId`, `shopId`, `position`) VALUES (1,1,1,4),(1,2,1,1),(1,3,1,5),(1,4,1,2),(1,5,1,3);
+INSERT INTO `shoppinglist`.`shops`(`name`) VALUES ('rewe');
+INSERT INTO `shoppinglist`.`users`(`name`, `password`) VALUES ('test','test');
+
+
+/* rename column in shoppinglist.listEntries count -> number */
+
+ALTER TABLE `listentries` CHANGE `count` `number` INT(10) UNSIGNED NULL DEFAULT NULL;
+
+
+/* 15.06. Set endoding to UTF8 */ 
+
+ALTER TABLE `categories` CHANGE `name` `name` VARCHAR(100) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL; 
+ALTER TABLE `products` CHANGE `name` `name` VARCHAR(100) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL; 
+ALTER TABLE `shops` CHANGE `name` `name` VARCHAR(100) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL; 
+ALTER TABLE `users` CHANGE `name` `name` VARCHAR(100) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL; 
+ALTER TABLE `users` CHANGE `password` `password` VARCHAR(100) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL;
+
+
+/* 16.06 add unique index to table 'positions'  */
+
+ALTER TABLE `shoppinglist`.`positions` ADD UNIQUE INDEX (`userId`, `categoryId`, `shopId`);
+
+

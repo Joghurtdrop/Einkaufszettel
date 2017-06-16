@@ -8,9 +8,9 @@
 		$name=$_POST['name'];
 		$password=$_POST['password'];		
 		
-		if(checkUsername($name) && checkRegistration($name, $password))
+		if(checkUsername($name) && $user=checkRegistration($name, $password))
 		{
-			$_SESSION['userid'] = $user['id'];
+			$_SESSION['userid'] = $user;
 			die('Login erfolgreich. Weiter zu <a href="profil.html">internen Bereich</a>');
 		}
 		else 

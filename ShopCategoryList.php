@@ -12,8 +12,8 @@
 	{
 		die("Connection failed: " . mysqli_connect_error());
 	}
-
-	$sql = "SELECT id, name, parent FROM categories";
+	$code = mysqli_query($db_link, "SET NAMES utf8");
+	$sql = "SELECT id, name, parentId FROM categories";
 	$result = mysqli_query($db_link, $sql);
 
 	if($result != FALSE)
