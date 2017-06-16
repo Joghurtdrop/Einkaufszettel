@@ -22,8 +22,4 @@
 			<?php
 		}
 	}
-	else
-	{
-		echo "Query failed";
-	}
 ?>

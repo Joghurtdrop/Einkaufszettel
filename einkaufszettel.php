@@ -1,4 +1,6 @@
-<?php require_once 'auth.php';?>
+<?php 
+	require_once 'auth.php';
+?>
 
 <!DOCTYPE html>
 <html>
@@ -20,6 +22,7 @@
 	 --><li class="rightAlign"><a href="index.php">Profil</a></li>
 	</ul>
 </div>
+
 
 <div class="main mainWithBaseboard">
   <h1>Dein Einkaufszettel</h1>
@@ -50,6 +53,20 @@
 		</div>
 	</div>
 </div>
+<?php
+if($_SESSION['selectedShopId']==NULL)
+{
+	?>
+	<div class="overlay">
+		<div class="popup card">
+			<h2>Achtung!</h2>
+			<div class="content">Du hast noch keinen Laden ausgewählt</div>
+			<a class="close" href="index.php">Laden auswählen</a>
+		</div>
+	</div>
+	<?php
+}
+?>
 <script src="js/shoppinglist.js"></script>
 </body>
 </html>

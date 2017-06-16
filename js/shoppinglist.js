@@ -1,6 +1,10 @@
 loadDoc("loadShoppingList.php", "list");
 loadDoc("loadCategoryList.php", "categories");
 
+$(document).ready(function(){
+	$('.overlay').fadeIn("slow");
+})
+
 function loadDoc(phpSource, id) 
 {
   var xhttp = new XMLHttpRequest();
