@@ -24,6 +24,15 @@ function newItem(e) {
 }
 
 function removeItem(e){
+	var levelup = e.parentNode;
+	console.log(levelup.parentNode);
+	var node = levelup.parentNode.firstChild;
+	var pos=0;
+	while (node && node != levelup){
+		node = node.nextSibling;
+		pos++;
+	}
+	removeFromDb(pos, levelup.id);
 	e.parentNode.remove();
 	refreshItems();
 }
