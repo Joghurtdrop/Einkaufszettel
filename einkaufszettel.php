@@ -1,3 +1,5 @@
+<?php require_once 'auth.php';?>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -14,7 +16,7 @@
 <div class="navbar">
 	<ul>
 		<li><a class="active">Einkaufszettel</a></li><!--
-	 --><li><a href="deinmarkt.html">Dein Markt</a></li><!--
+	 --><li><a href="deinmarkt.php">Dein Markt</a></li><!--
 	 --><li class="rightAlign"><a href="index.php">Profil</a></li>
 	</ul>
 </div>

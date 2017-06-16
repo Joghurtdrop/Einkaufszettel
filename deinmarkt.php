@@ -1,3 +1,4 @@
+<?php require_once 'auth.php';?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -9,9 +10,9 @@
 
 <div class="navbar">
     <ul>
-        <li><a href="einkaufszettel.html">Einkaufszettel</a></li><!--
+        <li><a href="einkaufszettel.php">Einkaufszettel</a></li><!--
         --><li><a class="active">Dein Markt</a></li><!--
-        --><li class="rightAlign"><a href="profil.html">Profil</a></li>
+        --><li class="rightAlign"><a href="index.php">Profil</a></li>
     </ul>
 </div>
 <div class="row">

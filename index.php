@@ -9,8 +9,8 @@
 
 <div class="navbar">
 	<ul>
-		<li><a href="einkaufszettel.html">Einkaufszettel</a></li><!--
-	 --><li><a href="deinmarkt.html">Dein Markt</a></li><!--
+		<li><a href="einkaufszettel.php">Einkaufszettel</a></li><!--
+	 --><li><a href="deinmarkt.php">Dein Markt</a></li><!--
 	 --><li class="rightAlign active"><a>Profil</a></li>
 	</ul>
 </div>

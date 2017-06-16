@@ -11,7 +11,7 @@
 		if(checkUsername($name) && $user=checkRegistration($name, $password))
 		{
 			$_SESSION['userid'] = $user;
-			die('Login erfolgreich. Weiter zu <a href="profil.html">internen Bereich</a>');
+			die('Login erfolgreich. Weiter zu <a href="index.php">internen Bereich</a>');
 		}
 		else 
 		{
@@ -68,7 +68,7 @@
         </div>        
         <div id="login">   
           <h1>Welcome Back!</h1>          
-          <form action="?login1" method="post">          
+          <form action="?login=1" method="post">          
             <div class="field-wrap">
             <label>Username</label>
             <input type="name" name="name"/>
