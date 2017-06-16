@@ -11,7 +11,7 @@
 		if(checkUsername($name) && $user=checkRegistration($name, $password))
 		{
 			$_SESSION['userid'] = $user;
-			die('Login erfolgreich. Weiter zu <a href="index.php">internen Bereich</a>');
+			header('Location: http://'.$_SERVER['HTTP_HOST'].'/Einkaufszettel');
 		}
 		else 
 		{
