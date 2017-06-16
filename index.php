@@ -1,12 +1,24 @@
 <?php require_once 'auth.php';?>
+
 <!DOCTYPE html>
 <html>
-	<head>
-		<meta charset="utf-8"/>
-		<title>loginsystem - login.php</title>
-	</head>
-	<body>
-		<?php echo $login_status;?>
-		<h1>Inhalt</h1>
-		<p>Mehr Inhalt</p>
-</html>
+<head>
+<link rel="stylesheet" href="css/general.css">
+</head>
+<body>
+
+<div class="navbar">
+	<ul>
+		<li><a href="einkaufszettel.html">Einkaufszettel</a></li><!--
+	 --><li><a href="deinmarkt.html">Dein Markt</a></li><!--
+	 --><li class="rightAlign active"><a>Profil</a></li>
+	</ul>
+</div>
+
+<div class="main">
+  <h1>Überschrift</h1>
+  <?php echo $login_status;?>
+ 
+</div>
+
+</body>

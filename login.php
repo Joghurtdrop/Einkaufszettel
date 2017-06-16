@@ -1,7 +1,7 @@
 <?php
 	session_start();
 	
-	include 'dataAccess/dataAccess.php';
+	include 'dataAccess/dataAccessLogin.php';
 	
 	if(isset($_GET['login']))
 	{
