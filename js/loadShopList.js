@@ -1,5 +1,5 @@
 loadDoc("ShopCategoryList.php", "verticallist");
-
+loadList();
 
 function loadDoc(phpSource, id) 
 {
@@ -15,7 +15,8 @@ function loadDoc(phpSource, id)
 }
 
 function loadList(){
-	loadDoc(
+	loadDoc("ShopTraceList.php", "trace")
+	refreshItems();
 }
 
 function saveList(){
