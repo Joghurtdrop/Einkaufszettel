@@ -3,7 +3,7 @@
 	
 	include 'dataAccess/dataAccessLogin.php';
 	
-	if(isset($_GET['login']))
+	if(isset($_GET['login']) && $_GET['login']==1)
 	{
 		$name=$_POST['name'];
 		$password=$_POST['password'];		
@@ -23,8 +23,21 @@
 		}
 		else 
 		{
-			$errorMessage = "Username oder Passwort war ungültig<br>";			 
+			$errorMessage = "Username oder Passwort ungültig<br>";			 
 		}		
+	}
+	else if(isset($_GET['login']) && $_GET['login']==2)
+	{
+		if(!checkUsername($_POST['name']))
+		{
+			$_SESSION['userId']=addUser($_POST['name'],$_POST['password'], $_POST['mail']);
+			$_SESSION['selectedShopId']=getSelectedShop($_SESSION['userId']);
+			header('Location: http://'.$_SERVER['HTTP_HOST'].'/Einkaufszettel');
+		}
+		else
+		{
+			$errorMessage="Username ist bereits vergeben";
+		}
 	}
 	
 	
@@ -44,49 +57,47 @@
 <?php
 	if(isset($errorMessage))
 	{
-		echo $errorMessage;
+		echo "<div class=\"field-wrap\">".$errorMessage."</div>";
 	}	
 ?>
 
 <div class="form card">      
       <ul class="tab-group">
-        <li class="tab active"><a href="#signup">Sign Up</a></li>
-        <li class="tab"><a href="#login">Log In</a></li>
+        <li class="tab active"><a href="#login">Log In</a></li>
+        <li class="tab"><a href="#signup">Sign Up</a></li>
       </ul>      
       <div class="tab-content">
-        <div id="signup">   
-          <h1>Sign Up for Free</h1>          
-          <form action="/" method="post">          
-          <div class="field-wrap">
-            <div class="field-wrap">
-              <label>Username</label>
-              <input type="text"/>
-            </div>
-          </div>
-          <div class="field-wrap">
-            <label>Email Address</label>
-            <input type="email"/>
-          </div>          
-          <div class="field-wrap">
-            <label>Set A Password</label>
-            <input type="password"/>
-          </div>          
-          <button type="submit" class="button button-block"/>Get Started</button>          
-          </form>
-        </div>        
-        <div id="login">   
-          <h1>Welcome Back!</h1>          
+        <div id="login">            
           <form action="?login=1" method="post">          
             <div class="field-wrap">
             <label>Username</label>
             <input type="name" name="name"/>
           </div>          
           <div class="field-wrap">
-            <label>Password</label>
+            <label>Passwort</label>
             <input type="password" name="password"/>
           </div>          
-          <p class="forgot"><a href="#">Forgot Password?</a></p>
+          <p class="forgot"><a href="#">Passwort vergessen?</a></p>
           <button class="button button-block" type="submit"/>Log In</button>          
+          </form>
+        </div>        
+        <div id="signup">           
+          <form action="?login=2" method="post">          
+          <div class="field-wrap">
+            <div class="field-wrap">
+              <label>Username</label>
+              <input type="text" name="name"/>
+            </div>
+          </div>
+          <div class="field-wrap">
+            <label>E-Mail Addresse</label>
+            <input type="email" name="mail"/>
+          </div>          
+          <div class="field-wrap">
+            <label>Passwort</label>
+            <input type="password" name="password"/>
+          </div>          
+          <button type="submit" class="button button-block"/>Los geht's</button>          
           </form>
         </div>        
       </div>

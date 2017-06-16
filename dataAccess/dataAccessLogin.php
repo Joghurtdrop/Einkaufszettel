@@ -71,4 +71,19 @@
 		mysqli_query($db_link, $query);
 		mysqli_close($db_link);		
 	}
+	
+	
+	function addUser($name, $password, $mail)
+	{
+		$db_link=getDbLink();
+		$stmt=mysqli_stmt_init($db_link);
+		if(mysqli_stmt_prepare($stmt, "INSERT INTO shoppinglist.users (name, password, mail) VALUES (?,?,?)"))
+		{		
+			mysqli_stmt_bind_param($stmt,"sss",$name, $password, $mail);
+			mysqli_stmt_execute($stmt);
+		}
+		mysqli_stmt_close($stmt);
+		mysqli_close($db_link);		
+		return checkRegistration($name, $password);
+	}
 ?>
