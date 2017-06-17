@@ -58,7 +58,7 @@
 	{
 		$db_link=getDbLink();
 		$query="SELECT shops.name, shops.id FROM shops 
-				LEFT JOIN positions ON shops.id = positions.shopId
+				INNER JOIN positions ON shops.id = positions.shopId
 				WHERE positions.userId=".$userid."
 				GROUP BY shops.id, shops.name
 				ORDER BY shops.name";
@@ -71,10 +71,13 @@
 	function getSelectedShop($userid)
 	{
 		$db_link=getDbLink();
-		$query="SELECT selectedShop FROM shoppinglist.users WHERE id=".$userid;
+		$query="SELECT users.selectedShop, shops.name 
+				FROM shoppinglist.users 
+				INNER JOIN shoppinglist.shops ON shops.id = users.selectedShop 
+				WHERE users.id=".$userid;
 		$selectedShop=mysqli_query($db_link,$query);
 		mysqli_close($db_link);
-		return mysqli_fetch_assoc($selectedShop)['selectedShop'];
+		return mysqli_fetch_assoc($selectedShop);
 	}
 	
 	

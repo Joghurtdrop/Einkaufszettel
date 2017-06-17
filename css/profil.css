@@ -9,7 +9,6 @@
 .wrapperDropdown{
 	position: relative;
     display: inline-block;
-    color: white;
 	font-size: 20px;
 	min-width:50%;
 }
@@ -38,7 +37,10 @@
 	display:inline-block;
 }
 
-.dropdown li:hover {background-color: #8e5458}
+.dropdown li:hover {
+	background-color: #8e161e;
+	color: white;
+}
 
 .wrapperDropdown:hover .dropdown{
     visibility:visible;

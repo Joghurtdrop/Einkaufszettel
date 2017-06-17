@@ -23,8 +23,8 @@
 	<?php echo $login_status;?>
 	<h1>Dein ausgewählter Markt</h1>
 	<div id="dd" class="wrapperDropdown" tabindex="1">
-		<div class="hiddenField">0</div>
-		<div id="selectedShop" class="dropbtn">Kein Markt</div>
+		<div id="selectedShop" class="dropbtn">Kein Markt</div>	
+		<div id="selectedShopId" class="hiddenField">0</div>
 		<ul id="shopList" class="dropdown"></ul>
 	</div>
 </div>

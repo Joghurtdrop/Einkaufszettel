@@ -14,8 +14,21 @@ function loadDoc(phpSource, id)
 }
 
 
-function setSelectedShop(div)
+
+function setSelectedShop(el)
 {
-	document.getElementById("selectedCategory").innerHTML=div.innerHTML;
-	document.getElementById("selectedCategoryId").innerHTML=div.nextElementSibling.innerHTML;
+	$.ajax({
+		type: "POST",
+		url: "setSelectedShop.php",
+		data:{
+			selectedShopId:el.lastElementChild.innerHTML
+		},
+		success:function(result){
+			$("#selectedShop").html(JSON.parse(result).name);
+			$("#selectedShopId").html(JSON.parse(result).selectedShop);			
+		},
+		error: function(){
+			console.log("error: update failed");
+		}
+	});	
 }

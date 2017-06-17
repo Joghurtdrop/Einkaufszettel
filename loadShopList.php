@@ -9,8 +9,8 @@
 		while($row = mysqli_fetch_assoc($result)) 
 		{
 			?>
-				<li>					
-					<div onClick=""><?php echo $row['name']?></div>
+				<li onClick="setSelectedShop(this)">					
+					<div><?php echo $row['name']?></div>
 					<div style="float:right">
 						<i class="material-icons md-24">&#xE8B8;</i>
 					</div>
