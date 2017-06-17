@@ -15,6 +15,23 @@
 		return $result;
 	}
 	
+	function loadLostListentries($userId, $shopId)
+	{
+		$db_link=getDbLink();
+		$query="SELECT listentries.number, products.name, products.id FROM listentries
+				INNER JOIN products ON products.id=listentries.productId
+				WHERE listentries.userId = ".$userId."
+				AND listentries.categoryId NOT IN (SELECT categoryId FROM positions WHERE shopId = ".$shopId.") 
+				ORDER BY products.name";
+		$result=mysqli_query($db_link, $query);		
+		mysqli_close($db_link);
+		if(mysqli_num_rows($result)<1)
+		{
+			return NULL;
+		}
+		return $result;	
+	}
+	
 	
 	/* adds a row with the passed name parameter to the table shoppinglist.products 
 	   returns the assigned productId */
