@@ -11,7 +11,7 @@
 		if(checkUsername($name) && $userId=checkRegistration($name, $password))
 		{
 			$_SESSION['userId'] = $userId;
-			$_SESSION['selectedShopId']=getSelectedShop($userId);
+			$_SESSION['selectedShopId']=getSelectedShop($userId)['selectedShop'];
 			if($_SESSION['selectedShopId']!=NULL)
 			{
 				header('Location: http://'.$_SERVER['HTTP_HOST'].'/Einkaufszettel/einkaufszettel.php');				
@@ -31,7 +31,7 @@
 		if(!checkUsername($_POST['name']))
 		{
 			$_SESSION['userId']=addUser($_POST['name'],$_POST['password'], $_POST['mail']);
-			$_SESSION['selectedShopId']=getSelectedShop($_SESSION['userId']);
+			$_SESSION['selectedShopId']=getSelectedShop($_SESSION['userId'])['selectedShop'];
 			header('Location: http://'.$_SERVER['HTTP_HOST'].'/Einkaufszettel');
 		}
 		else
