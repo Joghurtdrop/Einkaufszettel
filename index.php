@@ -22,12 +22,8 @@
 	<h1>Dein Konto</h1>
 	<?php echo $login_status;?>
 	<h1>Dein ausgewählter Markt</h1>
-	<div id="dd" class="wrapperDropdown" tabindex="1">
-		<div id="selectedShop" class="dropbtn">Kein Markt</div>	
-		<div id="selectedShopId" class="hiddenField">0</div>
-		<ul id="shopList" class="dropdown"></ul>
+	<div id="listholder"></div>
 	</div>
-</div>
 
 <script src="js/profil.js"></script>
 </body>

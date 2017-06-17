@@ -1,5 +1,5 @@
 
-loadDoc("loadShopList.php","shopList");
+loadDoc("loadShopList.php","listholder");
 
 function loadDoc(phpSource, id) 
 {

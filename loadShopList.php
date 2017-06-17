@@ -3,6 +3,27 @@
 	include 'dataAccess/dataAccessLogin.php';
 	
 	$result = getShops($_SESSION['userId']);
+	$selectedShop = getSelectedShop($_SESSION['userId']);
+	
+	if($selectedShop['selectedShop']!=NULL)
+	{
+		?>
+		<div id="dd" class="wrapperDropdown" tabindex="1">
+			<div id="selectedShop" class="dropbtn"><?php echo $selectedShop['name']?></div>	
+			<div id="selectedShopId" class="hiddenField"><?php echo $selectedShop['selectedShop']?></div>
+			<ul id="shopList" class="dropdown">
+		<?php
+	}
+	
+	else
+	{
+		?>
+		<div id="dd" class="wrapperDropdown" tabindex="1">
+			<div id="selectedShop" class="dropbtn">Kein Markt</div>	
+			<div id="selectedShopId" class="hiddenField">0</div>
+			<ul id="shopList" class="dropdown">
+		<?php
+	}
 
 	if($result != FALSE)
 	{
@@ -19,4 +40,8 @@
 			<?php
 		}
 	}
+	
+	?></ul>
+	</div>
+	<?php
 ?>
