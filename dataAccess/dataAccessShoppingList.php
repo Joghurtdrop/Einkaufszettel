@@ -9,7 +9,7 @@
 				INNER JOIN products ON products.id=listentries.productId 
 				INNER JOIN positions ON positions.categoryId=listentries.categoryId
 				WHERE listentries.userId=".$userid." AND positions.shopId=".$shopid."
-				ORDER BY positions.position";
+				ORDER BY positions.position, products.name";
 		$result=mysqli_query($db_link, $query);		
 		mysqli_close($db_link);
 		return $result;

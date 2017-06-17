@@ -119,3 +119,10 @@ body{
 }
 
 /*END: navigation bar elements*/
+
+
+/* useful classes */
+
+.hiddenField{
+	display:none!important;
+}

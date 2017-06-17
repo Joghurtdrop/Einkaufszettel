@@ -54,6 +54,20 @@
 	}
 	
 	
+	function getShops($userid)
+	{
+		$db_link=getDbLink();
+		$query="SELECT shops.name, shops.id FROM shops 
+				LEFT JOIN positions ON shops.id = positions.shopId
+				WHERE positions.userId=".$userid."
+				GROUP BY shops.id, shops.name
+				ORDER BY shops.name";
+		$result=mysqli_query($db_link, $query);		
+		mysqli_close($db_link);
+		return $result;
+	}
+	
+	
 	function getSelectedShop($userid)
 	{
 		$db_link=getDbLink();
