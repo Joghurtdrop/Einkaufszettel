@@ -1,7 +1,7 @@
 <?php
 	session_start();
 	
-	include 'dataAccess/dataAccessLogin.php';
+	include 'dataAccess/dataAccessProfile.php';
 	
 	setSelectedShop($_SESSION['userId'],$_POST['selectedShopId']);
 	$_SESSION['selectedShopId']=$_POST['selectedShopId'];

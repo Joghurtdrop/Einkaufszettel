@@ -1,6 +1,7 @@
+
 <?php
 	session_start();
-	include 'dataAccess/dataAccessLogin.php';
+	include 'dataAccess/dataAccessProfile.php';
 	
 	$result = getShops($_SESSION['userId']);
 	$selectedShop = getSelectedShop($_SESSION['userId']);

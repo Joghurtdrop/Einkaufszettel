@@ -48,7 +48,7 @@
 	/* returns the productId of a product selected by name from the table shoppinglist.products 
 	   if this exists else NULL*/	
 	/* !!FIXME: safe parameter passing (sql injection) */
-	function getProductUnsafe($name)
+	/*function getProductUnsafe($name)
 	{
 		$db_link=getDbLink();
 		$query="SELECT id FROM shoppinglist.products WHERE name LIKE '".$name."'";
@@ -60,7 +60,7 @@
 		}
 		mysqli_close($db_link);
 		return NULL;
-	}
+	}*/
 	
 	/* returns the productId of a product selected by name from the table shoppinglist.products */	
 	/* !!FIXME: ERORR: mysqli_prepare excepts mysqli object parameter ??? WTF?? */
