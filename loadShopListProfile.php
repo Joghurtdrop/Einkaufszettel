@@ -4,10 +4,10 @@
 	include 'dataAccess/dataAccessProfile.php';
 	
 	$result = getShops($_SESSION['userId']);
-	$selectedShop = getSelectedShop($_SESSION['userId']);
 	
-	if($selectedShop['selectedShop']!=NULL)
-	{
+	if($_SESSION['selectedShopId']!=NULL)
+	{		
+		$selectedShop = getSelectedShop($_SESSION['userId']);
 		?>
 		<div id="dd" class="wrapperDropdown" tabindex="1">
 			<div id="selectedShop" class="dropbtn"><?php echo $selectedShop['name']?></div>	
@@ -31,9 +31,9 @@
 		while($row = mysqli_fetch_assoc($result)) 
 		{
 			?>
-				<li onClick="setSelectedShop(this)">					
-					<div><?php echo $row['name']?></div>
-					<div style="float:right">
+				<li>					
+					<div onClick="setSelectedShop(this)" style="display:inline-block;width:80%"><?php echo $row['name']?></div>
+					<div onClick="deleteShop(this)" style="float:right;width:20%;display:inline-block">
 						<i class="material-icons md-24">&#xE8B8;</i>
 					</div>
 					<div class="hiddenField"><?php echo $row['id']?></div>

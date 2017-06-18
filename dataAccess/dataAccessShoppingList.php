@@ -48,7 +48,7 @@
 	/* returns the productId of a product selected by name from the table shoppinglist.products 
 	   if this exists else NULL*/	
 	/* !!FIXME: safe parameter passing (sql injection) */
-	/*function getProductUnsafe($name)
+	function getProductUnsafe($name)
 	{
 		$db_link=getDbLink();
 		$query="SELECT id FROM shoppinglist.products WHERE name LIKE '".$name."'";
@@ -60,10 +60,10 @@
 		}
 		mysqli_close($db_link);
 		return NULL;
-	}*/
+	}
 	
-	/* returns the productId of a product selected by name from the table shoppinglist.products */	
-	/* !!FIXME: ERORR: mysqli_prepare excepts mysqli object parameter ??? WTF?? */
+	
+	/* returns the productId of a product selected by name from the table shoppinglist.products */
 	function getProductSafe($name)
 	{
 		$db_link=getDbLink();
@@ -114,7 +114,7 @@
 	
 	/* adds a row to the shoppinglist.listentries table; checks if the products exists yet in the 
 	   shoppinglist.products table, if it does uses its productId; if the already product is in the 
-	   shoppinglist.listentries table it increases the number by the passes number-value */
+	   shoppinglist.listentries table it increases the number by the passed number-value */
 	function addEntry($userId, $name, $number , $categoryId)
 	{
 		$id=getProductUnsafe($name);

@@ -24,6 +24,14 @@
 	<h1>Dein ausgewählter Markt</h1>
 	<div id="listholder"></div>
 	</div>
+	
+	
+	<div class="field-wrap">
+		<label>Neuer Markt: </label>
+		<input id="newShopName"/>
+	</div>      
+	<button onClick="addShop(this)" class="button button-block"/>Okay</button>          
+	
 
 <script src="js/profil.js"></script>
 </body>
