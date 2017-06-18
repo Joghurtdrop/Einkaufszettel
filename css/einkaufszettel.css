@@ -119,11 +119,11 @@
 
 #numberInput{
 	width:20%;
-	margin-right:3%;
+	margin:0% 2%;
 }
 
 #productNameInput{
-	width:77%;
+	width:76%;
 }
 
 a:visited,:link{
@@ -190,7 +190,7 @@ a:hover{
     }
 	
 	.main{
-		padding-bottom:129px;
+		padding-bottom:140px;
 	} 
 	
 	.popup{
@@ -202,7 +202,7 @@ a:hover{
 @media only screen and (min-width: 551px) and (max-width: 767px) {
     /* For tablets: */
     .main{
-		padding-bottom:44px;
+		padding-bottom:55px;
 	}
 	
 	.dropup{
@@ -223,7 +223,7 @@ a:hover{
 	}	
 	
 	.main{
-		padding-bottom:44px;
+		padding-bottom:55px;
 	}
 	
 	.dropup{

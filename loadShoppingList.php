@@ -27,7 +27,7 @@
 	{
 		?>
 			<li class="listelement">
-				<div class="listtext" style="text-transform:uppercase; font-size: 15px"><?php echo "Nicht im aktuell ausgewählten Markt kategorisierte Einträge:"?></div>
+				<div class="listtext" style="text-transform:uppercase; font-size: 15px"><?php echo "Fehlende Kategorien:"?></div>
 			</li>
 		<?php
 		while($row = mysqli_fetch_assoc($lostEntries)) 
