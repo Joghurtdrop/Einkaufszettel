@@ -2,6 +2,7 @@
 	session_start();
 	
 	include 'dataAccess/dataAccessLogin.php';
+	include 'dataAccess/dataAccessProfile.php';
 	
 	if(isset($_GET['login']) && $_GET['login']==1)
 	{

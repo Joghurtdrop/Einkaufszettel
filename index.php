@@ -21,16 +21,19 @@
 <div class="main">
 	<h1>Dein Konto</h1>
 	<?php echo $login_status;?>
+	<div class="row">
+		<div class="col-10 row">
+			<label class="col-4">Füge einen neuen Markt hinzu:</label>
+			<input class="col-6" id="newShopName"/>
+			<div onClick="addShop(this)" class="button col-2"/>Okay</div>          
+		</div>      
+		<div class="col-2 buttonHolder"><a class="button" href="logout.php">Logout</a></div>
+	</div>
 	<h1>Dein ausgewählter Markt</h1>
 	<div id="listholder"></div>
 	</div>
 	
 	
-	<div class="field-wrap">
-		<label>Neuer Markt: </label>
-		<input id="newShopName"/>
-	</div>      
-	<button onClick="addShop(this)" class="button button-block"/>Okay</button>          
 	
 
 <script src="js/profil.js"></script>

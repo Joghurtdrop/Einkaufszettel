@@ -1,5 +1,5 @@
 <?php 
-	include 'dataAccess.php';
+	include_once 'dataAccess.php';
 	
 	
 	/* checks if a username password combination is valid returns TRUE if username is registered*/

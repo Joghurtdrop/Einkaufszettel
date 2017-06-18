@@ -1,3 +1,45 @@
+a{
+	text-decoration:none;
+}
+
+a:link, a:visited{
+	color:black;	
+}
+
+a.button{
+	padding: 14px 16px;
+    border: none;
+	background-color:#ddd;
+	display:block;
+}
+
+div.button{
+	border: none;
+	background-color:#ddd;
+	font-size:15px;
+}
+
+.button:hover{
+	cursor:pointer;
+	background-color:#8e161e;
+	color: white;
+}
+
+.main > .row{
+	margin: 20px 0px;
+}
+
+label{
+	padding:0!important;
+	text-transform: uppercase;
+}
+
+input{
+	font-size: 15px;
+	font-weight:bold;
+}
+
+
 .dropbtn{
     padding: 8px 16px;
     border: none;
@@ -11,9 +53,10 @@
     display: inline-block;
 	font-size: 20px;
 	min-width:50%;
+	margin-top: 30px;
 }
 
-.wrapperDropdown:focus{
+*:focus{
 	outline:none;
 }
 

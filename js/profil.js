@@ -51,17 +51,20 @@ function setSelectedShop(el)
 
 function addShop(el)
 {
-	$.ajax({
-		type: "POST",
-		url: "addShopProfile.php",
-		data:{
-			name:$('#newShopName').val()
-		},
-		success:function(result){
-			window.location='deinMarkt.php';
-		},
-		error: function(){
-			console.log("error: update failed");
-		}
-	});	
+	if($('newShopName').val()!="")
+	{		
+		$.ajax({
+			type: "POST",
+			url: "addShopProfile.php",
+			data:{
+				name:$('#newShopName').val()
+			},
+			success:function(result){
+				window.location='deinMarkt.php';
+			},
+			error: function(){
+				console.log("error: update failed");
+			}
+		});	
+	}
 }

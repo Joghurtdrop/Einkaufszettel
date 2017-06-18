@@ -11,8 +11,6 @@
 	else
 	{
 		$name=getUsername($_SESSION['userId']);
-		$login_status="<div>Hallo ".$name.".<br />
-							<a href=\"./logout.php\">Sitzung beenden</a>
-					   </div>";		
+		$login_status="<h3>Hallo ".$name."</h3>";		
 	}
 ?>

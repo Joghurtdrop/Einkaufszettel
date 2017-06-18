@@ -41,6 +41,12 @@ body{
     float: left;
     padding: 15px;
 }
+
+.row::after {
+    content: "";
+    clear: both;
+    display: table;
+}
  
 
 /*END: grid columns */

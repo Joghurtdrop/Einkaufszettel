@@ -10,7 +10,7 @@
 		$selectedShop = getSelectedShop($_SESSION['userId']);
 		?>
 		<div id="dd" class="wrapperDropdown" tabindex="1">
-			<div id="selectedShop" class="dropbtn"><?php echo $selectedShop['name']?></div>	
+			<div style="display:inline-block" id="selectedShop" class="dropbtn"><?php echo $selectedShop['name']?></div>	
 			<div id="selectedShopId" class="hiddenField"><?php echo $selectedShop['selectedShop']?></div>
 			<ul id="shopList" class="dropdown">
 		<?php
@@ -32,9 +32,9 @@
 		{
 			?>
 				<li>					
-					<div onClick="setSelectedShop(this)" style="display:inline-block;width:80%"><?php echo $row['name']?></div>
+					<div onClick="setSelectedShop(this)" style="display:inline-block;width:80%;padding-left:20%"><?php echo $row['name']?></div>
 					<div onClick="deleteShop(this)" style="float:right;width:20%;display:inline-block">
-						<i class="material-icons md-24">&#xE8B8;</i>
+						<i class="material-icons md-24">&#xE92B;</i>
 					</div>
 					<div class="hiddenField"><?php echo $row['id']?></div>
 				</li>

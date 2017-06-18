@@ -1,5 +1,5 @@
 <?php
-	include 'dataAccess.php';
+	include_once 'dataAccess.php';
 	
 	function getShops($userid)
 	{
