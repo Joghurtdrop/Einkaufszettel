@@ -1,9 +1,14 @@
 <?php
+	session_start();
 	include 'dataAccess/dataAccessShoppingList.php';
 	
 	$db_link=getDbLink();
 	
-	$sql = "SELECT name, id FROM categories INNER JOIN positions ON positions.categoryId=categories.id WHERE positions.userId=1 ORDER BY positions.position";
+	$sql = "SELECT name, id FROM categories 
+		    INNER JOIN positions ON positions.categoryId=categories.id 
+			WHERE positions.userId=".$_SESSION['userId']." 
+			AND positions.shopId=".$_SESSION['selectedShopId']."
+			ORDER BY positions.position";
 	$result = mysqli_query($db_link, $sql);
 
 	if($result != FALSE)
