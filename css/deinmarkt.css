@@ -21,6 +21,7 @@ nav.vertical {
 }
 
 nav.vertical ul {
+	top:0px;
     height: 100%;
     width: 100%;
     list-style: none;
@@ -29,20 +30,17 @@ nav.vertical ul {
 }
 
 nav.vertical li {
-    height: 25%; /* bei 4 items 1/4 */
-    position: relative;
+    height: 25%;
 }
 
 nav.vertical a {
 	text-align:center;
     height:100%;
-	/* line-height: 100%; */
     background: #555;
     display: block;
     color: white;
     text-decoration: none;
     padding: 35% 0px;
-    /*transition: 0.2s;*/
 }
 
 nav.vertical li:hover > a {
@@ -50,9 +48,8 @@ nav.vertical li:hover > a {
 }
 
 nav.vertical ul ul{
-    height: 400%; /* bei 4 items 400 */
+    height: 100%;
     position:absolute;
-    left:0%;
 	top:0px;
     width:100%;
     visibility:hidden;
