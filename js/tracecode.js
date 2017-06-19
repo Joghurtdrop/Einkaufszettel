@@ -9,31 +9,40 @@ function newItem(e) {
 					<i class=\"material-icons md-18\">&#xE92B;\
 					</i>\
 				</div>";
-
+	var pos = 0;
 	var cols = document.querySelectorAll('.column');
 	[].forEach.call(cols, function(col) {
 		if (col.id == newitem.id){
 			alert(col.innerText+" liegt bereits auf deinem Einkaufsweg!");
 			doppelt = false;
 		}
+			pos++;
 	});
 	if (doppelt){
 		document.getElementById("trace").appendChild(newitem);
+		console.log(pos);
+		addToDb(++pos,newitem.id);
 	}
+	
+	
+	saveList();
     refreshItems();
 }
 
 function removeItem(e){
 	var levelup = e.parentNode;
-	console.log(levelup.parentNode);
+	//console.log("levelup");
+	//console.log(levelup);
 	var node = levelup.parentNode.firstChild;
 	var pos=0;
 	while (node && node != levelup){
-		node = node.nextSibling;
+		node = node.nextElementSibling;
 		pos++;
-	}
+		//console.log(node);
+	} 	
+	//e.parentNode.remove();
+	//saveList();
 	removeFromDb(pos, levelup.id);
-	e.parentNode.remove();
 	refreshItems();
 }
 
@@ -76,25 +85,6 @@ function handleDragEnter(e) {
 function handleDragLeave(e) {
     this.classList.remove('over');
 }
-/*
-function handleDrop(e) {
-    if (e.stopPropagation) {
-        e.stopPropagation();
-    }
-    if (dragSrcEl != this) {
-		schubser(e,this);
-    }
-    return false;
-}
-
-function schubser(e, that){
-	var newid = dragSrcEl.id;
-        dragSrcEl.innerHTML = that.innerHTML;
-		dragSrcEl.id = that.id;
-        that.innerHTML = e.dataTransfer.getData('text/plain');
-		that.id=newid;
-}
-*/
 
 function handleDragEnd(e) {
     this.style.opacity = '1.0';
@@ -119,9 +109,6 @@ function refreshItems() {
     });
 
 }
-
-loadDoc("ShopCategoryList.php", "verticallist");
-loadList();
 
 function loadDoc(phpSource, id) 
 {
@@ -165,10 +152,8 @@ function saveList(){
 	
 }
 
-function removeFromDb(pos, category){
-	var user = 1;
-	var shop = 1;
-	
+function addToDb(pos,category){
+
 	var xhttp = new XMLHttpRequest();
 	xhttp.onreadystatechange = function() {
 		if (xhttp.readyState == 4 && xhttp.status == 200) 
@@ -176,9 +161,26 @@ function removeFromDb(pos, category){
 			loadList();
 		}
 	};
-	xhttp.open("GET", "removeFromShopList.php?position="+pos+"&shopid="+shop+"&userid="+user+"&categoryid="+category, true);
+	xhttp.open("GET", "addShopEntry.php?position="+pos+"&categoryid="+category, true);
+	xhttp.send();
+
+}
+
+function removeFromDb(pos, category){
+	
+	var xhttp = new XMLHttpRequest();
+	xhttp.onreadystatechange = function() {
+		if (xhttp.readyState == 4 && xhttp.status == 200) 
+		{
+			loadList();
+			console.log(this.responseText);
+		}
+	};
+	xhttp.open("GET", "removeFromShopList.php?position="+pos+"&categoryid="+category, true);
 	xhttp.send();
 	
 }
 
+loadDoc("ShopCategoryList.php", "verticallist");
+loadList();
 refreshItems();
