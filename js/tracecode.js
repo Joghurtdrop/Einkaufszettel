@@ -1,4 +1,4 @@
-/* function to add new items to the list */
+/* function to add new items from navigation bar to the traceroute */
 function newItem(e) {
 	var doppelt = true;
    /* var newitem = document.createElement("div");
@@ -29,6 +29,7 @@ function newItem(e) {
     refreshItems();
 }
 
+// remove Item from database and refresh list
 function removeItem(e){
 	var levelup = e.parentNode;
 	
@@ -45,7 +46,7 @@ function removeItem(e){
 	refreshItems();
 }
 
-
+// event for the start of dragging in categorylist
 function handleDragStart(e) {
     this.style.opacity = '0.4';
 
@@ -55,6 +56,7 @@ function handleDragStart(e) {
     e.dataTransfer.setData('text', this.innerHTML);
 }
 
+// eventhandler for moving items in categorylist, will change if draged to 50% top or bottom of next item
 function handleDragOver(e) {
     if (e.preventDefault) {
         e.preventDefault();
@@ -77,14 +79,17 @@ function handleDragOver(e) {
     return false;
 }
 
+// change look when item is dragged
 function handleDragEnter(e) {
     this.classList.add('over');
 }
 
+// change look back to normal when item is released
 function handleDragLeave(e) {
     this.classList.remove('over');
 }
 
+// save to database when item is droped 
 function handleDragEnd(e) {
     this.style.opacity = '1.0';
     var cols = document.querySelectorAll('.column');
@@ -96,6 +101,7 @@ function handleDragEnd(e) {
 	refreshItems();
 }
 
+// add eventhandler for categorylist
 function refreshItems() {
     var cols = document.querySelectorAll('.column');
     [].forEach.call(cols, function(col){
@@ -109,6 +115,7 @@ function refreshItems() {
 
 }
 
+// method used for loading navbar and tracelist
 function loadDoc(phpSource, id) 
 {
   var xhttp = new XMLHttpRequest();
@@ -124,13 +131,13 @@ function loadDoc(phpSource, id)
   
 }
 
+// will load tracelist
 function loadList(){
 	loadDoc("ShopTraceList.php", "trace")
 }
 
+// save position of every item in the tracelist 
 function saveList(){
-	var user = 1;
-	var shop = 1;
 	var pos = 0;
 	var cols = document.querySelectorAll('.column');
 	
@@ -144,13 +151,14 @@ function saveList(){
 				loadList();
 			}
 		};
-		xhttp.open("GET", "updateShopList.php?position="+pos+"&shopid="+shop+"&userid="+user+"&categoryid="+category, true);
+		xhttp.open("GET", "updateShopList.php?position="+pos+"&categoryid="+category, true);
 		xhttp.send();
 	});
 	
 	
 }
 
+// used by newItem() method to add items to database
 function addToDb(pos,category){
 
 	var xhttp = new XMLHttpRequest();
@@ -165,6 +173,7 @@ function addToDb(pos,category){
 
 }
 
+// used by removeItem() method to remove from database
 function removeFromDb(pos, category){
 	
 	var xhttp = new XMLHttpRequest();
@@ -180,6 +189,7 @@ function removeFromDb(pos, category){
 	
 }
 
+// init of site
 loadDoc("ShopCategoryList.php", "verticallist");
 loadList();
 refreshItems();
