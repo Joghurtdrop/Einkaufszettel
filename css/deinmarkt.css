@@ -40,7 +40,7 @@ nav.vertical a {
     display: block;
     color: white;
     text-decoration: none;
-    padding: 35% 0px;
+    padding: 35% 10px;
 }
 
 nav.vertical li:hover > a {
@@ -106,5 +106,15 @@ div.icon {
 	
 	nav.vertical {
 		position:relative;
+		/*height: 30%;*/
+	}
+	
+	nav.vertical ul {
+		height: 100%;
+		width: 33.33%;
+	}
+	
+	nav.vertical a {
+		padding: 15% 2px;
 	}
 }
