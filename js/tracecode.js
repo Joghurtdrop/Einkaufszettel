@@ -1,27 +1,27 @@
 /* function to add new items to the list */
 function newItem(e) {
 	var doppelt = true;
-    var newitem = document.createElement("div");
+   /* var newitem = document.createElement("div");
     newitem.className = "column";
     newitem.setAttribute("draggable","true");
 	newitem.id = e.id;
 	newitem.innerHTML = e.innerText+"<div onclick=\"removeItem(this)\" class=\"icon\">\
 					<i class=\"material-icons md-18\">&#xE92B;\
 					</i>\
-				</div>";
+				</div>";*/
 	var pos = 0;
 	var cols = document.querySelectorAll('.column');
 	[].forEach.call(cols, function(col) {
-		if (col.id == newitem.id){
+		if (col.id == e.id){
 			alert(col.innerText+" liegt bereits auf deinem Einkaufsweg!");
 			doppelt = false;
 		}
 			pos++;
 	});
 	if (doppelt){
-		document.getElementById("trace").appendChild(newitem);
-		console.log(pos);
-		addToDb(++pos,newitem.id);
+		//document.getElementById("trace").appendChild(newitem);
+		addToDb(++pos,e.id);
+		loadList();
 	}
 	
 	
@@ -31,14 +31,13 @@ function newItem(e) {
 
 function removeItem(e){
 	var levelup = e.parentNode;
-	//console.log("levelup");
-	//console.log(levelup);
+	
 	var node = levelup.parentNode.firstChild;
 	var pos=0;
 	while (node && node != levelup){
 		node = node.nextElementSibling;
 		pos++;
-		//console.log(node);
+		
 	} 	
 	//e.parentNode.remove();
 	//saveList();
@@ -115,7 +114,7 @@ function loadDoc(phpSource, id)
   var xhttp = new XMLHttpRequest();
   xhttp.onreadystatechange = function() {
     if (this.readyState == 4 && this.status == 200) {
-		//console.log(typeof this.responseText);		
+		
       document.getElementById(id).innerHTML=this.responseText;
 	  refreshItems();
 	}	
@@ -173,7 +172,7 @@ function removeFromDb(pos, category){
 		if (xhttp.readyState == 4 && xhttp.status == 200) 
 		{
 			loadList();
-			console.log(this.responseText);
+			
 		}
 	};
 	xhttp.open("GET", "removeFromShopList.php?position="+pos+"&categoryid="+category, true);
