@@ -1,0 +1,119 @@
+﻿
+/* 15.06. Create tables: categories, listEntries, positions, products, users, shops */
+
+CREATE TABLE `shoppinglist`.`categories` 
+	( `id` INT UNSIGNED NOT NULL AUTO_INCREMENT , 
+	  `name` VARCHAR(100) NOT NULL , 
+	  `parentId` INT UNSIGNED NULL , 
+	  PRIMARY KEY (`id`)) 
+	ENGINE = InnoDB;
+	
+	
+CREATE TABLE `shoppinglist`.`listEntries` 
+	( `userId` INT UNSIGNED NOT NULL , 
+	  `productId` INT UNSIGNED NOT NULL , 
+	  `categoryId` INT UNSIGNED NOT NULL , 
+	  `count` INT UNSIGNED NULL ) 
+	ENGINE = InnoDB;
+	
+	
+CREATE TABLE `shoppinglist`.`positions` 
+	( `userId` INT UNSIGNED NOT NULL , 
+	  `categoryId` INT UNSIGNED NOT NULL , 
+	  `shopId` INT UNSIGNED NOT NULL , 
+	  `position` INT UNSIGNED NOT NULL ) 
+	ENGINE = InnoDB;
+	
+	
+CREATE TABLE `shoppinglist`.`products` 
+	( `id` INT UNSIGNED NOT NULL AUTO_INCREMENT , 
+	  `name` VARCHAR(100) NOT NULL , 
+	  PRIMARY KEY (`id`)) 
+	ENGINE = InnoDB;
+	
+	
+CREATE TABLE `shoppinglist`.`users` 
+	( `id` INT UNSIGNED NOT NULL AUTO_INCREMENT , 
+	  `name` VARCHAR(25) NOT NULL , 
+	  `password` VARCHAR(25) NOT NULL , 
+	  PRIMARY KEY (`id`)) 
+	ENGINE = InnoDB;
+	
+	
+CREATE TABLE `shoppinglist`.`shops` 
+	( `id` INT UNSIGNED NOT NULL AUTO_INCREMENT , 
+	  `name` VARCHAR(100) NOT NULL , 
+	  PRIMARY KEY (`id`)) 
+	ENGINE = InnoDB;
+	
+	
+/* 15.06. Create dummy-entries */	
+
+INSERT INTO `shoppinglist`.`products` (`name`) VALUES ('Banane'), ('Eimer'), ('Milch'), ('Mehl'), ('Zucker'), ('Brot'), ('Birnen'), ('Haselnüsse'), ('Schaufel'), ('Taschentücher');
+INSERT INTO `shoppinglist`.`categories` (`name`) VALUES ('Backen'),('Obst und Gemüse'),('Drogerie'),('Werkzeug'),('Nüsse und Trockenfrüchte'),('Backwaren');
+INSERT INTO `shoppinglist`.`positions`(`userId`, `categoryId`, `shopId`, `position`) VALUES (1,1,1,4),(1,2,1,1),(1,3,1,5),(1,4,1,2),(1,5,1,3);
+INSERT INTO `shoppinglist`.`shops`(`name`) VALUES ('rewe');
+INSERT INTO `shoppinglist`.`users`(`name`, `password`) VALUES ('test','test');
+
+
+/* rename column in shoppinglist.listEntries count -> number */
+
+ALTER TABLE `listentries` CHANGE `count` `number` INT(10) UNSIGNED NULL DEFAULT NULL;
+
+
+/* 15.06. Set endoding to UTF8 */ 
+
+ALTER TABLE `categories` CHANGE `name` `name` VARCHAR(100) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL; 
+ALTER TABLE `products` CHANGE `name` `name` VARCHAR(100) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL; 
+ALTER TABLE `shops` CHANGE `name` `name` VARCHAR(100) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL; 
+ALTER TABLE `users` CHANGE `name` `name` VARCHAR(100) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL; 
+ALTER TABLE `users` CHANGE `password` `password` VARCHAR(100) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL;
+
+
+/* 16.06 add unique index to table 'positions'  */
+
+ALTER TABLE `shoppinglist`.`positions` ADD UNIQUE INDEX (`userId`, `categoryId`, `shopId`);
+
+
+/* 16.06 add column selectedShop and mail to shoppinglist.users */
+
+ALTER TABLE `users` ADD `selectedShop` INT UNSIGNED NULL AFTER `password`;
+ALTER TABLE `users` ADD `mail` VARCHAR(100) NOT NULL AFTER `selectedShop`;
+
+
+/* 19.06 reset categories table */
+
+TRUNCATE categories;
+
+
+/* 19.06. insert default Categories  */
+
+
+INSERT INTO categories (name) VALUES 
+('Getränke'),('Drogerie & Haushalt'),('Frisch- & Kühlwaren'),('Nahrungsmittel');
+
+INSERT INTO categories (name, parentId) VALUES
+('Softdrinks',1),('Wasser',1),('Alkoholisches',1),('Kaffee & Tee',1),
+('Drogerie & Kosmetik',2),('Küche & Haushalt',2),('Baby & Kind',2),('Tier',2),
+('Obst & Gemüse',3),('Kühlregal',3),('Frischetheke',3),('Tiefkühl',3),
+('Getreideprodukte',4),('Fertiggerichte',4),('Süßes & Salzige',4),('Gewürze & Brotaufstriche',4),
+
+('Säfte',5),('Limonaden',5),('Eistee',5),('Energy-Drinks',5),
+('Mineralwasser',6),('Wasser mit Geschmack',6),
+('Wein & Sekt',7),('Bier',7),('Spirituosen',7),('Liköre',7),
+('Kaffee',8),('Tee',8),('Kakao',8),
+
+('Körperpflege',9),('Gesundheit',9),('Make-Up',9),('Papier- & Hygieneartikel',9),
+('Haushaltsartikel',10),('Putzen & Waschen',10),('Haus & Freizeit',10),
+('Babynahrung',11),('Babypflege',11),('Windeln',11),('Schnuller & Spielzeug',11),
+('Tierfutter',12),('Tierbedarf',12),
+
+('Smoothies',13),('Salate & Co',13),('Bio',13),('Trockenfrüchte & Nüsse',13),
+('Milch & Eier',14),('Wurst, Fleisch & Fisch',14),('Convenience',14),('Vegan',14),
+('Wurst- & Fleischtheke',15),('Käsetheke',15),('Fischtheke',15),('Antipastitheke',15),
+('TK-Fertiggerichte',16),('TK-Gemüse',16),('TK-Fisch & Fleisch',16),('Eiscreme',16),
+
+('Brot & Backwaren',17),('Nudel',17),('Reis & Getreide',17),('Cerealien & Müsli ',17),
+('Gemüse- & Obstkonserven',18),('Fleisch- und Fischkonserven',18),('Fix-Produkte',18),('Internationales',18),
+('Salzgebäck',19),('Süßgebäck',19),('Schokolade',19),('Süßwaren',19),
+('Gewürze',20),('Essig & Öl',20),('Ketchup, Senf & Saucen',20),('Brotaufstriche',20);

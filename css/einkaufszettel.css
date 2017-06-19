@@ -3,7 +3,7 @@
 
 
 .listcontainer {	
-	min-height: 200px;
+	min-height: 450px;
 	padding: 0px 10px;
 	display:inline-block;
 	text-align:left;
@@ -119,11 +119,11 @@
 
 #numberInput{
 	width:20%;
-	margin-right:3%;
+	margin:0% 2%;
 }
 
 #productNameInput{
-	width:77%;
+	width:76%;
 }
 
 a:visited,:link{
@@ -134,11 +134,50 @@ a:hover{
 	cursor: pointer; 
 }
 
-div.hiddenField{
-	display:none;
+
+.overlay {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(0, 0, 0, 0.7);
+  transition: opacity 500ms;
+  z-index:1001;
+}
+
+.popup {
+  margin: 20% auto;
+  padding: 20px;
+  width:40%;
+  position: relative;
+  transition: all 0.5s ease-in-out;
+}
+
+.popup h2 {
+  margin-top: 0;
+  color: #333;
+}
+
+.popup a{
+	margin:20px;
+	background-color: #555;
+    color: white;
+    padding: 14px 25px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+}
+
+.popup a:hover {
+  background-color: #8e161e;
 }
 
 
+.popup .content {
+  max-height: 30%;
+  overflow: auto;
+}
 
 
 
@@ -151,21 +190,29 @@ div.hiddenField{
     }
 	
 	.main{
-		padding-bottom:129px;
+		padding-bottom:140px;
 	} 
+	
+	.popup{
+    width: 95%;
+    }
 }
 
 
 @media only screen and (min-width: 551px) and (max-width: 767px) {
     /* For tablets: */
     .main{
-		padding-bottom:44px;
+		padding-bottom:55px;
 	}
 	
 	.dropup{
 		width:41.67%;
 		background-color:pink;
 	}
+	
+	.popup{
+    width: 70%;
+    }
 }
 
 @media only screen and (min-width: 768px) {
@@ -176,7 +223,7 @@ div.hiddenField{
 	}	
 	
 	.main{
-		padding-bottom:44px;
+		padding-bottom:55px;
 	}
 	
 	.dropup{
