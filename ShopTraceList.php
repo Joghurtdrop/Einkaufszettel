@@ -1,5 +1,5 @@
 <?php
-	require_once('dbConfiguration.php');
+	require_once('dataAccess/dbConfiguration.php');
 
 	$db_link=mysqli_connect(
 			MYSQL_HOST,
