@@ -41,7 +41,7 @@ nav.vertical a {
     display: block;
     color: white;
     text-decoration: none;
-    padding: 40% 0px;
+    padding: 35% 0px;
     /*transition: 0.2s;*/
 }
 
@@ -53,7 +53,7 @@ nav.vertical ul ul{
     height: 400%; /* bei 4 items 400 */
     position:absolute;
     left:0%;
-    top:0;
+	top:0px;
     width:100%;
     visibility:hidden;
     opacity:0;
