@@ -1,4 +1,5 @@
 <?php
+	session_start();
 	require_once('dataAccess/dbConfiguration.php');
 
 	$db_link=mysqli_connect(
@@ -13,8 +14,9 @@
 		die("Connection failed: " . mysqli_connect_error());
 	}
 
-	$shopid = 1;
-	$userid = 1;
+	$shopid = $_SESSION['selectedShopId'];
+	$userid = $_SESSION['userId'];
+	
 	$query = "INSERT INTO positions (position, shopid, userid, categoryid) VALUES("
 		.$_GET['position']
 		.", "

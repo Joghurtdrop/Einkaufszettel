@@ -1,4 +1,5 @@
 <?php
+	session_start();
 	require_once('dataAccess/dbConfiguration.php');
 	
 	$db_link=mysqli_connect(
@@ -13,8 +14,8 @@
 		die("Connection failed: " . mysqli_connect_error());
 	}
 	
-	$userid=1;
-	$shopid=1;
+	$userid=$_SESSION['userId'];
+	$shopid=$_SESSION['selectedShopId'];
 	
 	print_r($_GET['position']." ".$shopid." ".$userid." ".$_GET['categoryid']);
 	

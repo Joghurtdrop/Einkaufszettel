@@ -1,4 +1,5 @@
 <?php
+	session_start();
 	require_once('dataAccess/dbConfiguration.php');
 
 	$db_link=mysqli_connect(
@@ -16,9 +17,9 @@
 	$query = "UPDATE positions SET position="
 		.$_GET['position']
 		." WHERE shopId="
-		.$_GET['shopid']
+		.$_SESSION['selectedShopId']
 		." AND userId="
-		.$_GET['userid']
+		.$_SESSION['userId']
 		." AND categoryId="
 		.$_GET['categoryid'];
 		
