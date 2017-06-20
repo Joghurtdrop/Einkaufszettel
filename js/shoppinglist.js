@@ -57,6 +57,8 @@ function addEntry()
 		success:function(result){
 			console.log('result: '+result)
 			loadDoc("loadShoppingList.php", "list");
+			productName:$('#productNameInput').val("");
+			productNumber:$("#numberInput").val("");
 		},
 		error: function(){
 			console.log("error: adding failed");

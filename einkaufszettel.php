@@ -36,9 +36,14 @@
 		<div class="col-1 mobileInvisible baseboardElement">
 		</div>
 		<div class="col-5 baseboardElement">
-			<input class="articleInput" id="numberInput" type="number" min="1"></input>
-			<input class="articleInput" id="productNameInput" type="text"></input>
-		</div>	
+			<div class="tooltip" id="numberInput">
+				<span class="tooltiptext">Anzahl</span>
+				<input class="articleInput" id="" type="number" min="1"></input>
+			</div>
+			<div class="tooltip" id="productNameInput">
+				<span class="tooltiptext">Artikel</span>	
+				<input class="articleInput" id="" type="text" title="test"></input>
+			</div>	
 		<div class="col-5 categoryList">
 			<ul>
 				<li><div id="selectedCategory">keine Kategorie</div> 
