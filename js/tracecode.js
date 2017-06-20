@@ -195,6 +195,7 @@ function checkOnLeave(){
 	xhttp.onreadystatechange = function() {
 		if (xhttp.readyState == 4 && xhttp.status == 200) 
 		{
+			console.log(this.result);
 			loadList();
 		}
 	};

@@ -90,13 +90,13 @@ TRUNCATE categories;
 
 
 INSERT INTO categories (name) VALUES 
-('Getränke'),('Drogerie & Haushalt'),('Frisch- & Kühlwaren'),('Nahrungsmittel');
+('Frisch- & Kühlwaren'),('Nahrungsmittel'),('Getränke'),('Drogerie & Haushalt');
 
 INSERT INTO categories (name, parentId) VALUES
-('Softdrinks',1),('Wasser',1),('Alkoholisches',1),('Kaffee & Tee',1),
-('Drogerie & Kosmetik',2),('Küche & Haushalt',2),('Baby & Kind',2),('Tier',2),
-('Obst & Gemüse',3),('Kühlregal',3),('Frischetheke',3),('Tiefkühl',3),
-('Getreideprodukte',4),('Fertiggerichte',4),('Süßes & Salzige',4),('Gewürze & Brotaufstriche',4),
+('Softdrinks',3),('Wasser',3),('Alkoholisches',3),('Kaffee & Tee',3),
+('Drogerie & Kosmetik',4),('Küche & Haushalt',4),('Baby & Kind',4),('Tier',4),
+('Obst & Gemüse',1),('Kühlregal',1),('Frischetheke',1),('Tiefkühl',1),
+('Getreideprodukte',2),('Fertiggerichte',2),('Süßes & Salzige',2),('Gewürze & Brotaufstriche',2),
 
 ('Säfte',5),('Limonaden',5),('Eistee',5),('Energy-Drinks',5),
 ('Mineralwasser',6),('Wasser mit Geschmack',6),
