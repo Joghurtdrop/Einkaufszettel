@@ -7,7 +7,8 @@
 	$sql = "SELECT name, id FROM categories 
 		    INNER JOIN positions ON positions.categoryId=categories.id 
 			WHERE positions.userId=".$_SESSION['userId']." 
-			AND positions.shopId=".$_SESSION['selectedShopId']."
+			AND positions.shopId=".$_SESSION['selectedShopId']." 
+			AND categoryId<>999 
 			ORDER BY positions.position";
 	$result = mysqli_query($db_link, $sql);
 
