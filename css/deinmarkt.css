@@ -107,11 +107,11 @@ div.icon {
 	
 	nav.vertical {
 		position:relative;
-		/*height: 30%;*/
+		height: 50%;
 	}
 	
 	nav.vertical ul {
-		height: 100%;
+		height: 50%;
 		width: 33.33%;
 	}
 	
