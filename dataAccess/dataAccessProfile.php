@@ -69,7 +69,7 @@
 		$query="UPDATE users SET selectedShop = ".$id." WHERE id =".$userId;
 		mysqli_query($db_link,$query);
 		mysqli_close($db_link);
-		return getSelectedShop($userId);
+		return getSelectedShop($userId)['selectedShop'];
 	}
 	
 	
@@ -106,6 +106,35 @@
 		mysqli_close($db_link);
 		return getShopId($name);
 	}
+	
+	
+	function getCategoriesSelectedShop($userId, $selectedShopId)
+	{
+		$db_link=getDbLink();
+		$query="SELECT categories.name, categoryId from positions"
+			  ." INNER JOIN categories on (categories.id=positions.categoryId)"
+			  ." WHERE userId="
+			  .$userId
+			  ." and shopId="
+			  .$selectedShopId
+			  ." ORDER BY position ASC";
+		$result=mysqli_query($db_link, $query);
+		mysqli_close($db_link);		
+		return $result;
+	}
+	
+	function checkSelectedShop($userId, $selectedShopId)
+	{
+		if(mysqli_num_rows(getCategoriesSelectedShop)<1)
+		{
+			$db_link=getDbLink();
+			$query="UPDATE shoppinglist.users SET selectedShop = NULL WHERE id=".$userId;
+			mysqli_query($db_link, $query);
+			mysqli_close();
+		}
+	}
+	
+	
 //INSERT INTO `positions` (`userId`, `categoryId`, `shopId`, `position`) VALUES ('1', '1', '1', '1'),('1', '2', '1', '2'),('1', '3', '1', '3'),('1', '4', '1', '4'),('1', '5', '1', '5'),('1', '1', '2', '3'),('1', '2', '2', '2'),('1', '3', '2', '1');
 ?>
 

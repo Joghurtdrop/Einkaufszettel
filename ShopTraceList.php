@@ -43,9 +43,5 @@
 			<?php
 		}
 	}
-	else
-	{
-		echo "Query failed";
-	}
 	mysqli_close($db_link);
 ?>
