@@ -189,6 +189,19 @@ function removeFromDb(pos, category){
 	
 }
 
+// check if trace is empty on leave and if so, delete selected shop
+function checkOnLeave(){
+	var xhttp = new XMLHttpRequest();
+	xhttp.onreadystatechange = function() {
+		if (xhttp.readyState == 4 && xhttp.status == 200) 
+		{
+			loadList();
+		}
+	};
+	xhttp.open("GET", "checkEmptyTrace.php", true);
+	xhttp.send();
+}
+
 // init of site
 loadDoc("ShopCategoryList.php", "verticallist");
 loadList();

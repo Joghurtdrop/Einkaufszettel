@@ -6,7 +6,7 @@
 <link rel="stylesheet" href="css/deinmarkt.css">
 <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 </head>
-<body>
+<body onbeforeunload="return checkOnLeave()">
 
 <div class="navbar">
     <ul>
