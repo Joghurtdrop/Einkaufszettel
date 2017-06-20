@@ -25,7 +25,7 @@
 				ORDER BY products.name";
 		$result=mysqli_query($db_link, $query);		
 		mysqli_close($db_link);
-		if(mysqli_num_rows($result)<1)
+		if($result==FALSE||mysqli_num_rows($result)<1 )
 		{
 			return NULL;
 		}

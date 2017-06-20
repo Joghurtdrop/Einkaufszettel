@@ -68,6 +68,9 @@
 		}
 		$query="UPDATE users SET selectedShop = ".$id." WHERE id =".$userId;
 		mysqli_query($db_link,$query);
+		$query="INSERT INTO shoppinglist.positions (userId,categoryId,shopId,position)
+				VALUES (".$userId.",999,".$id.",1)";
+		mysqli_query($db_link,$query);				
 		mysqli_close($db_link);
 		return getSelectedShop($userId)['selectedShop'];
 	}
@@ -117,21 +120,11 @@
 			  .$userId
 			  ." and shopId="
 			  .$selectedShopId
+			  ." and categories.id<>999"
 			  ." ORDER BY position ASC";
 		$result=mysqli_query($db_link, $query);
 		mysqli_close($db_link);		
 		return $result;
-	}
-	
-	function checkSelectedShop($userId, $selectedShopId)
-	{
-		if(mysqli_num_rows(getCategoriesSelectedShop)<1)
-		{
-			$db_link=getDbLink();
-			$query="UPDATE shoppinglist.users SET selectedShop = NULL WHERE id=".$userId;
-			mysqli_query($db_link, $query);
-			mysqli_close();
-		}
 	}
 	
 	

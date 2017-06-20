@@ -22,6 +22,7 @@
 		.$_SESSION['userId']
 		." and shopId="
 		.$_SESSION['selectedShopId']
+		." and categories.id<>999"
 		." ORDER BY position ASC";
 	$result = mysqli_query($db_link, $sql);
 	
