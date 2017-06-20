@@ -9,6 +9,7 @@
 
 
 nav.vertical {
+	vertical-align: middle;
     margin-top: 35px; 
     position:fixed;
     display: inline-block;
@@ -17,11 +18,10 @@ nav.vertical {
     padding: 0px;
     float: left;
     background: #555;
-    height: 95%;
+    height: 100vh;
 }
 
 nav.vertical ul {
-	vertical-align: middle;
 	top:0px;
     height: 100%;
     width: 100%;
@@ -41,7 +41,7 @@ nav.vertical a {
     display: block;
     color: white;
     text-decoration: none;
-    padding: 30% 10px;
+    /*padding: 35% 10px;*/
 }
 
 nav.vertical li:hover > a {

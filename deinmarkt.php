@@ -31,8 +31,20 @@
 
 </div>
 
-
-
+<?php
+if($_SESSION['selectedShopId']==NULL)
+{
+	?>
+	<div class="overlay">
+		<div class="popup card">
+			<h2>Achtung!</h2>
+			<div class="content">Du hast noch keinen Laden ausgewählt</div>
+			<a class="close" href="index.php">Laden auswählen</a>
+		</div>
+	</div>
+	<?php
+}
+?>
 <!--script src="js/loadShopList.js"></script-->
 <script src="js/tracecode.js"></script>
 </body>
