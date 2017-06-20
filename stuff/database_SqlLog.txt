@@ -117,3 +117,5 @@ INSERT INTO categories (name, parentId) VALUES
 ('Gemüse- & Obstkonserven',18),('Fleisch- und Fischkonserven',18),('Fix-Produkte',18),('Internationales',18),
 ('Salzgebäck',19),('Süßgebäck',19),('Schokolade',19),('Süßwaren',19),
 ('Gewürze',20),('Essig & Öl',20),('Ketchup, Senf & Saucen',20),('Brotaufstriche',20);
+
+INSERT INTO categories (id, name) VALUES (999,'dummy');
