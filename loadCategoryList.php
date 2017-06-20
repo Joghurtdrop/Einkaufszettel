@@ -14,6 +14,12 @@
 
 	if($result != FALSE)
 	{
+		?>
+			<li>
+				<div onClick="setCategory(this)">keine Kategorie</div>
+				<div class="hiddenField">0</div>
+			</li>
+		<?php
 		while($row = mysqli_fetch_assoc($result)) 
 		{
 			?>

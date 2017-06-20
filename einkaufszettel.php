@@ -41,7 +41,7 @@
 		</div>	
 		<div class="col-5 categoryList">
 			<ul>
-				<li><div id="selectedCategory">Katergorie:</div> 
+				<li><div id="selectedCategory">keine Kategorie</div> 
 					<div class="hiddenField" id="selectedCategoryId">0</div>
 					<ul class="dropup" id="categories">
 					</ul>
