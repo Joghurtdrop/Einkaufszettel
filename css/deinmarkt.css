@@ -41,7 +41,7 @@ nav.vertical a {
     display: block;
     color: white;
     text-decoration: none;
-    /*padding: 35% 10px;*/
+    padding: 35% 10px;
 }
 
 nav.vertical li:hover > a {
