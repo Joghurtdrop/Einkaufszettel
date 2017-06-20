@@ -2,9 +2,10 @@
 <!DOCTYPE html>
 <html>
 <head>
-<link rel="stylesheet" href="css/general.css">
-<link rel="stylesheet" href="css/deinmarkt.css">
-<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+	<link rel="stylesheet" href="css/general.css">
+	<link rel="stylesheet" href="css/deinmarkt.css">
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 </head>
 <body>
 
