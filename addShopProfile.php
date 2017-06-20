@@ -1,6 +1,9 @@
 <?php
 	session_start();
 	include 'dataAccess/dataAccessProfile.php';
-	$_SESSION['selectedShopId']=addShop($_SESSION['userId'], $_POST['name']);
 	
+	echo $_SESSION['selectedShopId'];
+	$id=addShop($_SESSION['userId'], $_POST['name']);	
+	$_SESSION['selectedShopId']=$id;
+	echo $_SESSION['selectedShopId'];
 ?>

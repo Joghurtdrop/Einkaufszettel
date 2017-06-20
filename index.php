@@ -25,7 +25,7 @@
 		<div class="col-10 row">
 			<label class="col-4">Füge einen neuen Markt hinzu:</label>
 			<input class="col-6" id="newShopName"/>
-			<div onClick="addShop(this)" class="button col-2"/>Okay</div>          
+			<div onClick="addShop()" class="button col-2"/>Okay</div>          
 		</div>      
 		<div class="col-2 buttonHolder"><a class="button" href="logout.php">Logout</a></div>
 	</div>
