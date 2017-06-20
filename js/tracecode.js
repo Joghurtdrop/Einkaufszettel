@@ -40,8 +40,17 @@ function removeItem(e){
 // event for the start of dragging in categorylist
 function handleDragStart(e) {
     this.style.opacity = '0.4';
-
     dragSrcEl = this;
+	
+	var toSearch = this.id;
+	var searching = this.parentNode.firstElementChild;
+	posBeforDrag=1;
+	
+	while (searching && searching.id != toSearch){
+		searching = searching.nextElementSibling;
+		posBeforDrag++;
+		
+	}
 
     e.dataTransfer.effectAllowed = 'move';
     e.dataTransfer.setData('text', this.innerHTML);
@@ -88,7 +97,17 @@ function handleDragEnd(e) {
         col.classList.remove('over');
     });
 	
-	saveList();
+	var toSearch = this.id;
+	var searching = this.parentNode.firstElementChild;
+	posAfterDrag=1;
+	
+	while (searching && searching.id != toSearch){
+		searching = searching.nextElementSibling;
+		posAfterDrag++;
+		
+	}
+	
+	saveList(e);
 	refreshItems();
 }
 
@@ -128,13 +147,14 @@ function loadList(){
 }
 
 // save position of every item in the tracelist 
-function saveList(){
-	var pos = 0;
+function saveList(e){
+	/*
 	var cols = document.querySelectorAll('.column');
 	var category = [];
 	[].forEach.call(cols,function(col){
 		category[pos] = col.id;
 		++pos;
+		*/
 		/*
 		var xhttp = new XMLHttpRequest();
 		xhttp.onreadystatechange = function() {
@@ -144,14 +164,17 @@ function saveList(){
 		};
 		xhttp.open("GET", "updateShopList.php?position="+pos+"&categoryid="+category, true);
 		xhttp.send();
-		*/
 	});
-	console.log(category);
+		*/
+	//console.log(category);
+	console.log("posBeforDrag: "+posBeforDrag);
+	console.log("posAfterDrag: "+posAfterDrag);
+	console.log(e.target.id);
 	
 	$.ajax({
 	type: "POST",
 	url: "updateShopList.php",
-	data: {data: category},
+	data: {befor: posBeforDrag, after: posAfterDrag, id: e.target.id},
 	success:function(result){
 		console.log(result);
 		loadList();
