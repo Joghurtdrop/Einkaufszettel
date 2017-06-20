@@ -1,14 +1,6 @@
 /* function to add new items from navigation bar to the traceroute */
 function newItem(e) {
 	var doppelt = true;
-   /* var newitem = document.createElement("div");
-    newitem.className = "column";
-    newitem.setAttribute("draggable","true");
-	newitem.id = e.id;
-	newitem.innerHTML = e.innerText+"<div onclick=\"removeItem(this)\" class=\"icon\">\
-					<i class=\"material-icons md-18\">&#xE92B;\
-					</i>\
-				</div>";*/
 	var pos = 0;
 	var cols = document.querySelectorAll('.column');
 	[].forEach.call(cols, function(col) {
@@ -19,13 +11,12 @@ function newItem(e) {
 			pos++;
 	});
 	if (doppelt){
-		//document.getElementById("trace").appendChild(newitem);
 		addToDb(++pos,e.id);
 		loadList();
 	}
 	
 	
-	saveList();
+	//saveList();
     refreshItems();
 }
 
@@ -140,20 +131,37 @@ function loadList(){
 function saveList(){
 	var pos = 0;
 	var cols = document.querySelectorAll('.column');
-	
+	var category = [];
 	[].forEach.call(cols,function(col){
+		category[pos] = col.id;
 		++pos;
-		category = col.id;
+		/*
 		var xhttp = new XMLHttpRequest();
 		xhttp.onreadystatechange = function() {
 			if (xhttp.readyState == 4 && xhttp.status == 200) 
 			{
-				loadList();
 			}
 		};
 		xhttp.open("GET", "updateShopList.php?position="+pos+"&categoryid="+category, true);
 		xhttp.send();
+		*/
 	});
+	console.log(category);
+	
+	$.ajax({
+	type: "POST",
+	url: "updateShopList.php",
+	data: {data: category},
+	success:function(result){
+		console.log(result);
+		loadList();
+	},
+	error: function(){
+		console.log("error: adding failed");
+	}
+	});
+	
+	
 	
 	
 }

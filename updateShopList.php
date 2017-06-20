@@ -14,15 +14,20 @@
 		die("Connection failed: " . mysqli_connect_error());
 	}
 	
-	$query = "UPDATE positions SET position="
-		.$_GET['position']
-		." WHERE shopId="
-		.$_SESSION['selectedShopId']
-		." AND userId="
-		.$_SESSION['userId']
-		." AND categoryId="
-		.$_GET['categoryid'];
+	$myArray = $_REQUEST['data'];
+	
+	for ($i = 0; $i < count($myArray); $i++){
 		
-	mysqli_query($db_link, $query);
+		$query = "UPDATE positions SET position="
+			.($i+1)
+			." WHERE shopId="
+			.$_SESSION['selectedShopId']
+			." AND userId="
+			.$_SESSION['userId']
+			." AND categoryId="
+			.$myArray[$i];
+		echo $query."\n";
+		mysqli_query($db_link, $query);
+	}
 	mysqli_close($db_link);
 ?>
