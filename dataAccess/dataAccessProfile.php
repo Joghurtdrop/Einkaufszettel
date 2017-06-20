@@ -58,12 +58,12 @@
 		}
 		else
 		{
-			$query="SELECT position FROM shoppinglist.positions WHERE userId=".$userId." AND shopId=".shopId;
+			$query="SELECT position FROM shoppinglist.positions WHERE userId=".$userId." AND shopId=".$id;
 			$result=mysqli_query($db_link,$query);
 			if(mysqli_num_rows($result)>0)
 			{
 				mysqli_close($db_link);
-				return FALSE;
+				return getSelectedShop($userId)['selectedShop'];
 			}
 		}
 		$query="UPDATE users SET selectedShop = ".$id." WHERE id =".$userId;

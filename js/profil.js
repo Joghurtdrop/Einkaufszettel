@@ -49,9 +49,9 @@ function setSelectedShop(el)
 	});	
 }
 
-function addShop(el)
+function addShop()
 {
-	if($('newShopName').val()!="")
+	if($('#newShopName').val()!="")
 	{		
 		$.ajax({
 			type: "POST",
@@ -59,8 +59,9 @@ function addShop(el)
 			data:{
 				name:$('#newShopName').val()
 			},
-			success:function(result){
+			success:function(result){				
 				window.location='deinMarkt.php';
+				console.log(result);
 			},
 			error: function(){
 				console.log("error: update failed");
