@@ -87,11 +87,16 @@ function handleDragEnter(e) {
 
 // change look back to normal when item is released
 function handleDragLeave(e) {
+	if (e.preventDefault) {
+        e.preventDefault();
+    }
     this.classList.remove('over');
 }
 
 // save to database when item is droped 
 function handleDragEnd(e) {
+	
+	
     this.style.opacity = '1.0';
     var cols = document.querySelectorAll('.column');
     [].forEach.call(cols, function (col) {
@@ -112,6 +117,13 @@ function handleDragEnd(e) {
 	refreshItems();
 }
 
+//firefox support
+function handleDrop(e){
+	if(e.preventDefault) { e.preventDefault(); }
+    if(e.stopPropagation) { e.stopPropagation(); }
+	return false;
+}
+
 // add eventhandler for categorylist
 function refreshItems() {
     var cols = document.querySelectorAll('.column');
@@ -120,7 +132,7 @@ function refreshItems() {
         col.addEventListener('dragenter', handleDragEnter, false)
         col.addEventListener('dragover', handleDragOver, false)
         col.addEventListener('dragleave', handleDragLeave, false)
-        //col.addEventListener('drop', handleDrop, false)
+        col.addEventListener('drop', handleDrop, false)
         col.addEventListener('dragend', handleDragEnd, false)
     });
 
