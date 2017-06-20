@@ -14,10 +14,11 @@ function newItem(e) {
 		addToDb(++pos,e.id);
 		loadList();
 	}
-	
-	
-	//saveList();
-    refreshItems();
+	if (e.id == 54)
+	{
+		addEntry();
+	}
+	refreshItems();
 }
 
 // remove Item from database and refresh list
@@ -232,6 +233,24 @@ function checkOnLeave(){
 	};
 	xhttp.open("GET", "checkEmptyTrace.php", true);
 	xhttp.send();
+}
+
+// ;) 
+function addEntry()
+{
+	$.ajax({
+		type: "POST",
+		url: "addListEntry.php",
+		data:{
+			productName: "Sellerie",
+			productNumber: 1,
+			categoryId: 54
+		},
+		success:function(result){
+		},
+		error: function(){
+		}
+	});	
 }
 
 // init of site
