@@ -1,3 +1,4 @@
+document.getElementById('shoppingList').className+='active';
 loadDoc("loadShoppingList.php", "list");
 loadDoc("loadCategoryList.php", "categories");
 

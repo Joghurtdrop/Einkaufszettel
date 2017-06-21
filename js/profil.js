@@ -1,4 +1,4 @@
-
+document.getElementById('profile').className+='active';
 loadDoc("loadShopListProfile.php","listholder");
 
 function loadDoc(phpSource, id) 

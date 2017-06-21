@@ -1,3 +1,6 @@
+document.getElementById('yourShop').className+='active';
+
+
 /* function to add new items from navigation bar to the traceroute */
 function newItem(e) {
 	var doppelt = true;

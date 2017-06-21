@@ -8,14 +8,9 @@
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 </head>
 <body>
-
-<div class="navbar">
-    <ul>
-        <li><a href="einkaufszettel.php">Einkaufszettel</a></li><!--
-        --><li><a class="active">Dein Markt</a></li><!--
-        --><li class="rightAlign"><a href="index.php">Profil</a></li>
-    </ul>
-</div>
+<?php
+include 'menubar.php';
+?>
 <div class="row">
 
     <div class="main col-10 vertinav">

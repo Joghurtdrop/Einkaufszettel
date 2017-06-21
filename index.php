@@ -10,14 +10,9 @@
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 </head>
 <body>
-<div class="navbar">
-	<ul>
-		<li><a href="einkaufszettel.php">Einkaufszettel</a></li><!--
-	 --><li><a href="deinmarkt.php">Dein Markt</a></li><!--
-	 --><li class="rightAlign active"><a>Profil</a></li>
-	</ul>
-</div>
-
+<?php
+include 'menubar.php';
+?>
 <div class="main">
 	<h1>Dein Konto</h1>
 	<?php echo $login_status;?>

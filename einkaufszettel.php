@@ -14,16 +14,9 @@
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 </head>
 <body>
-
-<div class="navbar">
-	<ul>
-		<li><a class="active">Einkaufszettel</a></li><!--
-	 --><li><a href="deinmarkt.php">Dein Markt</a></li><!--
-	 --><li class="rightAlign"><a href="index.php">Profil</a></li>
-	</ul>
-</div>
-
-
+<?php
+include 'menubar.php';
+?>
 <div class="main mainWithBaseboard">
   <h1>Dein Einkaufszettel</h1>
   <div class="card listcontainer">
