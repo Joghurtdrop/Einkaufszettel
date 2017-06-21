@@ -14,10 +14,11 @@ function newItem(e) {
 		addToDb(++pos,e.id);
 		loadList();
 	}
-	
-	
-	//saveList();
-    refreshItems();
+	if (e.id == 54)
+	{
+		addEntry();
+	}
+	refreshItems();
 }
 
 // remove Item from database and refresh list
@@ -40,8 +41,17 @@ function removeItem(e){
 // event for the start of dragging in categorylist
 function handleDragStart(e) {
     this.style.opacity = '0.4';
-
     dragSrcEl = this;
+	
+	var toSearch = this.id;
+	var searching = this.parentNode.firstElementChild;
+	posBeforDrag=1;
+	
+	while (searching && searching.id != toSearch){
+		searching = searching.nextElementSibling;
+		posBeforDrag++;
+		
+	}
 
     e.dataTransfer.effectAllowed = 'move';
     e.dataTransfer.setData('text', this.innerHTML);
@@ -77,19 +87,41 @@ function handleDragEnter(e) {
 
 // change look back to normal when item is released
 function handleDragLeave(e) {
+	if (e.preventDefault) {
+        e.preventDefault();
+    }
     this.classList.remove('over');
 }
 
 // save to database when item is droped 
 function handleDragEnd(e) {
+	
+	
     this.style.opacity = '1.0';
     var cols = document.querySelectorAll('.column');
     [].forEach.call(cols, function (col) {
         col.classList.remove('over');
     });
 	
-	saveList();
+	var toSearch = this.id;
+	var searching = this.parentNode.firstElementChild;
+	posAfterDrag=1;
+	
+	while (searching && searching.id != toSearch){
+		searching = searching.nextElementSibling;
+		posAfterDrag++;
+		
+	}
+	
+	saveList(e);
 	refreshItems();
+}
+
+//firefox support
+function handleDrop(e){
+	if(e.preventDefault) { e.preventDefault(); }
+    if(e.stopPropagation) { e.stopPropagation(); }
+	return false;
 }
 
 // add eventhandler for categorylist
@@ -100,7 +132,7 @@ function refreshItems() {
         col.addEventListener('dragenter', handleDragEnter, false)
         col.addEventListener('dragover', handleDragOver, false)
         col.addEventListener('dragleave', handleDragLeave, false)
-        //col.addEventListener('drop', handleDrop, false)
+        col.addEventListener('drop', handleDrop, false)
         col.addEventListener('dragend', handleDragEnd, false)
     });
 
@@ -128,13 +160,14 @@ function loadList(){
 }
 
 // save position of every item in the tracelist 
-function saveList(){
-	var pos = 0;
+function saveList(e){
+	/*
 	var cols = document.querySelectorAll('.column');
 	var category = [];
 	[].forEach.call(cols,function(col){
 		category[pos] = col.id;
 		++pos;
+		*/
 		/*
 		var xhttp = new XMLHttpRequest();
 		xhttp.onreadystatechange = function() {
@@ -144,14 +177,17 @@ function saveList(){
 		};
 		xhttp.open("GET", "updateShopList.php?position="+pos+"&categoryid="+category, true);
 		xhttp.send();
-		*/
 	});
-	console.log(category);
+		*/
+	//console.log(category);
+	console.log("posBeforDrag: "+posBeforDrag);
+	console.log("posAfterDrag: "+posAfterDrag);
+	console.log(e.target.id);
 	
 	$.ajax({
 	type: "POST",
 	url: "updateShopList.php",
-	data: {data: category},
+	data: {befor: posBeforDrag, after: posAfterDrag, id: e.target.id},
 	success:function(result){
 		console.log(result);
 		loadList();
@@ -209,6 +245,24 @@ function checkOnLeave(){
 	};
 	xhttp.open("GET", "checkEmptyTrace.php", true);
 	xhttp.send();
+}
+
+// ;) 
+function addEntry()
+{
+	$.ajax({
+		type: "POST",
+		url: "addListEntry.php",
+		data:{
+			productName: "Sellerie",
+			productNumber: 1,
+			categoryId: 54
+		},
+		success:function(result){
+		},
+		error: function(){
+		}
+	});	
 }
 
 // init of site

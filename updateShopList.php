@@ -14,20 +14,62 @@
 		die("Connection failed: " . mysqli_connect_error());
 	}
 	
-	$myArray = $_REQUEST['data'];
+	$newpos = $_POST['after'];
+	$oldpos = $_POST['befor'];
+	$id = $_POST['id'];
 	
-	for ($i = 0; $i < count($myArray); $i++){
-		
+	if ($oldpos > $newpos)
+	{
 		$query = "UPDATE positions SET position="
-			.($i+1)
+		."position+1 "
+		." WHERE shopId="
+		.$_SESSION['selectedShopId']
+		." AND userId="
+		.$_SESSION['userId']
+		." AND position>="
+		.$newpos
+		." AND position<"
+		.$oldpos;
+		
+		mysqli_query($db_link, $query);
+		
+		$query="UPDATE positions SET position="
+		.$newpos
+		." WHERE shopId="
+		.$_SESSION['selectedShopId']
+		." AND userId="
+		.$_SESSION['userId']
+		." AND categoryId="
+		.$id;
+		
+		mysqli_query($db_link, $query);
+	} else if ($oldpos < $newpos)
+	{
+			$query = "UPDATE positions SET position="
+			."position-1 "
+			." WHERE shopId="
+			.$_SESSION['selectedShopId']
+			." AND userId="
+			.$_SESSION['userId']
+			." AND position>"
+			.$oldpos
+			." AND position<="
+			.$newpos;
+			
+			mysqli_query($db_link, $query);
+			
+				
+			$query="UPDATE positions SET position="
+			.$newpos
 			." WHERE shopId="
 			.$_SESSION['selectedShopId']
 			." AND userId="
 			.$_SESSION['userId']
 			." AND categoryId="
-			.$myArray[$i];
-		echo $query."\n";
-		mysqli_query($db_link, $query);
+			.$id;
+			
+			mysqli_query($db_link, $query);
 	}
+
 	mysqli_close($db_link);
 ?>
