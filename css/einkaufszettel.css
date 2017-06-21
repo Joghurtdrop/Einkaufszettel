@@ -73,6 +73,9 @@
 	transform: translateY(35px);
 	z-index:-1;
 	position:absolute;
+	overflow-y:scroll;
+	max-height:80vh;
+	
 }
 
 .categoryList ul li:hover{
@@ -96,35 +99,84 @@
 }
 
 
-.articleInput{
+.Input{
     padding: 4px 10px;
     border: 2px solid #ccc;
     border-radius: 4px;
     background-color: #f8f8f8;
     font-size: 16px;
 	font-family: Patrick Hand;
-	float:left;
 }
 
-.articleInput:hover{
+.Input:hover{
 	border-color:#8e161e;
 	outline:none;
 }
 
-.articleInput:focus{
+.Input:focus{
 	border-color:#8e161e;
 	outline:none;
 	background-color:#eee;
 }
 
-#numberInput{
+
+
+.numberInput{
 	width:20%;
 	margin:0% 2%;
 }
 
+#numberInput{
+	width:100%;
+}
+
 #productNameInput{
+	width:100%;
+}
+
+.productNameInput{
 	width:76%;
 }
+
+.tooltip{
+	position:relative;
+	float:left;
+}
+
+
+.tooltip .tooltiptext {
+	position:absolute;
+	left: 50%;
+    visibility: hidden;
+    background-color: #bbb;
+    color: black;
+    text-align: center;
+    border-radius: 2px;
+    padding: 5px;
+    bottom: 120%;
+    opacity: 1;
+    transition: opacity 1s;
+}
+
+.tooltip .tooltiptext:after {
+	left: 50%;
+   
+    visibility: visible;
+    margin-left: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: #555 transparent transparent transparent;
+}
+
+.tooltip:hover .tooltiptext {
+    transform: translate(-50%, 0%);
+    visibility: visible;
+    opacity: 1;
+}
+
+
+
+
 
 a:visited,:link{
 	color:white;
@@ -180,6 +232,13 @@ a:hover{
 	.dropup{
 		width:25%;
 	}
+}
+
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0; 
 }
 
 
