@@ -39,6 +39,9 @@
 		{
 			$errorMessage="Username ist bereits vergeben";
 		}
+	} else if(isset($_GET['login']) && $_GET['login']==3)
+	{
+		$errorMessage = $_POST['mail'];
 	}
 	
 	
@@ -78,7 +81,7 @@
             <label>Passwort</label>
             <input type="password" name="password"/>
           </div>          
-          <p class="forgot"><a href="#">Passwort vergessen?</a></p>
+          <p class="forgot"><a href="#" onclick="openForgotPw()">Passwort vergessen?</a></p>
           <button class="button button-block" type="submit"/>Log In</button>          
           </form>
         </div>        
@@ -102,6 +105,19 @@
           </form>
         </div>        
       </div>
+	  
+	  <div id="forgotpw" class="overlay hiddenField">
+		<div class="popup card">
+			<h2>Bitte gib hier die E-Mail Addresse ein mit der du dich angemeldet hast:</h2>
+			<form action="?login=3" method="post"> 
+			<div class="content field-wrap">
+			  <label>E-Mail Addresse</label>
+              <input type="email" name="mail"/>
+			</div>
+			<button type="submit" class="button button-block">OK<button>
+			<button type="button" class="button button-block" onclick="closeForgotPw()">NOPE<button>
+		</div>
+	</div>
 </div>
 <script src="js/login.js"></script>
 </body>

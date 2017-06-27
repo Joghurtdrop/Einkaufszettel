@@ -41,3 +41,11 @@ $('.tab a').on('click', function (e) {
   $(target).fadeIn(600);
   
 });
+
+function openForgotPw(){
+	document.getElementById("forgotpw").style.cssText = "display: block!important";
+}
+
+function closeForgotPw(){
+	document.getElementById("forgotpw").style.cssText = "display: none!important";
+}
