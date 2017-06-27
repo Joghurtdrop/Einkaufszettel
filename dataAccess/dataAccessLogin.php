@@ -43,6 +43,25 @@
 		}
 	}	
 	
+	function getPassIfMailExists($mail,$name)
+	{
+		$valid=FALSE;
+		$db_link=getDbLink();
+		$stmt=mysqli_stmt_init($db_link);
+		if(mysqli_stmt_prepare($stmt, "SELECT password FROM shoppinglist.users WHERE mail = ? AND name = ?"))
+		{		
+			mysqli_stmt_bind_param($stmt,"ss",$mail,$name);
+			mysqli_stmt_execute($stmt);
+			mysqli_stmt_bind_result($stmt,$result);
+			if(mysqli_stmt_fetch($stmt)!=NULL)
+			{
+				$valid=$result;
+			}				
+			mysqli_stmt_close($stmt);
+			return $valid;
+		}
+	}
+	
 	
 	function getUsername($userid)
 	{		

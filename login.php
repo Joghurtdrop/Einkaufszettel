@@ -41,7 +41,31 @@
 		}
 	} else if(isset($_GET['login']) && $_GET['login']==3)
 	{
-		$errorMessage = $_POST['mail'];
+		if($password=getPassIfMailExists($_POST['mail'],$_POST['name']))
+		{
+			
+			$nachricht = "Hallo ".$_POST['name'].",\n"
+						."\n"
+						."dein bei uns hinterlegtes Passwort ist: \""
+						.$password."\".\n"
+						."\n"
+						."Mit freundlichen Grüßen\n"
+						."Dein Einkaufszettel Team";
+
+			$header = 'From: webmaster@example.com'."\r\n" 
+					 .'Reply-To: webmaster@example.com'."\r\n"
+					 .'X-Mailer: PHP/'.phpversion();
+			// Falls eine Zeile der Nachricht mehr als 70 Zeichen enthälten könnte,
+			// sollte wordwrap() benutzt werden
+			$nachricht = wordwrap($nachricht, 70);
+
+			// Send
+			mail($_POST['mail'], 'Einkaufszettel: Password Recovery', $nachricht, $header);
+		} 
+		else
+		{
+		  $errorMessage = "Kombination aus Username und E-Mail Addresse nicht gefunden!<br>";
+		}
 	}
 	
 	
@@ -108,11 +132,14 @@
 	  
 	  <div id="forgotpw" class="overlay hiddenField">
 		<div class="popup card">
-			<h2>Bitte gib hier die E-Mail Addresse ein mit der du dich angemeldet hast:</h2>
 			<form action="?login=3" method="post"> 
+			<div class="field-wrap">
+				<label>Username</label>
+				<input type="text" name="name"/>
+            </div>  
 			<div class="content field-wrap">
-			  <label>E-Mail Addresse</label>
-              <input type="email" name="mail"/>
+				<label>E-Mail Addresse</label>
+				<input type="email" name="mail"/>
 			</div>
 			<button type="submit" class="button button-block">OK<button>
 			<button type="button" class="button button-block" onclick="closeForgotPw()">NOPE<button>
