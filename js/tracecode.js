@@ -35,8 +35,6 @@ function removeItem(e){
 		pos++;
 		
 	} 	
-	//e.parentNode.remove();
-	//saveList();
 	removeFromDb(pos, levelup.id);
 	refreshItems();
 }
@@ -60,7 +58,7 @@ function handleDragStart(e) {
     e.dataTransfer.setData('text', this.innerHTML);
 }
 
-// eventhandler for moving items in categorylist, will change if draged to 50% top or bottom of next item
+// eventhandler for moving items in categorylist, will change position if dragged to 50% top or bottom of next item
 function handleDragOver(e) {
     if (e.preventDefault) {
         e.preventDefault();
@@ -164,29 +162,7 @@ function loadList(){
 
 // save position of every item in the tracelist 
 function saveList(e){
-	/*
-	var cols = document.querySelectorAll('.column');
-	var category = [];
-	[].forEach.call(cols,function(col){
-		category[pos] = col.id;
-		++pos;
-		*/
-		/*
-		var xhttp = new XMLHttpRequest();
-		xhttp.onreadystatechange = function() {
-			if (xhttp.readyState == 4 && xhttp.status == 200) 
-			{
-			}
-		};
-		xhttp.open("GET", "updateShopList.php?position="+pos+"&categoryid="+category, true);
-		xhttp.send();
-	});
-		*/
-	//console.log(category);
-	console.log("posBeforDrag: "+posBeforDrag);
-	console.log("posAfterDrag: "+posAfterDrag);
-	console.log(e.target.id);
-	
+
 	$.ajax({
 	type: "POST",
 	url: "updateShopList.php",

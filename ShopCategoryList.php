@@ -1,7 +1,7 @@
 <?php	require_once('dataAccess/dbConfiguration.php');
 	$db_link=mysqli_connect(			MYSQL_HOST,			MYSQL_USER,			MYSQL_PASSWORD,			MYSQL_DATABASE			);
 	if (!$db_link) 	{		die("Connection failed: " . mysqli_connect_error());	}
-	$code = mysqli_query($db_link, "SET NAMES utf8");	$sql = "SELECT id, name, parentId FROM categories";	$result = mysqli_query($db_link, $sql);
+	$code = mysqli_query($db_link, "SET NAMES utf8");	$sql = "SELECT id, name, parentId FROM categories WHERE id<>999";	$result = mysqli_query($db_link, $sql);
 	if($result != FALSE)	{		$all = mysqli_fetch_all($result);		$level = 'NULL'; 
 		echo makelist($all, 0);	}	else	{		echo "Query failed";	}
 	mysqli_close($db_link);
