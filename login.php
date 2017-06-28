@@ -39,6 +39,33 @@
 		{
 			$errorMessage="Username ist bereits vergeben";
 		}
+	} else if(isset($_GET['login']) && $_GET['login']==3)
+	{
+		if($password=getPassIfMailExists($_POST['mail'],$_POST['name']))
+		{
+			
+			$nachricht = "Hallo ".$_POST['name'].",\n"
+						."\n"
+						."dein bei uns hinterlegtes Passwort ist: \""
+						.$password."\".\n"
+						."\n"
+						."Mit freundlichen Grüßen\n"
+						."Dein Einkaufszettel Team";
+
+			$header = 'From: webmaster@example.com'."\r\n" 
+					 .'Reply-To: webmaster@example.com'."\r\n"
+					 .'X-Mailer: PHP/'.phpversion();
+			// Falls eine Zeile der Nachricht mehr als 70 Zeichen enthälten könnte,
+			// sollte wordwrap() benutzt werden
+			$nachricht = wordwrap($nachricht, 70);
+
+			// Send
+			mail($_POST['mail'], 'Einkaufszettel: Password Recovery', $nachricht, $header);
+		} 
+		else
+		{
+		  $errorMessage = "Kombination aus Username und E-Mail Addresse nicht gefunden!<br>";
+		}
 	}
 	
 	
@@ -78,7 +105,7 @@
             <label>Passwort</label>
             <input type="password" name="password"/>
           </div>          
-          <p class="forgot"><a href="#">Passwort vergessen?</a></p>
+          <p class="forgot"><a href="#" onclick="openForgotPw()">Passwort vergessen?</a></p>
           <button class="button button-block" type="submit"/>Log In</button>          
           </form>
         </div>        
@@ -102,6 +129,22 @@
           </form>
         </div>        
       </div>
+	  
+	  <div id="forgotpw" class="overlay hiddenField">
+		<div class="popup card">
+			<form action="?login=3" method="post"> 
+			<div class="field-wrap">
+				<label>Username</label>
+				<input type="text" name="name"/>
+            </div>  
+			<div class="content field-wrap">
+				<label>E-Mail Addresse</label>
+				<input type="email" name="mail"/>
+			</div>
+			<button type="submit" class="button button-block">OK<button>
+			<button type="button" class="button button-block" onclick="closeForgotPw()">NOPE<button>
+		</div>
+	</div>
 </div>
 <script src="js/login.js"></script>
 </body>
