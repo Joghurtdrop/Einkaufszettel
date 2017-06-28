@@ -1,7 +1,13 @@
 
+a:visited,:link{
+	color:white;
+}
+a:hover{
+	cursor: pointer; 
+}
 
 
-
+/* below: shoppinglist */
 .listcontainer {	
 	min-height: 450px;
 	padding: 0px 10px;
@@ -12,26 +18,21 @@
 	width: 50%;
 	z-index:1;
 }
-
-
 #list{
 	padding: 10px;
 	margin:10px;
 	list-style-type:none;
 }
-
 .listtext{
 	font-family: Patrick Hand;
 	font-size: 20px;
 	padding: 0px 0px 0px 15px;
 	display:inline-block;
 }
-
 .listelement{
 	padding: 5px 10px 2px 10px;
 	border-bottom: thin solid black;
 }
-
 .listnumber{
 	font-family: Patrick Hand;
 	font-size: 20px;
@@ -39,31 +40,32 @@
 	width: 20px;
 	text-align:right;
 }
+/* above: shoppinglist */
 
 
-
+/* below: baseboard elements */
+.baseboardElement{
+	padding: 5px 0px;
+	padding-right:5px;
+}
+/* below: categorylist */
 .categoryList{
 	padding:0;
 }
-
 .categoryList div{
 	height:44px;
 	padding-top:10px;
 }
-
 .categoryList ul{
 	list-style-type:none;	
 }
-
 .categoryList ul li{
 	list-style-type:none;
 }
-
 .categoryList li:hover > ul{
 	visibility:visible;
 	transform: translateY(0px);
 }
-
 .categoryList ul ul{
 	visibility:hidden;
 	bottom:100%;
@@ -73,32 +75,22 @@
 	transform: translateY(35px);
 	z-index:-1;
 	position:absolute;
-	overflow-y:scroll;
-	max-height:80vh;
-	
+	overflow-y:auto;
+	max-height:80vh;	
 }
-
 .categoryList ul li:hover{
 	background:#8e161e;
 }
-
 .categoryList ul li ul li:hover{
 	background:#111;
 }
-
 .categoryList a{
 	display:block;
 	height: 30px;
 	padding-top:5px;
 	cursor:default;
 }
-
-.baseboardElement{
-	padding: 5px 0px;
-	padding-right:5px;
-}
-
-
+/* above: categorylist */
 .Input{
     padding: 4px 10px;
     border: 2px solid #ccc;
@@ -107,43 +99,36 @@
     font-size: 16px;
 	font-family: Patrick Hand;
 }
-
 .Input:hover{
 	border-color:#8e161e;
 	outline:none;
 }
-
 .Input:focus{
 	border-color:#8e161e;
 	outline:none;
 	background-color:#eee;
 }
-
-
-
 .numberInput{
 	width:20%;
 	margin:0% 2%;
 }
-
 #numberInput{
 	width:100%;
 }
-
 #productNameInput{
 	width:100%;
 }
-
 .productNameInput{
 	width:76%;
 }
+/* above: baseboard elements */
 
+
+/* below: tooltip */
 .tooltip{
 	position:relative;
 	float:left;
 }
-
-
 .tooltip .tooltiptext {
 	position:absolute;
 	left: 50%;
@@ -157,7 +142,6 @@
     opacity: 1;
     transition: opacity 1s;
 }
-
 .tooltip .tooltiptext:after {
 	left: 50%;
    
@@ -167,25 +151,15 @@
     border-style: solid;
     border-color: #555 transparent transparent transparent;
 }
-
 .tooltip:hover .tooltiptext {
     transform: translate(-50%, 0%);
     visibility: visible;
     opacity: 1;
 }
+/* above: tooltip */
 
 
-
-
-
-a:visited,:link{
-	color:white;
-}
-
-a:hover{
-	cursor: pointer; 
-}
-
+/* below: screen size adaption */
 @media only screen and (max-width: 550px) {
     /* For mobile phones: */
     .mobileInvisible {
@@ -233,8 +207,10 @@ a:hover{
 		width:25%;
 	}
 }
+/* above: screen size adaption */
 
 
+/* hides the number input's spin box */
 input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
     -webkit-appearance: none;
