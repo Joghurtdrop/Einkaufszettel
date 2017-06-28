@@ -8,7 +8,7 @@ html {
 	background-color:#fff9f9;
 }
 /*general font formating*/
-div,button,span,strong,nav{font-family:Calibri;}
+div,button,span,strong,nav,h1,h2,h3{font-family:Calibri;}
 
 body{
 	text-align:center;
