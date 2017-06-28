@@ -47,8 +47,11 @@ include 'menubar.php';
 				</li>
 			</ul>
 		</div>
-		<div class="col-1 baseboardElement">
-			<a onClick="addEntry()" color="white"><i class="material-icons md-30">&#xE854;</i></a>
+		<div class="tooltip baseboardElement col-1">
+			<div id="tooltipAddButton">Ungültige Eingabe</div>
+			<div id="addButton" class="not-active" onClick="addEntry()" color="white">
+				<i class="material-icons md-30">&#xE854;</i>
+			</div>
 		</div>
 	</div>
 </div>

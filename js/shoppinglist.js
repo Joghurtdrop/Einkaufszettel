@@ -6,6 +6,23 @@ $(document).ready(function(){
 	$('.overlay').fadeIn("slow");
 })
 
+$('.Input').keyup(function(){
+	var empty=false;
+	$('.Input').each(function(){
+		if($(this).val()==''){
+			empty=true;
+		}
+	});
+	if(empty){
+		$('#addButton').addClass('not-active');
+		$('.tooltip:hover #tooltipAddButton').css('visibility', 'visible');		
+	}
+	else{
+		$('#addButton').removeClass('not-active');		
+		$('#.tooltip:hover #tooltipAddButton').css('visibility', 'hidden');		
+	}
+})
+
 function loadDoc(phpSource, id) 
 {
   var xhttp = new XMLHttpRequest();
@@ -59,7 +76,7 @@ function addEntry()
 			console.log('result: '+result)
 			loadDoc("loadShoppingList.php", "list");
 			productName:$('#productNameInput').val("");
-			productNumber:$("#numberInput").val("");
+			productNumber:$("#numberInput").val("");		
 		},
 		error: function(){
 			console.log("error: adding failed");
