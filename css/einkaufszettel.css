@@ -198,10 +198,6 @@ a:hover{
 	.main{
 		padding-bottom:140px;
 	} 
-	
-	.popup{
-    width: 95%;
-    }
 }
 
 
@@ -214,10 +210,6 @@ a:hover{
 	.dropup{
 		width:41.67%;
 	}
-	
-	.popup{
-    width: 70%;
-    }
 }
 
 @media only screen and (min-width: 768px) {

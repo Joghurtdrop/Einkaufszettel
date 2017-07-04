@@ -36,6 +36,10 @@ body{
     [class*="col-"] {
         width: 100%;
     }
+	
+	.popup{
+    width: 95%;
+    }
 }
 [class*="col-"] {
     float: left;
@@ -175,4 +179,23 @@ body{
 
 .hiddenField{
 	display:none!important;
+}
+
+
+
+
+
+@media only screen and (max-width: 550px) {
+    /* For mobile phones: */	
+	.popup{
+    width: 95%;
+    }
+}
+
+
+@media only screen and (min-width: 551px) and (max-width: 767px) {
+    /* For tablets: */
+	.popup{
+    width: 70%;
+    }
 }
