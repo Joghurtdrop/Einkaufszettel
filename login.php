@@ -24,7 +24,7 @@
 		}
 		else 
 		{
-			$errorMessage = "Username oder Passwort ungültig<br>";			 
+			$errorMessage = "Username oder Passwort ungültig";			 
 		}		
 	}
 	else if(isset($_GET['login']) && $_GET['login']==2)
@@ -64,7 +64,7 @@
 		} 
 		else
 		{
-		  $errorMessage = "Kombination aus Username und E-Mail Addresse nicht gefunden!<br>";
+		  $errorMessage = "Kombination aus Username und E-Mail Addresse nicht gefunden!";
 		}
 	}
 	
@@ -85,7 +85,7 @@
 <?php
 	if(isset($errorMessage))
 	{
-		echo "<div class=\"field-wrap\">".$errorMessage."</div>";
+		echo "<script type='text/javascript'>alert('".$errorMessage."');window.location='login.php'</script>";
 	}	
 ?>
 

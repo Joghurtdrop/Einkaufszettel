@@ -49,3 +49,8 @@ function openForgotPw(){
 function closeForgotPw(){
 	document.getElementById("forgotpw").style.cssText = "display: none!important";
 }
+
+function test(message){
+	alert(message);
+	window.location="login.php";
+}

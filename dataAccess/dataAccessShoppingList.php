@@ -5,9 +5,10 @@
 	function loadList($userid, $shopid)
 	{
 		$db_link=getDbLink();
-		$query="SELECT listentries.number, products.name, products.id FROM listentries 
+		$query="SELECT listentries.number, products.name AS pName, products.id, categories.name AS cName FROM listentries 
 				INNER JOIN products ON products.id=listentries.productId 
 				INNER JOIN positions ON positions.categoryId=listentries.categoryId
+				INNER JOIN categories ON categories.id = listentries.categoryId
 				WHERE listentries.userId=".$userid." AND positions.shopId=".$shopid."
 				ORDER BY positions.position, products.name";
 		$result=mysqli_query($db_link, $query);		

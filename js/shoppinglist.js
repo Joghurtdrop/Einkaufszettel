@@ -19,7 +19,7 @@ $('.Input').keyup(function(){
 	}
 	else{
 		$('#addButton').removeClass('not-active');		
-		$('#.tooltip:hover #tooltipAddButton').css('visibility', 'hidden');		
+		$('.#tooltip:hover #tooltipAddButton').css('visibility', 'hidden');		
 	}
 })
 
@@ -63,7 +63,6 @@ function updateEntry(Id, newNumber)
 
 function addEntry()
 {
-	console.log('ich werde immerhin aufgerufen');
 	$.ajax({
 		type: "POST",
 		url: "addListEntry.php",
@@ -73,7 +72,6 @@ function addEntry()
 			categoryId:$("#selectedCategoryId").html()
 		},
 		success:function(result){
-			console.log('result: '+result)
 			loadDoc("loadShoppingList.php", "list");
 			productName:$('#productNameInput').val("");
 			productNumber:$("#numberInput").val("");		
