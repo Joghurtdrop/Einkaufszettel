@@ -17,8 +17,8 @@
 						<a onClick="incrementEntry(this)"><i class="material-icons md-24">&#xE145;</i></a>
 						<a onClick="decrementEntry(this)"><i class="material-icons md-24">&#xE15B;</i></a>
 					</div>
-					<div class="hiddenField"><?php echo $row['id']?></div>
 					<div class="categoryHint hiddenField"><?php echo $row['cName']?></div>
+					<div class="hiddenField"><?php echo $row['id']?></div>
 				</li>
 			<?php
 		}

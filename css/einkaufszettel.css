@@ -19,7 +19,7 @@ a:hover{
 	padding: 0px 10px;
 	display:inline-block;
 	text-align:left;
-	min-width:280px;
+	min-width:335px;
 	max-width:600px;
 	width: 50%;
 	z-index:1;
@@ -40,7 +40,6 @@ a:hover{
 	padding: 5px 10px 2px 10px;
 	border-bottom: thin solid black;
 	overflow-x:auto;
-	text-overflow:ellipsis;
 	white-space:nowrap;
 }
 
@@ -56,6 +55,7 @@ a:hover{
     transition: opacity 1s;
 	left:9%;
 }
+
 .listnumber{
 	font-family: Patrick Hand;
 	font-size: 20px;
@@ -190,21 +190,17 @@ a:hover{
 .tooltip:hover #tooltipAddButton{
 	transform: translate(-50%, 0%);
     visibility: visible;
-    opacity: 1;
 }
 #tooltipAddButton{
 	position:absolute;
 	left: 50%;
-    visibility: hidden;
+	visibility:hidden;
     background-color: #bbb;
     color: black;
     text-align: center;
     border-radius: 2px;
     padding: 5px;
     bottom: 103%;
-    opacity: 1;
-    transition: opacity 1s;
-    transition: opacity 1s;
 }
 
 /* above: tooltip */

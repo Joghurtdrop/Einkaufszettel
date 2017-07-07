@@ -15,11 +15,11 @@ $('.Input').keyup(function(){
 	});
 	if(empty){
 		$('#addButton').addClass('not-active');
-		$('.tooltip:hover #tooltipAddButton').css('visibility', 'visible');		
+		$('#tooltipAddButton').css('display', 'block');		
 	}
 	else{
 		$('#addButton').removeClass('not-active');		
-		$('.#tooltip:hover #tooltipAddButton').css('visibility', 'hidden');		
+		$('#tooltipAddButton').css('display', 'none');		
 	}
 })
 
@@ -74,7 +74,9 @@ function addEntry()
 		success:function(result){
 			loadDoc("loadShoppingList.php", "list");
 			productName:$('#productNameInput').val("");
-			productNumber:$("#numberInput").val("");		
+			productNumber:$("#numberInput").val("");	
+			$('#addButton').addClass('not-active');
+			$('#tooltipAddButton').css('display', 'block');				
 		},
 		error: function(){
 			console.log("error: adding failed");
