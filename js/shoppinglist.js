@@ -100,3 +100,11 @@ function decrementEntry(a)
 	newNumber=parseInt(a.parentNode.parentNode.firstElementChild.innerHTML)-1;
 	updateEntry(a.parentNode.parentNode.lastElementChild.innerHTML, newNumber);
 }
+
+
+function openPrint(){
+	var w=screen.width*0.8;
+	var left = (screen.width/2)-(w/2);
+	var h=screen.height*0.8;
+	window.open("/Einkaufszettel/sites/shoppingList/printversion.php","Dein Einkaufszettel - Druckversion", 'height='+h+',width='+w+',scrollbars=yes,status=yes,left='+left+'menubar=yes');
+}

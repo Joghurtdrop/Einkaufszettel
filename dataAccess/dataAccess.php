@@ -1,6 +1,6 @@
 <?php
 
-	require_once('dataAccess/dbConfiguration.php');
+	require_once($_SERVER['DOCUMENT_ROOT'].'/Einkaufszettel/dataAccess/dbConfiguration.php');
 
 	
 	/* returns a mysqli-object which represents a connection to the database 

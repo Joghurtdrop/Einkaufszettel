@@ -33,6 +33,7 @@ function deleteShop(el)
 
 function setSelectedShop(el)
 {
+	console.log(el.parentNode.lastElementChild.innerHTML);
 	$.ajax({
 		type: "POST",
 		url: "setSelectedShop.php",
@@ -40,6 +41,7 @@ function setSelectedShop(el)
 			selectedShopId:el.parentNode.lastElementChild.innerHTML
 		},
 		success:function(result){
+			console.log(result);
 			$("#selectedShop").html(JSON.parse(result).name);
 			$("#selectedShopId").html(JSON.parse(result).selectedShop);			
 		},
@@ -60,7 +62,7 @@ function addShop()
 				name:$('#newShopName').val()
 			},
 			success:function(result){				
-				window.location='deinMarkt.php';
+				window.location='/Einkaufszettel/sites/yourShop';
 				console.log(result);
 			},
 			error: function(){

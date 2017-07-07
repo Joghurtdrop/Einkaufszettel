@@ -1,5 +1,5 @@
 <?php
-	include_once 'dataAccess.php';
+	include_once $_SERVER['DOCUMENT_ROOT'].'/Einkaufszettel/dataAccess/dataAccess.php';
 	
 	function getShops($userid)
 	{

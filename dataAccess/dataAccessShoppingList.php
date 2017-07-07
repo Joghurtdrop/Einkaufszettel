@@ -1,5 +1,5 @@
 <?php
-	include 'dataAccess.php';
+	include $_SERVER['DOCUMENT_ROOT'].'/Einkaufszettel/dataAccess/dataAccess.php';
 	
 	/* loads all listentries with the passed user and shop ID from the database in order as saved in table positions */
 	function loadList($userid, $shopid)

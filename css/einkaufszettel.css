@@ -2,7 +2,7 @@
 a:visited,:link{
 	color:white;
 }
-a:hover{
+.button, a:hover{
 	cursor: pointer; 
 }
 
