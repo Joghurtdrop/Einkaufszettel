@@ -168,7 +168,6 @@ function saveList(e){
 	url: "updateShopList.php",
 	data: {befor: posBeforDrag, after: posAfterDrag, id: e.target.id},
 	success:function(result){
-		console.log(result);
 		loadList();
 	},
 	error: function(){
