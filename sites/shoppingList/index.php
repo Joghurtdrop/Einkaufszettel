@@ -32,7 +32,7 @@ include '/sites/menubar.php';
 		<div class="col-5 baseboardElement">
 			<div class="tooltip numberInput">
 				<div class="tooltiptext">Anzahl</div>
-				<input class="Input" id="numberInput" type="number" min="1"></input>
+				<input class="Input" id="numberInput" type="text" pattern="[0-9]" min="1"></input>
 			</div>
 			<div class="tooltip productNameInput">
 				<div class="tooltiptext">Artikel</div>	
