@@ -119,7 +119,7 @@
           </div>
           <div class="field-wrap">
             <label>E-Mail Addresse</label>
-            <input type="email" name="mail"/>
+            <input type="text" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" name="mail"/>
           </div>          
           <div class="field-wrap">
             <label>Passwort</label>
@@ -139,7 +139,7 @@
             </div>  
 			<div class="content field-wrap">
 				<label>E-Mail Addresse</label>
-				<input type="email" name="mail"/>
+				<input type="text" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" name="mail"/>
 			</div>
 			<button type="submit" class="button button-block">OK<button>
 			<button type="button" class="button button-block" onclick="closeForgotPw()">NOPE<button>
