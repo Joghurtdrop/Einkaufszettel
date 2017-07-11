@@ -1,4 +1,8 @@
-﻿
+﻿/* creat table */
+
+CREATE DATABASE shoppinglist
+
+
 /* 15.06. Create tables: categories, listEntries, positions, products, users, shops */
 
 CREATE TABLE `shoppinglist`.`categories` 
@@ -96,7 +100,7 @@ INSERT INTO categories (name, parentId) VALUES
 ('Softdrinks',3),('Wasser',3),('Alkoholisches',3),('Kaffee & Tee',3),
 ('Drogerie & Kosmetik',4),('Küche & Haushalt',4),('Baby & Kind',4),('Tier',4),
 ('Obst & Gemüse',1),('Kühlregal',1),('Frischetheke',1),('Tiefkühl',1),
-('Getreideprodukte',2),('Fertiggerichte',2),('Süßes & Salzige',2),('Gewürze & Brotaufstriche',2),
+('Getreideprodukte',2),('Fertiggerichte',2),('Süßes & Salziges',2),('Gewürze & Brotaufstriche',2),
 
 ('Säfte',5),('Limonaden',5),('Eistee',5),('Energy-Drinks',5),
 ('Mineralwasser',6),('Wasser mit Geschmack',6),
@@ -119,3 +123,5 @@ INSERT INTO categories (name, parentId) VALUES
 ('Gewürze',20),('Essig & Öl',20),('Ketchup, Senf & Saucen',20),('Brotaufstriche',20);
 
 INSERT INTO categories (id, name) VALUES (999,'dummy');
+
+

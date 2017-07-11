@@ -13,6 +13,11 @@ a:hover {
   color: #8e161e;
 }
 
+
+label{
+	z-index:0;
+}
+
 .form {
   padding: 40px;
   max-width: 600px;
