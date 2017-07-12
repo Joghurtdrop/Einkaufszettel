@@ -75,6 +75,7 @@
 <html> 
 <head>
   <title>Login</title> 
+  <link rel="shortcut icon" href="/Einkaufszettel/coolesIcon_64.ico" />
   <link rel="stylesheet" href="/Einkaufszettel/css/login.css">
   <link rel="stylesheet" href="/Einkaufszettel/css/general.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
