@@ -2,7 +2,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <link rel="shortcut icon" href="/Einkaufszettel/coolesIcon_64.ico"/>
+	<link rel="shortcut icon" href="/Einkaufszettel/icon/coolesIcon_64.ico"/>
 	<link rel="stylesheet" href="/Einkaufszettel/css/general.css">
 	<link rel="stylesheet" href="/Einkaufszettel/css/deinmarkt.css">
 	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">

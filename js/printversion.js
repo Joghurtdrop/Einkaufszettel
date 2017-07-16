@@ -6,7 +6,7 @@ function loadDoc(phpSource, id)
   xhttp.onreadystatechange = function() {
     if (this.readyState == 4 && this.status == 200) {	
     document.getElementById(id).innerHTML=this.responseText;
-	print();
+	setTimeout(print(),1000);
 	}	
   };
   xhttp.open("GET", phpSource, true);
