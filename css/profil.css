@@ -17,6 +17,7 @@ div.button{
 	border: none;
 	background-color:#ddd;
 	font-size:15px;
+	height:50px;
 }
 
 .button:hover{
@@ -35,9 +36,16 @@ div.button{
 	font-size:20px;
 }
 
+.inputContainer{
+	padding:0px;
+}
+
 input{
 	font-size: 18px;
 	font-weight:bold;
+	height:50px;
+	border:1px #ccc solid;
+	padding-right:20px
 }
 
 

@@ -21,7 +21,7 @@
 	{
 		?>
 			<li class="listelement">
-				<div class="listtext" style="text-transform:uppercase; font-size: 15px"><?php echo "Fehlende Kategorien:"?></div>
+				<div class="listtext" style="text-transform:uppercase; font-size: 15px"><?php echo "Keine Kategorie:"?></div>
 			</li>
 		<?php
 		while($row = mysqli_fetch_assoc($lostEntries)) 
