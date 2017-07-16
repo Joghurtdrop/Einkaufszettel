@@ -123,7 +123,7 @@
           </div>          
           <div class="field-wrap">
             <label>Passwort</label>
-            <input type="password" name="password"/>
+            <input type="password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Mindestens 8 Zeichen, die einen Groß- und Kleinbuchstaben und eine Zahl enthalten." name="password"/>
           </div>          
           <button type="submit" class="button button-block"/>Los geht's</button>          
           </form>

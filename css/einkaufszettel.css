@@ -40,7 +40,6 @@ a:visited,:link{
 	padding: 5px 10px 2px 10px;
 	border-bottom: thin solid black;
 	overflow-x:auto;
-	white-space:nowrap;
 }
 
 .listelement:hover .categoryHint{
