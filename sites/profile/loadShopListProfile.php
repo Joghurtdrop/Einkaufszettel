@@ -3,7 +3,7 @@
 	session_start();
 	set_include_path($_SERVER['DOCUMENT_ROOT'].'/Einkaufszettel');
 	
-	include '/dataAccess/dataAccessProfile.php';
+	include 'dataAccess/dataAccessProfile.php';
 	
 	$result = getShops($_SESSION['userId']);
 	
