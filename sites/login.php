@@ -39,7 +39,7 @@
 		{
 			$errorMessage="Username ist bereits vergeben";
 		}
-	} else if(isset($_GET['login']) && $_GET['login']==3)
+	} /*else if(isset($_GET['login']) && $_GET['login']==3)
 	{
 		if($password=getPassIfMailExists($_POST['mail'],$_POST['name']))
 		{
@@ -52,8 +52,8 @@
 						."Mit freundlichen Grüßen\n"
 						."Dein Einkaufszettel Team";
 
-			$header = 'From: webmaster@example.com'."\r\n" 
-					 .'Reply-To: webmaster@example.com'."\r\n"
+			$header = 'From: noreply@joghurtdrop.net'."\r\n" 
+					 .'Reply-To: noreply@joghurtdrop.net'."\r\n"
 					 .'X-Mailer: PHP/'.phpversion();
 			// Falls eine Zeile der Nachricht mehr als 70 Zeichen enthälten könnte,
 			// sollte wordwrap() benutzt werden
@@ -66,7 +66,7 @@
 		{
 		  $errorMessage = "Kombination aus Username und E-Mail Addresse nicht gefunden!";
 		}
-	}
+	}*/
 	
 	
 ?>
