@@ -10,13 +10,14 @@
 </head>
 <body>
 <?php
-include '/sites/menubar.php';
+include 'sites/menubar.php';
 ?>
 <div class="row">
 
     <div class="main col-10 vertinav">
         <h1>Dein Markt</h1>
-        <h2>Trage hier deinen Einkaufsweg durch den Laden ein.</h2>
+        <h2>Trage hier deinen Einkaufsweg durch den Markt ein.</h2>
+		<h3>Durch Verschieben kannst du die Reihenfolge ändern.</h3>
 
 
         <div id="trace" class="card middlerow">
@@ -35,8 +36,8 @@ if($_SESSION['selectedShopId']==NULL)
 	<div class="overlay">
 		<div class="popup card">
 			<h2>Achtung!</h2>
-			<div class="content">Du hast noch keinen Laden ausgewählt</div>
-			<a class="close" href="/Einkaufszettel/sites/profile">Laden auswählen</a>
+			<div class="content">Du hast noch keinen Markt ausgewählt</div>
+			<a class="close" href="/Einkaufszettel/sites/profile">Markt auswählen</a>
 		</div>
 	</div>
 	<?php

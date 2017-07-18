@@ -16,7 +16,7 @@
 </head>
 <body>
 <?php
-include '/sites/menubar.php';
+include 'sites/menubar.php';
 ?>
 <div class="main mainWithBaseboard">
   <h1>Dein Einkaufszettel</h1>
@@ -64,8 +64,8 @@ if($_SESSION['selectedShopId']==NULL)
 	<div class="overlay">
 		<div class="popup card">
 			<h2>Achtung!</h2>
-			<div class="content">Du hast noch keinen Laden ausgewählt</div>
-			<a class="close" href="/Einkaufszettel/sites/profile">Laden auswählen</a>
+			<div class="content">Du hast noch keinen Markt ausgewählt</div>
+			<a class="close" href="/Einkaufszettel/sites/profile">Markt auswählen</a>
 		</div>
 	</div>
 	<?php

@@ -12,7 +12,7 @@
 </head>
 <body>
 <?php
-include '/sites/menubar.php';
+include 'sites/menubar.php';
 ?>
 <div class="main">
 	<h1>Dein Konto</h1>

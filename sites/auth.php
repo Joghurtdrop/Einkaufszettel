@@ -3,7 +3,7 @@
 	session_regenerate_id();
 	
 	set_include_path($_SERVER['DOCUMENT_ROOT'].'/Einkaufszettel');
-	include '/dataAccess/dataAccessLogin.php';
+	include 'dataAccess/dataAccessLogin.php';
 	
 	if(empty($_SESSION['userId']))
 	{
