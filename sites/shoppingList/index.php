@@ -37,7 +37,7 @@ include '/sites/menubar.php';
 			</div>
 			<div class="tooltip productNameInput">
 				<div class="tooltiptext">Artikel</div>	
-				<input class="Input" id="productNameInput" type="text" title="test"></input>
+				<input class="Input" id="productNameInput" oninput="this.value=this.value.replace(/[<]|[>]/,'')" title="test"></input>
 			</div>	
 		</div>
 		<div class="col-5 categoryList">

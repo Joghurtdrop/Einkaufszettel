@@ -92,7 +92,10 @@ function removeEntry(a)
 function incrementEntry(a)
 {	
 	newNumber=parseInt(a.parentNode.parentNode.firstElementChild.innerHTML)+1;
-	updateEntry(a.parentNode.parentNode.lastElementChild.innerHTML, newNumber);
+	if(newNumber<=9999)
+	{
+		updateEntry(a.parentNode.parentNode.lastElementChild.innerHTML, newNumber);		
+	}
 }
 
 function decrementEntry(a)

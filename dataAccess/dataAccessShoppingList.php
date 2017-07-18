@@ -108,7 +108,11 @@
 			return;
 		}
 		$db_link=getDbLink();
-		$query="UPDATE shoppinglist.listentries SET number='".$number."' WHERE userId = '".$userId."' AND productId ='".$productId."'";
+		if($number>9999)
+		{
+			$number=9999;
+		}
+		$query="UPDATE shoppinglist.listentries SET number='".$number."' WHERE userId = '".$userId."' AND productId ='".$productId."'";			
 		mysqli_query($db_link,$query);
 		mysqli_close($db_link);
 	}
