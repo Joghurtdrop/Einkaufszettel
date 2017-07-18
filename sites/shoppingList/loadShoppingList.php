@@ -12,10 +12,10 @@
 				<li class="listelement">
 					<div class="listnumber"><?php echo $row['number']?></div>
 					<div class="listtext"><?php echo $row['pName']?></div>
-					<div class="listButtons">
-						<a onClick="removeEntry(this)"><i class="material-icons md-24">&#xE928;</i></a>
-						<a onClick="incrementEntry(this)"><i class="material-icons md-24">&#xE145;</i></a>
-						<a onClick="decrementEntry(this)"><i class="material-icons md-24">&#xE15B;</i></a>
+					<div class="listButtons unselectable">
+						<a onClick="removeEntry(this)"><i class="material-icons md-24 unselectable">&#xE928;</i></a>
+						<a onClick="incrementEntry(this)"><i class="material-icons md-24 unselectable">&#xE145;</i></a>
+						<a onClick="decrementEntry(this)"><i class="material-icons md-24 unselectable">&#xE15B;</i></a>
 					</div>
 					<div class="categoryHint hiddenField"><?php echo $row['cName']?></div>
 					<div class="hiddenField"><?php echo $row['id']?></div>

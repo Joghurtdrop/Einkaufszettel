@@ -33,7 +33,7 @@ include '/sites/menubar.php';
 		<div class="col-5 baseboardElement">
 			<div class="tooltip numberInput">
 				<div class="tooltiptext">Anzahl</div>
-				<input class="Input" id="numberInput" type="text" maxlength="4" oninput="this.value=this.value.replace(/([^0-9]+)/,'');"></input>
+				<input class="Input" id="numberInput" type="text" value="1" onClick="this.select();" maxlength="4" oninput="this.value=this.value.replace(/([^0-9]+)/,'');" ></input>
 			</div>
 			<div class="tooltip productNameInput">
 				<div class="tooltiptext">Artikel</div>	
