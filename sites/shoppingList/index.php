@@ -16,7 +16,7 @@
 </head>
 <body>
 <?php
-include '/sites/menubar.php';
+include 'sites/menubar.php';
 ?>
 <div class="main mainWithBaseboard">
   <h1>Dein Einkaufszettel</h1>

@@ -10,7 +10,7 @@
 </head>
 <body>
 <?php
-include '/sites/menubar.php';
+include 'sites/menubar.php';
 ?>
 <div class="row">
 
