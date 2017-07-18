@@ -46,6 +46,7 @@ nav.vertical a {
 
 nav.vertical li:hover > a {
     background: #8e161e;
+	cursor: pointer;
 }
 
 nav.vertical ul ul{
