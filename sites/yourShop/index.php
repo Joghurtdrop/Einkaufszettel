@@ -2,6 +2,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+<title>Dein Markt</title> 
 	<link rel="shortcut icon" href="/Einkaufszettel/icon/coolesIcon_64.ico"/>
 	<link rel="stylesheet" href="/Einkaufszettel/css/general.css">
 	<link rel="stylesheet" href="/Einkaufszettel/css/deinmarkt.css">
