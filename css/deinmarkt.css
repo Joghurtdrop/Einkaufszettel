@@ -86,11 +86,6 @@ div.icon {
     cursor: move;
 }
 
-.column.over {
-    /*padding: 2px;
-    border: 2px dashed #000;*/
-}
-
 
 @media only screen and (max-width: 550px) {
     /* For mobile phones: */

@@ -23,6 +23,7 @@ $('.Input').keyup(function(){
 	}
 })
 
+
 function loadDoc(phpSource, id) 
 {
   var xhttp = new XMLHttpRequest();
@@ -34,6 +35,7 @@ function loadDoc(phpSource, id)
   xhttp.open("GET", phpSource, true);
   xhttp.send();
 }
+
 
 function setCategory(div)
 {
@@ -104,7 +106,7 @@ function decrementEntry(a)
 	updateEntry(a.parentNode.parentNode.lastElementChild.innerHTML, newNumber);
 }
 
-
+// opens new window with printversion 
 function openPrint(){
 	var w=screen.width*0.8;
 	var left = (screen.width/2)-(w/2);

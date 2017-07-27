@@ -16,6 +16,7 @@
 		return $result;
 	}
 	
+	/* loads listentries of the current user which are not categorized in the current selected shop */
 	function loadLostListentries($userId, $shopId)
 	{
 		$db_link=getDbLink();
@@ -42,30 +43,12 @@
 		$query="INSERT INTO shoppinglist.products (name) VALUES ('".$name."')";
 		mysqli_query($db_link,$query);
 		mysqli_close($db_link);
-		return getProductUnsafe($name);
-	}
-	
-	
-	/* returns the productId of a product selected by name from the table shoppinglist.products 
-	   if this exists else NULL*/	
-	/* !!FIXME: safe parameter passing (sql injection) */
-	function getProductUnsafe($name)
-	{
-		$db_link=getDbLink();
-		$query="SELECT id FROM shoppinglist.products WHERE name LIKE '".$name."'";
-		$result = mysqli_query($db_link,$query);
-		if($result != FALSE)
-		{
-			mysqli_close($db_link);
-			return mysqli_fetch_assoc($result)['id'];
-		}
-		mysqli_close($db_link);
-		return NULL;
+		return getProduct($name);
 	}
 	
 	
 	/* returns the productId of a product selected by name from the table shoppinglist.products */
-	function getProductSafe($name)
+	function getProduct($name)
 	{
 		$db_link=getDbLink();
 		$stmt=mysqli_stmt_init($db_link);
@@ -122,7 +105,7 @@
 	   shoppinglist.listentries table it increases the number by the passed number-value */
 	function addEntry($userId, $name, $number , $categoryId)
 	{
-		$id=getProductUnsafe($name);
+		$id=getProduct($name);
 		if($id==NULL)
 		{
 			$id=addProduct($name);

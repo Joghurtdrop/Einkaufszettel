@@ -311,7 +311,7 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `name`, `password`, `selectedShop`, `mail`) VALUES
-(1, 'test', 'test', 1, 'test@test.test');
+(1, 'test', 'test', 1, 'test@te.st');
 
 --
 -- Indizes der exportierten Tabellen
