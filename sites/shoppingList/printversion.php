@@ -19,7 +19,7 @@
 <div class="main">
   <h1>Dein Einkaufszettel</h1>
   <h3><?php echo date('d.m.Y H:i' ); ?></h3>
-  <h4>Dein Laden: <?php echo getSelectedShop($_SESSION['userId'])['name']?> </h4>
+  <h4>Dein Markt: <?php echo getSelectedShop($_SESSION['userId'])['name']?> </h4>
   <div><i onClick="printDoc()"class="button material-icons">&#xE8AD;</i></div>
   <div class="card listcontainer">
 	<ul id="list">	
