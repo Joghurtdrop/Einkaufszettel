@@ -1,4 +1,8 @@
-<?php require_once $_SERVER['DOCUMENT_ROOT'].'/Einkaufszettel/sites/auth.php';?>
+<?php 
+require_once $_SERVER['DOCUMENT_ROOT'].'/Einkaufszettel/sites/auth.php';
+include $_SERVER['DOCUMENT_ROOT'].'/Einkaufszettel/dataAccess/dataAccessYourShop.php'; 
+?>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -16,7 +20,7 @@ include 'sites/menubar.php';
 <div class="row">
 
     <div class="main col-10 vertinav">
-        <h1>Dein Markt</h1>
+        <h1>Dein Markt: <?php echo getSelectedShop($_SESSION['userId'])['name']; ?></h1>
         <h2>Trage hier deinen Einkaufsweg durch den Markt ein.</h2>
 		<h3>Durch Verschieben kannst du die Reihenfolge ändern.</h3>
 
@@ -44,7 +48,6 @@ if($_SESSION['selectedShopId']==NULL)
 	<?php
 }
 ?>
-<!--script src="js/loadShopList.js"></script-->
 <script src="/Einkaufszettel/js/tracecode.js"></script>
 </body>
 </html>
