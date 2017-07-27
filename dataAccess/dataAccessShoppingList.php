@@ -5,7 +5,7 @@
 	function loadList($userid, $shopid)
 	{
 		$db_link=getDbLink();
-		$query="SELECT listentries.number, products.name AS pName, products.id, categories.name AS cName FROM listentries 
+		$query="SELECT DISTINCT listentries.number, products.name AS pName, products.id, categories.name AS cName FROM listentries 
 				INNER JOIN products ON products.id=listentries.productId 
 				INNER JOIN positions ON positions.categoryId=listentries.categoryId
 				INNER JOIN categories ON categories.id = listentries.categoryId
