@@ -39,7 +39,7 @@
 		{
 			$errorMessage="Username ist bereits vergeben";
 		}
-	} /*else if(isset($_GET['login']) && $_GET['login']==3)
+	} else if(isset($_GET['login']) && $_GET['login']==3)
 	{
 		if($password=getPassIfMailExists($_POST['mail'],$_POST['name']))
 		{
@@ -52,8 +52,8 @@
 						."Mit freundlichen Grüßen\n"
 						."Dein Einkaufszettel Team";
 
-			$header = 'From: noreply@joghurtdrop.net'."\r\n" 
-					 .'Reply-To: noreply@joghurtdrop.net'."\r\n"
+			$header = 'From: noreply@deinzettel.de'."\r\n" 
+					 .'Reply-To: noreply@deinzettel.de'."\r\n"
 					 .'X-Mailer: PHP/'.phpversion();
 			// Falls eine Zeile der Nachricht mehr als 70 Zeichen enthälten könnte,
 			// sollte wordwrap() benutzt werden
@@ -61,12 +61,13 @@
 
 			// Send
 			mail($_POST['mail'], 'Einkaufszettel: Password Recovery', $nachricht, $header);
+			//header('Location: http://'.$_SERVER['HTTP_HOST'].'/Einkaufszettel/sites/login.php');
 		} 
 		else
 		{
-		  $errorMessage = "Kombination aus Username und E-Mail Addresse nicht gefunden!";
+		  $errorMessage = "Kombination aus Username und E-Mail-Addresse nicht gefunden!";
 		}
-	}*/
+	}
 	
 	
 ?>
@@ -120,7 +121,7 @@
           </div>
           <div class="field-wrap">
             <label>E-Mail Addresse</label>
-            <input type="text" pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,3}$" name="mail" title="eine gültige E-Mail-Adresse"/>
+            <input type="text" pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,3}$" name="mail"/>
           </div>          
           <div class="field-wrap">
             <label>Passwort</label>
