@@ -13,11 +13,6 @@ a:hover {
   color: #8e161e;
 }
 
-
-label{
-	z-index:0;
-}
-
 .form {
   padding: 40px;
   max-width: 600px;
@@ -81,6 +76,7 @@ label {
   transition: all 0.1s ease;
   backface-visibility: hidden;
   font-size: 22px;
+  z-index:0;
 }
 
 label.active {

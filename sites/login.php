@@ -100,12 +100,10 @@
         <div id="login">            
           <form action="?login=1" method="post">          
             <div class="field-wrap">
-            <label>Username</label>
-            <input type="name" name="name"/>
+            <input type="name" name="name" placeholder="Username"/>
           </div>          
           <div class="field-wrap">
-            <label>Passwort</label>
-            <input type="password" name="password"/>
+            <input type="password" placeholder="Passwort" name="password"/>
           </div>          
           <p class="forgot"><a href="#" onclick="openForgotPw()">Passwort vergessen?</a></p>
           <button class="button button-block" type="submit"/>Log In</button>          
@@ -115,17 +113,14 @@
           <form action="?login=2" method="post">          
           <div class="field-wrap">
             <div class="field-wrap">
-              <label>Username</label>
-              <input type="text" name="name"/>
+              <input type="text" name="name" placeholder="Username"/>
             </div>
           </div>
           <div class="field-wrap">
-            <label>E-Mail Addresse</label>
-            <input type="text" pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,3}$" name="mail"/>
+            <input type="text" pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,3}$" name="mail" placeholder="E-Mail-Addresse"/>
           </div>          
           <div class="field-wrap">
-            <label>Passwort</label>
-            <input type="password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Mindestens 8 Zeichen, die einen Groß- und Kleinbuchstaben und eine Zahl enthalten." name="password"/>
+            <input type="password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" placeholder="Passwort" title="Mindestens 8 Zeichen, die einen Groß- und Kleinbuchstaben und eine Zahl enthalten." name="password"/>
           </div>          
           <button type="submit" class="button button-block"/>Los geht's</button>          
           </form>
@@ -136,12 +131,10 @@
 		<div class="popup card">
 			<form action="?login=3" method="post"> 
 			<div class="field-wrap">
-				<label>Username</label>
-				<input type="text" name="name"/>
+				<input type="text" name="name" placeholder="Username"/>
             </div>  
 			<div class="content field-wrap">
-				<label>E-Mail Addresse</label>
-				<input type="text" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" name="mail"/>
+				<input type="text" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" name="mail"placeholder="E-Mail-Addresse"/>
 			</div>
 			<button type="submit" class="button button-block">OK<button>
 			<button type="button" class="button button-block" onclick="closeForgotPw()">NOPE<button>
