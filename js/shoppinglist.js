@@ -78,7 +78,8 @@ function addEntry()
 			productName:$('#productNameInput').val("");
 			productNumber:$("#numberInput").val("");	
 			$('#addButton').addClass('not-active');
-			$('#tooltipAddButton').css('display', 'block');				
+			$('#tooltipAddButton').css('display', 'block');	
+			$('#numberInput').val(1);
 		},
 		error: function(){
 			console.log("error: adding failed");
